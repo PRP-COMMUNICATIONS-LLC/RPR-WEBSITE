@@ -31,6 +31,7 @@
 </nav>
 
 <!-- Hero Section -->
+<main>
 <header class="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden bg-hex-pattern">
   <div class="absolute inset-0 bg-gradient-to-b from-transparent via-rpr-bg/80 to-rpr-bg pointer-events-none"></div>
   <div class="container mx-auto px-6 relative z-10">
@@ -140,11 +141,11 @@
           With over 20 years of experience in high-level corporate communications, Puvan has led transformative campaigns for global entities. His strategic vision was recognized with the prestigious Gold Award in 2016 for Excellence in Public Relations.
         </p>
         <div class="flex gap-4">
-          <div class="flex items-center gap-2 text-sm text-gray-500">
+          <div class="flex items-center gap-2 text-sm text-gray-400">
             <app-icon name="award" class="text-rpr-silver"></app-icon>
             <span>2016 Gold Award Winner</span>
           </div>
-          <div class="flex items-center gap-2 text-sm text-gray-500">
+          <div class="flex items-center gap-2 text-sm text-gray-400">
             <app-icon name="shield-check" class="text-rpr-silver"></app-icon>
             <span>20+ Years Experience</span>
           </div>
@@ -216,7 +217,7 @@
             [formControl]="chatInput"
             type="text" 
             placeholder="Type your inquiry here..." 
-            class="flex-1 bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-rpr-cyan transition-colors"
+            class="flex-1 bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-rpr-cyan transition-colors"
           >
           <button 
             type="submit" 
@@ -230,20 +231,21 @@
     </div>
   </div>
 </section>
+</main>
 
 <footer class="bg-black py-12 border-t border-white/10">
   <div class="container mx-auto px-6">
     <div class="flex flex-col md:flex-row justify-between items-center gap-8">
       <app-brand-logo variant="footer"></app-brand-logo>
       
-      <div class="text-gray-500 text-sm">
+      <div class="text-gray-400 text-sm">
         &copy; 2025 RPR Communications, LLC. All Rights Reserved.
       </div>
       
       <div class="flex gap-6">
-        <a href="#" class="text-gray-500 hover:text-rpr-cyan transition-colors"><app-icon name="globe" [size]="20"></app-icon></a>
-        <a href="#" class="text-gray-500 hover:text-rpr-cyan transition-colors">LinkedIn</a>
-        <a href="#" class="text-gray-500 hover:text-rpr-cyan transition-colors">Contact</a>
+        <a href="#" aria-label="Visit our website" class="text-gray-400 hover:text-rpr-cyan transition-colors"><app-icon name="globe" [size]="20"></app-icon></a>
+        <a href="#" aria-label="Visit our LinkedIn page" class="text-gray-400 hover:text-rpr-cyan transition-colors">LinkedIn</a>
+        <a href="#chat" aria-label="Contact us via chat" class="text-gray-400 hover:text-rpr-cyan transition-colors">Contact</a>
       </div>
     </div>
   </div>
