@@ -21,9 +21,7 @@ import { Component } from '@angular/core';
           .st2{fill:#FFFFFF;}
         </style>
         <g id="Layer_4"></g>
-        <g id="Layer_8">
-          <rect width="512" height="512"/>
-        </g>
+        <!-- REMOVED: Black background rectangle -->
         <g id="_x33_" class="st0">
           <g class="st1">
             <polygon points="143.31,407.88 443.73,407.88 415.16,355.68 171.89,355.68"/>
@@ -91,8 +89,8 @@ import { Component } from '@angular/core';
           </g>
         </g>
       </svg>
-      <span class="text-xl md:text-2xl font-semibold tracking-wide text-white">
-        RPR Communications
+      <span class="text-xl md:text-2xl font-semibold tracking-wide text-white uppercase">
+        RPR COMMUNICATIONS LLC
       </span>
     </div>
   `,
