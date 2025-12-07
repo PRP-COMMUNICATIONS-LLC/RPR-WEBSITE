@@ -1,0 +1,248 @@
+<!-- Navigation -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-rpr-bg/90 backdrop-blur-md border-b border-white/10">
+  <div class="container mx-auto px-6 h-20 flex items-center justify-between">
+    <app-brand-logo variant="header"></app-brand-logo>
+    
+    <div class="hidden md:flex items-center gap-8">
+      <a href="#services" class="text-sm font-medium text-gray-300 hover:text-rpr-cyan transition-colors">SERVICES</a>
+      <a href="#impact" class="text-sm font-medium text-gray-300 hover:text-rpr-cyan transition-colors">IMPACT</a>
+      <a href="#about" class="text-sm font-medium text-gray-300 hover:text-rpr-cyan transition-colors">LEADERSHIP</a>
+      <button (click)="scrollToChat()" class="px-4 py-2 border border-rpr-cyan text-rpr-cyan text-sm font-bold rounded hover:bg-rpr-cyan hover:text-black transition-all">
+        TALK TO AI
+      </button>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button class="md:hidden text-white" (click)="toggleMobileMenu()">
+      <app-icon [name]="isMobileMenuOpen() ? 'x' : 'menu'"></app-icon>
+    </button>
+  </div>
+  
+  @if (isMobileMenuOpen()) {
+    <div class="md:hidden bg-rpr-bg border-b border-white/10 p-6 flex flex-col gap-4">
+      <a href="#services" (click)="toggleMobileMenu()" class="text-gray-300 hover:text-rpr-cyan">SERVICES</a>
+      <a href="#impact" (click)="toggleMobileMenu()" class="text-gray-300 hover:text-rpr-cyan">IMPACT</a>
+      <a href="#about" (click)="toggleMobileMenu()" class="text-gray-300 hover:text-rpr-cyan">LEADERSHIP</a>
+      <button (click)="scrollToChat(); toggleMobileMenu()" class="text-left text-rpr-cyan font-bold">TALK TO AI</button>
+    </div>
+  }
+</nav>
+
+<!-- Hero Section -->
+<header class="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden bg-hex-pattern">
+  <div class="absolute inset-0 bg-gradient-to-b from-transparent via-rpr-bg/80 to-rpr-bg pointer-events-none"></div>
+  <div class="container mx-auto px-6 relative z-10">
+    <div class="max-w-4xl">
+      <div class="inline-block px-3 py-1 bg-rpr-cyan_dim border border-rpr-cyan/30 rounded-full text-rpr-cyan text-xs font-bold tracking-widest mb-6">
+        EST. 2024 // STRATEGIC COMMUNICATIONS
+      </div>
+      <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-8 text-white">
+        Global Reach.<br/>
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-rpr-silver to-white">Strategic Activation.</span>
+      </h1>
+      <p class="text-xl text-gray-400 max-w-2xl mb-10 leading-relaxed">
+        Empowering brands through data-driven narratives and high-impact engagement strategies across the Asia-Pacific region and beyond.
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <a href="#impact" class="px-8 py-4 bg-rpr-cyan text-black font-bold rounded hover:bg-white transition-colors flex items-center gap-2">
+          EXPLORE IMPACT
+          <app-icon name="chevron-right" [size]="18"></app-icon>
+        </a>
+        <a href="#chat" class="px-8 py-4 border border-white/20 text-white font-bold rounded hover:bg-white/5 transition-colors">
+          CONSULT AI AGENT
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Services Section -->
+<section id="services" class="py-20 bg-rpr-bg">
+  <div class="container mx-auto px-6">
+    <app-section-header>Core Competencies</app-section-header>
+    
+    <div class="grid md:grid-cols-3 gap-6">
+      <app-card>
+        <div class="h-12 w-12 bg-rpr-cyan/10 rounded-lg flex items-center justify-center mb-6 text-rpr-cyan">
+          <app-icon name="globe" [size]="28"></app-icon>
+        </div>
+        <h3 class="text-xl font-bold mb-3 text-white">Global Activation</h3>
+        <p class="text-gray-400">Cross-border campaign management and brand positioning for multinational enterprises entering new markets.</p>
+      </app-card>
+      
+      <app-card>
+        <div class="h-12 w-12 bg-rpr-cyan/10 rounded-lg flex items-center justify-center mb-6 text-rpr-cyan">
+          <app-icon name="trending-up" [size]="28"></app-icon>
+        </div>
+        <h3 class="text-xl font-bold mb-3 text-white">Strategic Growth</h3>
+        <p class="text-gray-400">Data-backed recruitment and compliance consulting to scale operations efficiently and securely.</p>
+      </app-card>
+      
+      <app-card>
+        <div class="h-12 w-12 bg-rpr-cyan/10 rounded-lg flex items-center justify-center mb-6 text-rpr-cyan">
+          <app-icon name="shield-check" [size]="28"></app-icon>
+        </div>
+        <h3 class="text-xl font-bold mb-3 text-white">Brand Resilience</h3>
+        <p class="text-gray-400">Crisis management and reputation architecture for high-stakes corporate environments.</p>
+      </app-card>
+    </div>
+  </div>
+</section>
+
+<!-- Impact / Case Studies -->
+<section id="impact" class="py-20 bg-black/30 border-y border-white/5">
+  <div class="container mx-auto px-6">
+    <app-section-header>Strategic Impact</app-section-header>
+    
+    <div class="grid md:grid-cols-2 gap-8">
+      <!-- Case Study 1 -->
+      <div class="group relative overflow-hidden rounded-xl bg-rpr-card border border-white/10">
+        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent z-10"></div>
+        <img src="https://picsum.photos/800/600?grayscale&blur=2" alt="Starlight Project" class="w-full h-80 object-cover opacity-60 group-hover:scale-105 transition-transform duration-700">
+        <div class="absolute bottom-0 left-0 p-8 z-20">
+          <div class="text-rpr-cyan font-bold text-sm mb-2 tracking-wider">CREATIVE SERVICES</div>
+          <h3 class="text-2xl font-bold text-white mb-2">Starlight Pty Ltd</h3>
+          <p class="text-gray-300">First Australian bound client for creative services and brand activation, establishing a new benchmark for cross-regional creative partnerships.</p>
+        </div>
+      </div>
+
+      <!-- Case Study 2 -->
+      <div class="group relative overflow-hidden rounded-xl bg-rpr-card border border-white/10">
+        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent z-10"></div>
+        <img src="https://picsum.photos/800/601?grayscale&blur=2" alt="Bosch Campaign" class="w-full h-80 object-cover opacity-60 group-hover:scale-105 transition-transform duration-700">
+        <div class="absolute bottom-0 left-0 p-8 z-20">
+          <div class="text-rpr-cyan font-bold text-sm mb-2 tracking-wider">CENTENNIAL CAMPAIGN</div>
+          <h3 class="text-2xl font-bold text-white mb-2">Bosch Global</h3>
+          <p class="text-gray-300">"100 years Malaysia 2023". Executed a comprehensive centennial celebration campaign honoring a century of innovation.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Leadership -->
+<section id="about" class="py-20 bg-rpr-bg">
+  <div class="container mx-auto px-6">
+    <div class="flex flex-col md:flex-row gap-12 items-center">
+      <div class="w-full md:w-1/3">
+        <div class="relative">
+          <div class="absolute inset-0 bg-rpr-cyan transform translate-x-4 translate-y-4 rounded-lg opacity-20"></div>
+          <img src="https://picsum.photos/600/600?grayscale" alt="Puvan Sivanasan" class="relative rounded-lg w-full shadow-2xl grayscale hover:grayscale-0 transition-all duration-500">
+        </div>
+      </div>
+      <div class="w-full md:w-2/3">
+        <app-section-header>Leadership</app-section-header>
+        <h3 class="text-2xl font-bold text-white mb-2">Puvan Sivanasan</h3>
+        <div class="text-rpr-cyan font-medium mb-6">Founder & Principal Strategist</div>
+        <p class="text-gray-400 mb-6 leading-relaxed">
+          With over 20 years of experience in high-level corporate communications, Puvan has led transformative campaigns for global entities. His strategic vision was recognized with the prestigious Gold Award in 2016 for Excellence in Public Relations.
+        </p>
+        <div class="flex gap-4">
+          <div class="flex items-center gap-2 text-sm text-gray-500">
+            <app-icon name="award" class="text-rpr-silver"></app-icon>
+            <span>2016 Gold Award Winner</span>
+          </div>
+          <div class="flex items-center gap-2 text-sm text-gray-500">
+            <app-icon name="shield-check" class="text-rpr-silver"></app-icon>
+            <span>20+ Years Experience</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AI Chat Interface -->
+<section id="chat" class="py-20 bg-rpr-card border-t border-white/10">
+  <div class="container mx-auto px-6 max-w-4xl">
+    <div class="text-center mb-10">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-rpr-cyan/10 text-rpr-cyan text-sm font-bold mb-4">
+        <div class="w-2 h-2 rounded-full bg-rpr-cyan animate-pulse"></div>
+        POWERED BY GEMINI 2.5
+      </div>
+      <h2 class="text-3xl font-bold text-white mb-4">Strategic Intelligence Agent</h2>
+      <p class="text-gray-400">Ask about our recruitment compliance standards, services, or case studies.</p>
+    </div>
+
+    <div class="bg-black/50 border border-white/10 rounded-2xl overflow-hidden shadow-2xl flex flex-col h-[600px]">
+      <!-- Chat Area -->
+      <div class="flex-1 p-6 overflow-y-auto space-y-4" #chatContainer>
+        <!-- Welcome Message -->
+        <div class="flex gap-4">
+          <div class="w-8 h-8 rounded-full bg-rpr-cyan/20 flex items-center justify-center flex-shrink-0 text-rpr-cyan text-xs">AI</div>
+          <div class="bg-white/5 p-4 rounded-2xl rounded-tl-none max-w-[80%]">
+            <p class="text-gray-200 text-sm">Hello. I am the RPR strategic AI assistant. How can I assist with your inquiries regarding our global activation or compliance services today?</p>
+          </div>
+        </div>
+
+        @for (msg of chatMessages(); track msg) {
+          <div class="flex gap-4" [class.flex-row-reverse]="msg.role === 'user'">
+            <div class="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 text-xs"
+                 [class.bg-rpr-cyan-20]="msg.role === 'ai'" 
+                 [class.text-rpr-cyan]="msg.role === 'ai'"
+                 [class.bg-white]="msg.role === 'user'"
+                 [class.text-black]="msg.role === 'user'">
+              {{ msg.role === 'ai' ? 'AI' : 'U' }}
+            </div>
+            <div class="p-4 rounded-2xl max-w-[80%] text-sm leading-relaxed"
+                 [class.bg-white-5]="msg.role === 'ai'"
+                 [class.rounded-tl-none]="msg.role === 'ai'"
+                 [class.bg-rpr-cyan]="msg.role === 'user'"
+                 [class.text-black]="msg.role === 'user'"
+                 [class.rounded-tr-none]="msg.role === 'user'">
+              {{ msg.content }}
+            </div>
+          </div>
+        }
+
+        @if (isLoading()) {
+          <div class="flex gap-4">
+            <div class="w-8 h-8 rounded-full bg-rpr-cyan/20 flex items-center justify-center flex-shrink-0 text-rpr-cyan text-xs">AI</div>
+            <div class="bg-white/5 p-4 rounded-2xl rounded-tl-none flex gap-2 items-center">
+              <div class="w-2 h-2 bg-rpr-cyan rounded-full animate-bounce"></div>
+              <div class="w-2 h-2 bg-rpr-cyan rounded-full animate-bounce" style="animation-delay: 0.2s"></div>
+              <div class="w-2 h-2 bg-rpr-cyan rounded-full animate-bounce" style="animation-delay: 0.4s"></div>
+            </div>
+          </div>
+        }
+      </div>
+
+      <!-- Input Area -->
+      <div class="p-4 border-t border-white/10 bg-black/30">
+        <form (submit)="sendMessage($event)" class="flex gap-2">
+          <input 
+            [formControl]="chatInput"
+            type="text" 
+            placeholder="Type your inquiry here..." 
+            class="flex-1 bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-rpr-cyan transition-colors"
+          >
+          <button 
+            type="submit" 
+            [disabled]="isLoading() || !chatInput.value"
+            class="bg-rpr-cyan text-black px-6 py-3 rounded-lg font-bold hover:bg-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2">
+            <span>SEND</span>
+            <app-icon name="send" [size]="16"></app-icon>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="bg-black py-12 border-t border-white/10">
+  <div class="container mx-auto px-6">
+    <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+      <app-brand-logo variant="footer"></app-brand-logo>
+      
+      <div class="text-gray-500 text-sm">
+        &copy; 2024 RPR Communications, LLC. All Rights Reserved.
+      </div>
+      
+      <div class="flex gap-6">
+        <a href="#" class="text-gray-500 hover:text-rpr-cyan transition-colors"><app-icon name="globe" [size]="20"></app-icon></a>
+        <a href="#" class="text-gray-500 hover:text-rpr-cyan transition-colors">LinkedIn</a>
+        <a href="#" class="text-gray-500 hover:text-rpr-cyan transition-colors">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>

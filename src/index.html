@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>RPR Communications, LLC</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            rpr: {
+              bg: '#2B2F33',        /* Deep Charcoal */
+              card: '#3A4045',      /* Slate Gray */
+              silver: '#B0B0B0',    /* Secondary Text */
+              cyan: '#00D9FF',      /* Brand Cyan */
+              cyan_dim: 'rgba(0, 217, 255, 0.1)',
+              teal: '#008B8B',      /* Teal */
+              black: '#000000',      /* Black */
+              white: '#FFFFFF',      /* White */
+            }
+          },
+          fontFamily: {
+            sans: ['"Inter"', 'Arial', 'Helvetica', 'sans-serif'],
+            display: ['"Inter"', 'Arial', 'Helvetica', 'sans-serif'],
+          },
+          backgroundImage: {
+            'hex-pattern': "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l25.98 15v30L30 60 4.02 45V15z' fill-opacity='0.03' fill='%23ffffff' fill-rule='evenodd'/%3E%3C/svg%3E\")",
+            'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-rpr-bg text-white font-sans antialiased overflow-x-hidden">
+  <app-root>
+    <div class="h-screen w-full flex items-center justify-center">
+      <div class="animate-pulse text-rpr-cyan">Loading RPR Communications...</div>
+    </div>
+  </app-root>
+</body>
+</html>

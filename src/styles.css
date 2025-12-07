@@ -1,0 +1,10 @@
+/* Tailwind CSS is loaded via CDN in index.html for this project */
+
+/* Custom Reset or global overrides */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #2B2F33; /* Deep Charcoal */
+}
