@@ -9,6 +9,29 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  <!-- Material Symbols -->
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+  />
+
+  <!-- Squircle CSS Support -->
+  <style>
+    .squircle {
+      mask-image: paint(squircle);
+      -webkit-mask-image: paint(squircle);
+    }
+    @supports not (mask-image: paint(squircle)) {
+      .squircle {
+        border-radius: 22.5%;
+      }
+    }
+  </style>
+  <script>
+    if (CSS.paintWorklet) {
+      CSS.paintWorklet.addModule('https://unpkg.com/css-houdini-squircle@0.3.0/squircle.min.js');
+    }
+  </script>
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -18,11 +41,12 @@
         extend: {
           colors: {
             rpr: {
-              bg: '#0a0a0a',
+              bg: '#050608',
               card: '#111111',
               silver: '#C0C0C0',
               cyan: '#00d9ff',
               cyan_dim: 'rgba(0, 217, 255, 0.1)',
+              gold: '#d4af37',
             }
           },
           fontFamily: {
@@ -30,7 +54,6 @@
             display: ['"Inter"', 'Arial', 'Helvetica', 'sans-serif'],
           },
           backgroundImage: {
-            'hex-pattern': "url('/assets/patterns/hexagon-pattern.svg')",
             'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
           }
         }

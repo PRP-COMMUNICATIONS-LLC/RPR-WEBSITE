@@ -20,18 +20,77 @@ html {
 
 body {
   font-family: var(--font-primary);
-  background-color: #000000;
-  background-image: url('/assets/patterns/hexagon-pattern.svg');
-  background-size: 240px 240px;
-  background-repeat: repeat;
-  background-position: center;
+  background-color: #050608;
+  background-image: none;
   color: var(--color-white);
 }
 
-/* Hexagon background utility class */
-.hexagon-bg {
-  background-image: url("/assets/patterns/hexagon-pattern.svg");
-  background-size: 240px 240px;
-  background-repeat: repeat;
-  background-position: center;
+
+/* Foundation Icons - Remove glow and increase size */
+.squircle {
+  width: 64px !important;
+  height: 64px !important;
+  background: #000000 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important; /* Remove cyan glow */
+  filter: none !important;
+}
+
+.squircle svg {
+  width: 48px !important; /* Increased from ~32px */
+  height: 48px !important;
+  filter: none !important; /* Remove any glow */
+}
+
+/* Hide "N" indicators if present */
+.foundation-card .indicator-n,
+[class*="indicator-n"] {
+  display: none !important;
+}
+
+/* Workflow Chart Styling */
+.workflow-chart-container {
+  max-width: 1200px;
+  margin: 48px auto 64px;
+  padding: 0 24px;
+}
+
+.workflow-chart {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.02);
+  padding: 32px;
+  box-shadow: 0 4px 24px rgba(0, 217, 255, 0.1);
+}
+
+.workflow-caption {
+  text-align: center;
+  margin-top: 16px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .workflow-chart-container {
+    margin: 32px auto 48px;
+  }
+  
+  .workflow-chart {
+    padding: 16px;
+  }
+}
+
+/* Project Image Styling */
+.project-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  filter: brightness(0.85) contrast(1.1); /* Subtle dark theme adjustment */
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.project-image:hover {
+  transform: scale(1.02);
+  filter: brightness(0.95) contrast(1.15);
 }
