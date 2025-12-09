@@ -4,10 +4,11 @@
     <app-brand-logo variant="header"></app-brand-logo>
     
     <div class="hidden md:flex items-center gap-8">
-      <a href="#services" class="text-sm font-medium text-gray-300 hover:text-rpr-cyan transition-colors">SERVICES</a>
-      <a href="#impact" class="text-sm font-medium text-gray-300 hover:text-rpr-cyan transition-colors">IMPACT</a>
-      <a href="#about" class="text-sm font-medium text-gray-300 hover:text-rpr-cyan transition-colors">LEADERSHIP</a>
+      <a href="#foundations" class="text-sm font-medium text-gray-300 hover:text-rpr-cyan transition-colors">METHODS</a>
+      <a href="#highlights" class="text-sm font-medium text-gray-300 hover:text-rpr-cyan transition-colors">HIGHLIGHTS</a>
+      <a href="#about" class="text-sm font-medium text-gray-300 hover:text-rpr-cyan transition-colors">OVERSIGHT</a>
       <a href="https://verify.rprcomms.com" target="_blank" class="text-sm font-medium text-gray-300 hover:text-rpr-cyan transition-colors">PRODUCTS</a>
+      <app-auth-button></app-auth-button>
       <button (click)="scrollToChat()" class="px-4 py-2 border border-rpr-cyan text-rpr-cyan text-sm font-bold rounded hover:bg-rpr-cyan hover:text-black transition-all">
         TALK TO AI
       </button>
@@ -21,10 +22,13 @@
   
   @if (isMobileMenuOpen()) {
     <div class="md:hidden bg-rpr-bg border-b border-white/10 p-6 flex flex-col gap-4">
-      <a href="#services" (click)="toggleMobileMenu()" class="text-gray-300 hover:text-rpr-cyan">SERVICES</a>
-      <a href="#impact" (click)="toggleMobileMenu()" class="text-gray-300 hover:text-rpr-cyan">IMPACT</a>
-      <a href="#about" (click)="toggleMobileMenu()" class="text-gray-300 hover:text-rpr-cyan">LEADERSHIP</a>
+      <a href="#foundations" (click)="toggleMobileMenu()" class="text-gray-300 hover:text-rpr-cyan">METHODS</a>
+      <a href="#highlights" (click)="toggleMobileMenu()" class="text-gray-300 hover:text-rpr-cyan">HIGHLIGHTS</a>
+      <a href="#about" (click)="toggleMobileMenu()" class="text-gray-300 hover:text-rpr-cyan">OVERSIGHT</a>
       <a href="https://verify.rprcomms.com" target="_blank" (click)="toggleMobileMenu()" class="text-gray-300 hover:text-rpr-cyan">PRODUCTS</a>
+      <div class="py-2">
+        <app-auth-button></app-auth-button>
+      </div>
       <button (click)="scrollToChat(); toggleMobileMenu()" class="text-left text-rpr-cyan font-bold">TALK TO AI</button>
     </div>
   }
@@ -35,14 +39,14 @@
 <header class="relative py-16 md:py-24 overflow-hidden">
   <div class="absolute inset-0 bg-gradient-to-b from-transparent via-rpr-bg/80 to-rpr-bg pointer-events-none"></div>
   <div class="max-w-5xl mx-auto px-6 relative z-10">
-    <div class="inline-block px-3 py-1 bg-rpr-cyan_dim border border-rpr-cyan/30 rounded-full text-rpr-cyan text-xs font-bold tracking-widest mb-6">
-      EST. 2025 // STRATEGIC COMMUNICATIONS
-    </div>
-    <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-8 text-white">
-      Global Reach.<br/>
-      <span class="text-transparent bg-clip-text bg-gradient-to-r from-rpr-silver to-white">Strategic Activation.</span>
+    <p class="text-xs font-medium tracking-[0.35em] text-slate-400 uppercase">
+      EST. 2025 // EXPERIENTIAL COMMUNICATIONS
+    </p>
+
+    <h1 class="mt-4 text-5xl md:text-7xl font-bold tracking-tight text-white">
+      Global Intelligence, Experiential Activation.
     </h1>
-    <div class="text-xl text-gray-400 mb-10 leading-relaxed space-y-4">
+    <div class="text-xl text-white mb-10 leading-relaxed space-y-4">
       <p>
         We are a boutique agency and experience studio that conceptualises and executes campaigns delivering measurable outcomes across the region. We de‑risk and optimise critical customer journeys—from digital products to physical environments—by focusing on real problems and real outcomes, not trends.
       </p>
@@ -51,8 +55,8 @@
       </p>
     </div>
     <div class="flex flex-wrap gap-4">
-      <a href="#impact" class="px-8 py-4 bg-rpr-cyan text-black font-bold rounded hover:bg-white transition-colors flex items-center gap-2">
-        EXPLORE IMPACT
+      <a href="#highlights" class="px-8 py-4 bg-rpr-cyan text-black font-bold rounded hover:bg-white transition-colors flex items-center gap-2">
+        EXPLORE HIGHLIGHTS
         <app-icon name="chevron-right" [size]="18"></app-icon>
       </a>
       <a href="#chat" class="px-8 py-4 border border-white/20 text-white font-bold rounded hover:bg-white/5 transition-colors">
@@ -62,74 +66,504 @@
   </div>
 </header>
 
-<!-- Services Section -->
-<section id="services" class="py-16 md:py-24 bg-rpr-bg">
+<!-- Foundations Section -->
+<section id="foundations" class="py-16 md:py-24">
   <div class="container mx-auto px-6">
-    <app-section-header>Core Competencies</app-section-header>
+    <app-section-header>THE FOUNDATIONS</app-section-header>
     
     <div class="grid md:grid-cols-3 gap-6">
-      <app-card>
-        <div class="h-12 w-12 bg-rpr-cyan/10 rounded-lg flex items-center justify-center mb-6 text-rpr-cyan">
-          <app-icon name="globe" [size]="28"></app-icon>
+      <!-- Core 1 - The Source of Truth (Compass Icon) - Desktop -->
+      <app-card class="hidden md:block">
+        <div class="flex flex-col">
+          <!-- Header with Icon Tile -->
+          <button 
+            (click)="toggleFoundation('sourceOfTruth')"
+            class="mb-5 flex items-center justify-between cursor-pointer group w-full"
+          >
+            <div class="flex items-center gap-3">
+              <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-cyan-500/10 border border-cyan-400/40">
+                <span class="material-symbols-outlined text-2xl md:text-3xl text-white">explore</span>
+              </div>
+              <h3 class="text-sm md:text-lg font-semibold tracking-[0.25em] text-white uppercase">THE SOURCE OF TRUTH</h3>
+            </div>
+            <span class="material-symbols-outlined text-rpr-cyan transition-transform duration-200" 
+                  [class.rotate-180]="foundationExpanded().sourceOfTruth">
+              expand_more
+            </span>
+          </button>
+          
+          <!-- Text Content -->
+          <div class="flex flex-col gap-2">
+            
+            <!-- Overview -->
+            <div class="text-base text-slate-100 leading-relaxed">
+              <p class="m-0">Structured problem framing, hypothesis-driven roadmapping, and outcome-based planning that links brand objectives to specific customer journey metrics. Our proprietary measurement frameworks provide clarity in fragmented markets by determining the correct touch points, then gathering the necessary insight to present what we believe the problem statement is.</p>
+            </div>
+            
+            <!-- Details (Expandable) -->
+            @if (foundationExpanded().sourceOfTruth) {
+              <div class="border-t border-white/10 pt-6 mt-4">
+                <div class="text-base text-slate-100 leading-relaxed space-y-4">
+                  <p class="m-0">The traditional idea of a customer-vendor relationship lost its importance, simply because the largest transfer of wealth in human history happened during the pandemic. So we lost all our "clients". Although that might be true, the opposite happened with the transfer of information. The only problem with that was it came with all the noise too. Information is only as useful as its application to generate value.</p>
+                  <p class="m-0">So as the glitter gently falls to the ground and reality sinks in, we think the clear way forward is for us to have a chat and figure things out together.</p>
+                </div>
+              </div>
+            }
+          </div>
         </div>
-        <h3 class="text-xl font-bold mb-3 text-white">Global Activation</h3>
-        <p class="text-gray-400">Cross-border campaign management and brand positioning for multinational enterprises entering new markets.</p>
       </app-card>
       
-      <app-card>
-        <div class="h-12 w-12 bg-rpr-cyan/10 rounded-lg flex items-center justify-center mb-6 text-rpr-cyan">
-          <app-icon name="trending-up" [size]="28"></app-icon>
+      <!-- Core 1 - Mobile (details/summary) -->
+      <details class="md:hidden rounded-lg border border-rpr-cyan/20 shadow-lg shadow-rpr-cyan/5 p-6 group">
+        <summary class="flex items-center gap-3 cursor-pointer list-none mb-5">
+          <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-cyan-500/10 border border-cyan-400/40 flex-shrink-0">
+            <span class="material-symbols-outlined text-2xl md:text-3xl text-white">explore</span>
+          </div>
+          <div class="flex-1">
+            <h3 class="text-sm md:text-lg font-semibold tracking-[0.25em] text-white uppercase mb-2">THE SOURCE OF TRUTH</h3>
+            <p class="text-base text-slate-100 m-0 leading-relaxed">Structured problem framing, hypothesis-driven roadmapping, and outcome-based planning that links brand objectives to specific customer journey metrics.</p>
+          </div>
+          <span class="material-symbols-outlined text-rpr-cyan group-open:rotate-180 transition-transform duration-200">
+            expand_more
+          </span>
+        </summary>
+        <div class="mt-4 pt-4 border-t border-white/10">
+          <div class="text-base text-slate-100 leading-relaxed space-y-4">
+            <p class="m-0">The traditional idea of a customer-vendor relationship lost its importance, simply because the largest transfer of wealth in human history happened during the pandemic. So we lost all our "clients". Although that might be true, the opposite happened with the transfer of information. The only problem with that was it came with all the noise too. Information is only as useful as its application to generate value.</p>
+            <p class="m-0">So as the glitter gently falls to the ground and reality sinks in, we think the clear way forward is for us to have a chat and figure things out together.</p>
+          </div>
         </div>
-        <h3 class="text-xl font-bold mb-3 text-white">Strategic Growth</h3>
-        <p class="text-gray-400">Data-backed recruitment and compliance consulting to scale operations efficiently and securely.</p>
+      </details>
+      
+      <!-- Core 2 - User Experiences (UI) (Light Bulb Icon) - Desktop -->
+      <app-card class="hidden md:block">
+        <div class="flex flex-col">
+          <!-- Header with Icon Tile -->
+          <button 
+            (click)="toggleFoundation('userExperiences')"
+            class="mb-5 flex items-center justify-between cursor-pointer group w-full"
+          >
+            <div class="flex items-center gap-3">
+              <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-cyan-500/10 border border-cyan-400/40">
+                <span class="material-symbols-outlined text-2xl md:text-3xl text-white">lightbulb</span>
+              </div>
+              <h3 class="text-sm md:text-lg font-semibold tracking-[0.25em] text-white uppercase">USER EXPERIENCES (UI)</h3>
+            </div>
+            <span class="material-symbols-outlined text-rpr-cyan transition-transform duration-200" 
+                  [class.rotate-180]="foundationExpanded().userExperiences">
+              expand_more
+            </span>
+          </button>
+          
+          <!-- Text Content -->
+          <div class="flex flex-col gap-2">
+            
+            <!-- Overview -->
+            <div class="text-base text-slate-100 leading-relaxed">
+              <p class="m-0">Interface architecture and interaction design for high-stakes flows, built on continuous insight capture at the correct touchpoints—because somewhere along the way, we forgot how to ask the right questions.</p>
+            </div>
+            
+            <!-- Details (Expandable) -->
+            @if (foundationExpanded().userExperiences) {
+              <div class="border-t border-white/10 pt-6 mt-4">
+                <div class="text-base text-slate-100 leading-relaxed">
+                  <p class="m-0">Despite the usual rhetoric around demographic bias, user preference, or political correctness, the fundamental issue persists in an era where traditional brand value metrics have collapsed. Modern communication methods make people defensive, rendering conventional research unreliable. Our approach prioritizes framework-based inquiry—where questions are tested for weighted response value before deployment—over performative engagement with influencers who dilute brand equity for the highest bidder. As legacy consumer segmentation dissolved, masked by information silos that preserved the illusion of control, our methodology shifted to real-time behavioral signals over declared preferences. We employ systems thinking, microcopy design, and iterative usability testing to reduce friction and error states, treating each interaction as a data point in a continuous improvement loop that rebuilds understanding from observable truth rather than inherited assumptions.</p>
+                </div>
+              </div>
+            }
+          </div>
+        </div>
       </app-card>
       
-      <app-card>
-        <div class="h-12 w-12 bg-rpr-cyan/10 rounded-lg flex items-center justify-center mb-6 text-rpr-cyan">
-          <app-icon name="shield-check" [size]="28"></app-icon>
+      <!-- Core 2 - Mobile (details/summary) -->
+      <details class="md:hidden rounded-lg border border-rpr-cyan/20 shadow-lg shadow-rpr-cyan/5 p-6 group">
+        <summary class="flex items-center gap-3 cursor-pointer list-none mb-5">
+          <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-cyan-500/10 border border-cyan-400/40 flex-shrink-0">
+            <span class="material-symbols-outlined text-2xl md:text-3xl text-white">lightbulb</span>
+          </div>
+          <div class="flex-1">
+            <h3 class="text-sm md:text-lg font-semibold tracking-[0.25em] text-white uppercase mb-2">USER EXPERIENCES (UI)</h3>
+            <p class="text-base text-slate-100 m-0 leading-relaxed">Interface architecture and interaction design for high-stakes flows, built on continuous insight capture at the correct touchpoints.</p>
+          </div>
+          <span class="material-symbols-outlined text-rpr-cyan group-open:rotate-180 transition-transform duration-200">
+            expand_more
+          </span>
+        </summary>
+        <div class="mt-4 pt-4 border-t border-white/10">
+          <div class="text-base text-slate-100 leading-relaxed">
+            <p class="m-0">Despite the usual rhetoric around demographic bias, user preference, or political correctness, the fundamental issue persists in an era where traditional brand value metrics have collapsed. Modern communication methods make people defensive, rendering conventional research unreliable. Our approach prioritizes framework-based inquiry—where questions are tested for weighted response value before deployment—over performative engagement with influencers who dilute brand equity for the highest bidder. As legacy consumer segmentation dissolved, masked by information silos that preserved the illusion of control, our methodology shifted to real-time behavioral signals over declared preferences. We employ systems thinking, microcopy design, and iterative usability testing to reduce friction and error states, treating each interaction as a data point in a continuous improvement loop that rebuilds understanding from observable truth rather than inherited assumptions.</p>
+          </div>
         </div>
-        <h3 class="text-xl font-bold mb-3 text-white">Brand Resilience</h3>
-        <p class="text-gray-400">Crisis management and reputation architecture for high-stakes corporate environments.</p>
+      </details>
+      
+      <!-- Core 3 - Customer Journeys (CX) (North Arrow Icon) - Desktop -->
+      <app-card class="hidden md:block">
+        <div class="flex flex-col">
+          <!-- Header with Icon Tile -->
+          <button 
+            (click)="toggleFoundation('customerJourneys')"
+            class="mb-5 flex items-center justify-between cursor-pointer group w-full"
+          >
+            <div class="flex items-center gap-3">
+              <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-cyan-500/10 border border-cyan-400/40">
+                <span class="material-symbols-outlined text-2xl md:text-3xl text-white">navigation</span>
+              </div>
+              <h3 class="text-sm md:text-lg font-semibold tracking-[0.25em] text-white uppercase">CUSTOMER JOURNEYS (CX)</h3>
+            </div>
+            <span class="material-symbols-outlined text-rpr-cyan transition-transform duration-200" 
+                  [class.rotate-180]="foundationExpanded().customerJourneys">
+              expand_more
+            </span>
+          </button>
+          
+          <!-- Text Content -->
+          <div class="flex flex-col gap-2">
+            
+            <!-- Overview -->
+            <div class="text-base text-slate-100 leading-relaxed">
+              <p class="m-0">End-to-end journey orchestration across all customer touchpoints, where our continuous optimization loop leverages both on-screen user interface signals and off-screen touchpoint data to drive improvements in customer lifetime value, build trust, and ensure high-quality issue resolution.</p>
+            </div>
+            
+            <!-- Details (Expandable) -->
+            @if (foundationExpanded().customerJourneys) {
+              <div class="border-t border-white/10 pt-6 mt-4">
+                <div class="text-base text-slate-100 leading-relaxed space-y-4">
+                  <p class="m-0">This is where our model becomes truly dynamic. Our horizontal business structure allows us to transcend specific industry segments with a singular focus: helping clients engage and secure their customers. We have adapted to cover a wide spectrum of needs, from creative consultancy to financial forensic due diligence and dispute resolution. This is enabled by a diverse team of specialized entities with shared mutual obligations that allows rapid adaptation across industries and disciplines.</p>
+                  <p class="m-0">We see this not as a fundamental shift, but as the enduring cycle of market evolution—the same dynamics repeating in a new time—and we have leveraged key insights to successfully connect those patterns. It's not something new, it's just keeping things interesting.</p>
+                </div>
+              </div>
+            }
+          </div>
+        </div>
       </app-card>
+      
+      <!-- Core 3 - Mobile (details/summary) -->
+      <details class="md:hidden rounded-lg border border-rpr-cyan/20 shadow-lg shadow-rpr-cyan/5 p-6 group">
+        <summary class="flex items-center gap-3 cursor-pointer list-none mb-5">
+          <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-cyan-500/10 border border-cyan-400/40 flex-shrink-0">
+            <span class="material-symbols-outlined text-2xl md:text-3xl text-white">navigation</span>
+          </div>
+          <div class="flex-1">
+            <h3 class="text-sm md:text-lg font-semibold tracking-[0.25em] text-white uppercase mb-2">CUSTOMER JOURNEYS (CX)</h3>
+            <p class="text-base text-slate-100 m-0 leading-relaxed">End-to-end journey orchestration across all customer touchpoints, where our continuous optimization loop leverages both on-screen user interface signals and off-screen touchpoint data.</p>
+          </div>
+          <span class="material-symbols-outlined text-rpr-cyan group-open:rotate-180 transition-transform duration-200">
+            expand_more
+          </span>
+        </summary>
+        <div class="mt-4 pt-4 border-t border-white/10">
+          <div class="text-base text-slate-100 leading-relaxed space-y-4">
+            <p class="m-0">This is where our model becomes truly dynamic. Our horizontal business structure allows us to transcend specific industry segments with a singular focus: helping clients engage and secure their customers. We have adapted to cover a wide spectrum of needs, from creative consultancy to financial forensic due diligence and dispute resolution. This is enabled by a diverse team of specialized entities with shared mutual obligations that allows rapid adaptation across industries and disciplines.</p>
+            <p class="m-0">We see this not as a fundamental shift, but as the enduring cycle of market evolution—the same dynamics repeating in a new time—and we have leveraged key insights to successfully connect those patterns. It's not something new, it's just keeping things interesting.</p>
+          </div>
+        </div>
+      </details>
     </div>
   </div>
 </section>
 
-<!-- Impact / Case Studies -->
-<section id="impact" class="py-16 md:py-24 border-y border-white/5">
+<!-- Process Section -->
+<section id="process" class="py-16 md:py-24">
   <div class="container mx-auto px-6">
-    <app-section-header>Strategic Impact</app-section-header>
+    <app-section-header>THE METHODS</app-section-header>
+    <div class="text-center mb-12">
+      <p class="mt-3 text-base text-white/70">
+        A continuous loop from strategy to post‑campaign insight.
+      </p>
+    </div>
+  
+    <!-- How We Work Process -->
+    <div class="max-w-6xl mx-auto py-8 px-4">
+      <div class="py-10 md:py-12">
+      <!-- Desktop: horizontal timeline -->
+      <div class="hidden md:block">
+        <div class="relative grid grid-cols-5 gap-8">
+
+          <!-- Step 1 -->
+          <div class="group flex flex-col items-center gap-3 text-center">
+            <!-- Icon -->
+            <div class="relative flex items-center justify-center w-20 h-20 sm:w-24 sm:h-24 bg-black squircle shadow-2xl shadow-cyan-400/10 transition-all duration-300 group-hover:shadow-cyan-400/20">
+              <!-- Spark -->
+              <svg class="absolute -top-3 -right-3 w-5 h-5 sm:w-6 sm:h-6 text-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" fill="currentColor" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <path d="M50 0L61.226 38.774L100 50L61.226 61.226L50 100L38.774 61.226L0 50L38.774 38.774L50 0Z"></path>
+              </svg>
+              <!-- Icon -->
+              <svg class="text-white w-10 h-10 sm:w-12 sm:h-12 transition-colors duration-300 group-hover:text-cyan-400" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15.5 1h-8C6.12 1 5 2.12 5 3.5v17C5 21.88 6.12 23 7.5 23h8c1.38 0 2.5-1.12 2.5-2.5v-17C18 2.12 16.88 1 15.5 1zm-4 21c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm4.5-4H7V4h8.5v14z" fill="currentColor"/>
+              </svg>
+            </div>
+            <!-- Verb label -->
+            <span class="text-xs md:text-sm font-semibold tracking-[0.3em] text-white">ASK</span>
+            <!-- Title -->
+            <h3 class="text-sm md:text-base font-semibold text-slate-100">Strategic Planning</h3>
+            <!-- Description -->
+            <p class="mt-1 text-xs md:text-sm text-slate-400 max-w-xs">
+              Define problem, map consumer journey, set success metrics.
+            </p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="group flex flex-col items-center gap-3 text-center">
+            <!-- Icon -->
+            <div class="relative flex items-center justify-center w-20 h-20 sm:w-24 sm:h-24 bg-black squircle shadow-2xl shadow-cyan-400/10 transition-all duration-300 group-hover:shadow-cyan-400/20">
+              <!-- Spark -->
+              <svg class="absolute -top-3 -right-3 w-5 h-5 sm:w-6 sm:h-6 text-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" fill="currentColor" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <path d="M50 0L61.226 38.774L100 50L61.226 61.226L50 100L38.774 61.226L0 50L38.774 38.774L50 0Z"></path>
+              </svg>
+              <!-- Icon -->
+              <svg class="text-white w-10 h-10 sm:w-12 sm:h-12 transition-colors duration-300 group-hover:text-cyan-400" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z" fill="currentColor"/>
+              </svg>
+            </div>
+            <!-- Verb label -->
+            <span class="text-xs md:text-sm font-semibold tracking-[0.3em] text-white">APPROVE</span>
+            <!-- Title -->
+            <h3 class="text-sm md:text-base font-semibold text-slate-100">Client Approval</h3>
+            <!-- Description -->
+            <p class="mt-1 text-xs md:text-sm text-slate-400 max-w-xs">
+              Align on risks, timelines and budgets; get sign‑off.
+            </p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="group flex flex-col items-center gap-3 text-center">
+            <!-- Icon -->
+            <div class="relative flex items-center justify-center w-20 h-20 sm:w-24 sm:h-24 bg-black squircle shadow-2xl shadow-cyan-400/10 transition-all duration-300 group-hover:shadow-cyan-400/20">
+              <!-- Spark -->
+              <svg class="absolute -top-3 -right-3 w-5 h-5 sm:w-6 sm:h-6 text-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" fill="currentColor" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <path d="M50 0L61.226 38.774L100 50L61.226 61.226L50 100L38.774 61.226L0 50L38.774 38.774L50 0Z"></path>
+              </svg>
+              <!-- Icon -->
+              <svg class="text-white w-10 h-10 sm:w-12 sm:h-12 transition-colors duration-300 group-hover:text-cyan-400" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z" fill="currentColor"/>
+              </svg>
+            </div>
+            <!-- Verb label -->
+            <span class="text-xs md:text-sm font-semibold tracking-[0.3em] text-white">CREATE</span>
+            <!-- Title -->
+            <h3 class="text-sm md:text-base font-semibold text-slate-100">Planning (Creative/UX)</h3>
+            <!-- Description -->
+            <p class="mt-1 text-xs md:text-sm text-slate-400 max-w-xs">
+              Develop concepts, plan channels, build the roadmap.
+            </p>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="group flex flex-col items-center gap-3 text-center">
+            <!-- Icon -->
+            <div class="relative flex items-center justify-center w-20 h-20 sm:w-24 sm:h-24 bg-black squircle shadow-2xl shadow-cyan-400/10 transition-all duration-300 group-hover:shadow-cyan-400/20">
+              <!-- Spark -->
+              <svg class="absolute -top-3 -right-3 w-5 h-5 sm:w-6 sm:h-6 text-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" fill="currentColor" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <path d="M50 0L61.226 38.774L100 50L61.226 61.226L50 100L38.774 61.226L0 50L38.774 38.774L50 0Z"></path>
+              </svg>
+              <!-- Icon -->
+              <svg class="text-white w-10 h-10 sm:w-12 sm:h-12 transition-colors duration-300 group-hover:text-cyan-400" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16.6915026,12.4744748 L3.50612381,13.2599618 C3.19218622,13.2599618 3.03521743,13.4170592 3.03521743,13.5741566 L1.15159189,20.0151496 C0.8376543,20.8006365 0.99,21.89 1.77946707,22.52 C2.41,22.99 3.50612381,23.1 4.13399899,22.99 L21.714504,14.0454487 C22.6563168,13.5741566 23.1272231,12.6315722 22.9702544,11.6889879 L4.13399899,1.01149134 C3.34915502,0.9 2.40734225,1.00636533 1.77946707,1.4776575 C0.994623095,2.10604706 0.837654326,3.0486314 1.15159189,3.98721575 L3.03521743,10.4282088 C3.03521743,10.5853061 3.34915502,10.7424035 3.50612381,10.7424035 L16.6915026,11.5278905 C16.6915026,11.5278905 17.1624089,11.5278905 17.1624089,12.0991827 C17.1624089,12.6704748 16.6915026,12.4744748 16.6915026,12.4744748 Z" fill="currentColor"/>
+              </svg>
+            </div>
+            <!-- Verb label -->
+            <span class="text-xs md:text-sm font-semibold tracking-[0.3em] text-white">PLAY</span>
+            <!-- Title -->
+            <h3 class="text-sm md:text-base font-semibold text-slate-100">Execution</h3>
+            <!-- Description -->
+            <p class="mt-1 text-xs md:text-sm text-slate-400 max-w-xs">
+              Produce assets, launch and monitor performance in market.
+            </p>
+          </div>
+
+          <!-- Step 5 -->
+          <div class="group flex flex-col items-center gap-3 text-center">
+            <!-- Icon -->
+            <div class="relative flex items-center justify-center w-20 h-20 sm:w-24 sm:h-24 bg-black squircle shadow-2xl shadow-cyan-400/10 transition-all duration-300 group-hover:shadow-cyan-400/20">
+              <!-- Spark -->
+              <svg class="absolute -top-3 -right-3 w-5 h-5 sm:w-6 sm:h-6 text-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" fill="currentColor" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <path d="M50 0L61.226 38.774L100 50L61.226 61.226L50 100L38.774 61.226L0 50L38.774 38.774L50 0Z"></path>
+              </svg>
+              <!-- Icon -->
+              <svg class="text-white w-10 h-10 sm:w-12 sm:h-12 transition-colors duration-300 group-hover:text-cyan-400" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7 7h10v3l4-4-4-4v3H5v6h2V7zm10 10H7v-3l-4 4 4 4v-3h12v-6h-2v4z" fill="currentColor"/>
+              </svg>
+            </div>
+            <!-- Verb label -->
+            <span class="text-xs md:text-sm font-semibold tracking-[0.3em] text-white">REPEAT</span>
+            <!-- Title -->
+            <h3 class="text-sm md:text-base font-semibold text-slate-100">Post‑mortem Analysis</h3>
+            <!-- Description -->
+            <p class="mt-1 text-xs md:text-sm text-slate-400 max-w-xs">
+              Review results, capture insights, improve the journey.
+            </p>
+          </div>
+        </div>
+
+        <div class="relative mt-8 flex justify-end items-center">
+          <p class="text-xs text-white/50 mr-2">
+            Insights refine the next cycle.
+          </p>
+          <svg
+            class="text-white/50"
+            width="60"
+            height="48"
+            viewBox="0 0 60 48"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M59 24C59 11.3323 48.6677 1 36 1C23.3323 1 13 11.3323 13 24C13 36.6677 23.3323 47 36 47H52.5"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-dasharray="2 2"
+            />
+            <path
+              d="M50 43L53 47L57 43"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
+      </div>
+
+      <!-- Mobile: accordion -->
+      <div class="md:hidden mt-6">
+        <div class="flex flex-col gap-3">
+          <details class="rounded-2xl border border-white/10 bg-slate-900/60 px-4 py-2 group" open>
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 py-2" aria-label="How We Work - Strategic Planning">
+              <div class="flex items-center gap-4">
+                <span class="material-symbols-outlined text-rpr-cyan text-2xl">group_search</span>
+                <p class="text-base font-medium text-white">Strategic Planning</p>
+              </div>
+              <span class="material-symbols-outlined text-white/60 group-open:rotate-180 transition-transform duration-300">
+                expand_more
+              </span>
+            </summary>
+            <p class="mt-2 pb-3 ml-10 text-sm text-white/70">
+              Define problem, map consumer journey, set success metrics.
+            </p>
+          </details>
+
+          <details class="rounded-2xl border border-white/10 bg-slate-900/60 px-4 py-2 group">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 py-2" aria-label="How We Work - Client Approval">
+              <div class="flex items-center gap-4">
+                <span class="material-symbols-outlined text-rpr-cyan text-2xl">send_money</span>
+                <p class="text-base font-medium text-white">Client Approval</p>
+              </div>
+              <span class="material-symbols-outlined text-white/60 group-open:rotate-180 transition-transform duration-300">
+                expand_more
+              </span>
+            </summary>
+            <p class="mt-2 pb-3 ml-10 text-sm text-white/70">
+              Align on risks, timelines and budgets; get sign‑off.
+            </p>
+          </details>
+
+          <details class="rounded-2xl border border-white/10 bg-slate-900/60 px-4 py-2 group">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 py-2" aria-label="How We Work - Planning (Creative/UX)">
+              <div class="flex items-center gap-4">
+                <span class="material-symbols-outlined text-rpr-cyan text-2xl">design_services</span>
+                <p class="text-base font-medium text-white">Planning (Creative/UX)</p>
+              </div>
+              <span class="material-symbols-outlined text-white/60 group-open:rotate-180 transition-transform duration-300">
+                expand_more
+              </span>
+            </summary>
+            <p class="mt-2 pb-3 ml-10 text-sm text-white/70">
+              Develop concepts, plan channels, build the roadmap.
+            </p>
+          </details>
+
+          <details class="rounded-2xl border border-white/10 bg-slate-900/60 px-4 py-2 group">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 py-2" aria-label="How We Work - Execution">
+              <div class="flex items-center gap-4">
+                <span class="material-symbols-outlined text-rpr-cyan text-2xl">send</span>
+                <p class="text-base font-medium text-white">Execution</p>
+              </div>
+              <span class="material-symbols-outlined text-white/60 group-open:rotate-180 transition-transform duration-300">
+                expand_more
+              </span>
+            </summary>
+            <p class="mt-2 pb-3 ml-10 text-sm text-white/70">
+              Produce assets, launch and monitor performance in market.
+            </p>
+          </details>
+
+          <details class="rounded-2xl border border-white/10 bg-slate-900/60 px-4 py-2 group">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 py-2" aria-label="How We Work - Post-mortem Analysis">
+              <div class="flex items-center gap-4">
+                <span class="material-symbols-outlined text-rpr-cyan text-2xl">analytics</span>
+                <p class="text-base font-medium text-white">Post‑mortem Analysis</p>
+              </div>
+              <span class="material-symbols-outlined text-white/60 group-open:rotate-180 transition-transform duration-300">
+                expand_more
+              </span>
+            </summary>
+            <p class="mt-2 pb-3 ml-10 text-sm text-white/70">
+              Review results, capture insights, improve the journey.
+            </p>
+          </details>
+        </div>
+
+        <div class="mt-6 flex items-center justify-center gap-3 px-4 text-center">
+          <span class="material-symbols-outlined text-white/60 text-2xl">cycle</span>
+          <p class="text-sm text-white/60">
+            Insights refine the next cycle.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+
+<!-- Highlights / Case Studies -->
+<section id="highlights" class="py-16 md:py-24 border-y border-white/5">
+  <div class="container mx-auto px-6">
+    <app-section-header>HIGHLIGHTS</app-section-header>
     
     <div class="grid md:grid-cols-2 gap-8">
       <!-- Case Study 1 -->
       <div class="group relative overflow-hidden rounded-lg bg-[#020617] border border-rpr-cyan/20 shadow-lg shadow-rpr-cyan/5">
         <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent z-10"></div>
-        <img src="https://picsum.photos/800/600?grayscale&blur=2" alt="Starlight Project" class="w-full h-80 object-cover opacity-60 group-hover:scale-105 transition-transform duration-700">
+        <picture>
+          <source srcset="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80" type="image/jpeg">
+          <img 
+            src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80" 
+            alt="Starlight Pty Ltd creative services and brand activation strategy"
+            loading="lazy"
+            class="w-full h-80 object-cover opacity-60 group-hover:scale-105 transition-transform duration-700 project-image">
+        </picture>
         <div class="absolute bottom-0 left-0 p-8 z-20">
           <div class="text-rpr-cyan font-bold text-sm mb-2 tracking-wider">CREATIVE SERVICES</div>
           <h3 class="text-2xl font-bold text-white mb-2">Starlight Pty Ltd</h3>
-          <p class="text-gray-300">First Australian bound client for creative services and brand activation, establishing a new benchmark for cross-regional creative partnerships.</p>
+          <p class="text-white">First Australian bound client for creative services and brand activation, establishing a new benchmark for cross-regional creative partnerships.</p>
         </div>
       </div>
 
       <!-- Case Study 2 -->
       <div class="group relative overflow-hidden rounded-lg bg-[#020617] border border-rpr-cyan/20 shadow-lg shadow-rpr-cyan/5">
         <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent z-10"></div>
-        <img src="https://picsum.photos/800/601?grayscale&blur=2" alt="Bosch Campaign" class="w-full h-80 object-cover opacity-60 group-hover:scale-105 transition-transform duration-700">
+        <picture>
+          <source srcset="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80" type="image/jpeg">
+          <img 
+            src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80" 
+            alt="Bosch Global centennial campaign and industrial innovation"
+            loading="lazy"
+            class="w-full h-80 object-cover opacity-60 group-hover:scale-105 transition-transform duration-700 project-image">
+        </picture>
         <div class="absolute bottom-0 left-0 p-8 z-20">
           <div class="text-rpr-cyan font-bold text-sm mb-2 tracking-wider">CENTENNIAL CAMPAIGN</div>
           <h3 class="text-2xl font-bold text-white mb-2">Bosch Global</h3>
-          <p class="text-gray-300">"100 years Malaysia 2023". Executed a comprehensive centennial celebration campaign honoring a century of innovation.</p>
+          <p class="text-white">"100 years Malaysia 2023". Executed a comprehensive centennial celebration campaign honoring a century of innovation.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Leadership -->
+<!-- Oversight -->
 <section id="about" class="py-16 md:py-24">
   <div class="max-w-5xl mx-auto px-6">
-    <div class="bg-[#020617] rounded-lg border border-rpr-cyan/20 shadow-lg shadow-rpr-cyan/5 p-8 md:p-12">
+    <div class="rounded-lg border border-rpr-cyan/20 shadow-lg shadow-rpr-cyan/5 p-8 md:p-12">
       <div class="flex flex-col md:flex-row gap-12 items-center">
         <div class="w-full md:w-1/3">
           <div class="relative">
@@ -138,10 +572,10 @@
           </div>
         </div>
         <div class="w-full md:w-2/3">
-          <app-section-header>Leadership</app-section-header>
+          <app-section-header>THE OVERSIGHT</app-section-header>
           <h3 class="text-2xl font-bold text-white mb-2">Puvan Sivanasan</h3>
           <div class="text-rpr-cyan font-medium mb-6">Founder & Principal Strategist</div>
-          <div class="text-gray-400 mb-6 leading-relaxed space-y-4">
+          <div class="text-white mb-6 leading-relaxed space-y-4">
             <p>
               Having spent 20 years in corporate communications and brand activation—from local event firms to global creative agencies—he has worked on everything from on‑ground activations to award‑winning campaigns for global corporations. What began as a fascination with human behaviour and systems, and a belief that technology should be used to improve people's lives rather than just generate TikTok likes, has evolved into a multidisciplinary approach to customer experience.
             </p>
@@ -166,7 +600,7 @@
 </section>
 
 <!-- AI Chat Interface -->
-<section id="chat" class="py-16 md:py-24 bg-[#020617] border-t border-white/10">
+<section id="chat" class="py-16 md:py-24 border-t border-white/10">
   <div class="container mx-auto px-6 max-w-4xl">
     <div class="text-center mb-10">
       <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-rpr-cyan/10 text-rpr-cyan text-sm font-bold mb-4">

@@ -72,7 +72,7 @@ export class SectionHeaderComponent {}
   selector: 'app-card',
   standalone: true,
   template: `
-    <div class="bg-[#020617] border border-rpr-cyan/20 rounded-lg p-6 shadow-lg shadow-rpr-cyan/5 hover:border-rpr-cyan/50 transition-colors duration-300 h-full flex flex-col">
+    <div class="bg-[#000000] border border-rpr-cyan/20 rounded-lg p-8 md:p-10 shadow-lg shadow-rpr-cyan/5 hover:border-rpr-cyan/50 transition-colors duration-300 h-full flex flex-col">
       <ng-content></ng-content>
     </div>
   `,

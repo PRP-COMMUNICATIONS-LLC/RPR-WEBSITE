@@ -61,6 +61,8 @@ export class GeminiService {
         model: this.modelId,
         config: {
           systemInstruction: systemContext,
+          maxOutputTokens: 500,     // Limit response length
+          temperature: 0.7,          // Balance creativity/accuracy
         },
         history: formattedHistory
       });
