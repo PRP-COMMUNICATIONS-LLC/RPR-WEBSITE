@@ -92,7 +92,7 @@
                   <span class="material-symbols-outlined text-3xl text-white group-hover:text-cyan-400 transition-colors" style="font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 48">explore</span>
                 </div>
               </div>
-              <h3 class="text-xs md:text-sm font-semibold tracking-[0.3em] text-white uppercase">THE SOURCE OF TRUTH</h3>
+              <h3 class="text-sm md:text-base font-bold tracking-tight text-white uppercase">THE SOURCE OF TRUTH</h3>
             </div>
             <span class="material-symbols-outlined text-rpr-cyan transition-transform duration-200" 
                   [class.rotate-180]="foundationExpanded().sourceOfTruth">
@@ -132,7 +132,7 @@
             </div>
           </div>
           <div class="flex-1">
-            <h3 class="text-xs md:text-sm font-semibold tracking-[0.3em] text-white uppercase mb-2">THE SOURCE OF TRUTH</h3>
+            <h3 class="text-sm md:text-base font-bold tracking-tight text-white uppercase mb-2">THE SOURCE OF TRUTH</h3>
             <p class="text-base text-slate-100 m-0 leading-relaxed">Structured problem framing, hypothesis-driven roadmapping, and outcome-based planning that links brand objectives to specific customer journey metrics.</p>
           </div>
           <span class="material-symbols-outlined text-rpr-cyan group-open:rotate-180 transition-transform duration-200">
@@ -167,7 +167,7 @@
                   <span class="material-symbols-outlined text-3xl text-white group-hover:text-cyan-400 transition-colors" style="font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 48">lightbulb</span>
                 </div>
               </div>
-              <h3 class="text-xs md:text-sm font-semibold tracking-[0.3em] text-white uppercase">THE USER EXPERIENCE (UI)</h3>
+              <h3 class="text-sm md:text-base font-bold tracking-tight text-white uppercase">THE USER EXPERIENCE (UI)</h3>
             </div>
             <span class="material-symbols-outlined text-rpr-cyan transition-transform duration-200" 
                   [class.rotate-180]="foundationExpanded().userExperiences">
@@ -206,7 +206,7 @@
             </div>
           </div>
           <div class="flex-1">
-            <h3 class="text-xs md:text-sm font-semibold tracking-[0.3em] text-white uppercase mb-2">THE USER EXPERIENCE (UI)</h3>
+            <h3 class="text-sm md:text-base font-bold tracking-tight text-white uppercase mb-2">THE USER EXPERIENCE (UI)</h3>
             <p class="text-base text-slate-100 m-0 leading-relaxed">Interface architecture and interaction design for high-stakes flows, built on continuous insight capture at the correct touchpoints.</p>
           </div>
           <span class="material-symbols-outlined text-rpr-cyan group-open:rotate-180 transition-transform duration-200">
@@ -240,7 +240,7 @@
                   <span class="material-symbols-outlined text-3xl text-white group-hover:text-cyan-400 transition-colors" style="font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 48">navigation</span>
                 </div>
               </div>
-              <h3 class="text-xs md:text-sm font-semibold tracking-[0.3em] text-white uppercase">THE CONSUMER JOURNEY</h3>
+              <h3 class="text-sm md:text-base font-bold tracking-tight text-white uppercase">THE CONSUMER JOURNEY</h3>
             </div>
             <span class="material-symbols-outlined text-rpr-cyan transition-transform duration-200" 
                   [class.rotate-180]="foundationExpanded().customerJourneys">
@@ -280,7 +280,7 @@
             </div>
           </div>
           <div class="flex-1">
-            <h3 class="text-xs md:text-sm font-semibold tracking-[0.3em] text-white uppercase mb-2">THE CONSUMER JOURNEY</h3>
+            <h3 class="text-sm md:text-base font-bold tracking-tight text-white uppercase mb-2">THE CONSUMER JOURNEY</h3>
             <p class="text-base text-slate-100 m-0 leading-relaxed">End-to-end journey orchestration across all customer touchpoints, where our continuous optimization loop leverages both on-screen user interface signals and off-screen touchpoint data.</p>
           </div>
           <span class="material-symbols-outlined text-rpr-cyan group-open:rotate-180 transition-transform duration-200">
@@ -468,11 +468,14 @@
       <!-- Mobile: accordion -->
       <div class="md:hidden mt-6">
         <div class="flex flex-col gap-3">
-          <details class="rounded-2xl border border-white/10 bg-slate-900/60 px-4 py-2 group" open>
-            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 py-2" aria-label="How We Work - Strategic Planning">
+          <details class="rounded-2xl border border-white/10 bg-[#2B2F33] px-4 py-2 group" open>
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 py-2" aria-label="How We Work - ASK - Strategic Planning">
               <div class="flex items-center gap-4">
                 <span class="material-symbols-outlined text-rpr-cyan text-2xl">group_search</span>
-                <p class="text-base font-medium text-white">Strategic Planning</p>
+                <div class="flex flex-col gap-1">
+                  <span class="text-xs font-bold tracking-[0.3em] text-rpr-cyan">ASK</span>
+                  <p class="text-base font-semibold text-white m-0">Strategic Planning</p>
+                </div>
               </div>
               <span class="material-symbols-outlined text-white/60 group-open:rotate-180 transition-transform duration-300">
                 expand_more
@@ -483,11 +486,14 @@
             </p>
           </details>
 
-          <details class="rounded-2xl border border-white/10 bg-slate-900/60 px-4 py-2 group">
-            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 py-2" aria-label="How We Work - Client Approval">
+          <details class="rounded-2xl border border-white/10 bg-[#2B2F33] px-4 py-2 group">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 py-2" aria-label="How We Work - APPROVE - Client Approval">
               <div class="flex items-center gap-4">
                 <span class="material-symbols-outlined text-rpr-cyan text-2xl">send_money</span>
-                <p class="text-base font-medium text-white">Client Approval</p>
+                <div class="flex flex-col gap-1">
+                  <span class="text-xs font-bold tracking-[0.3em] text-rpr-cyan">APPROVE</span>
+                  <p class="text-base font-semibold text-white m-0">Client Approval</p>
+                </div>
               </div>
               <span class="material-symbols-outlined text-white/60 group-open:rotate-180 transition-transform duration-300">
                 expand_more
@@ -498,11 +504,14 @@
             </p>
           </details>
 
-          <details class="rounded-2xl border border-white/10 bg-slate-900/60 px-4 py-2 group">
-            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 py-2" aria-label="How We Work - Planning (Creative/UX)">
+          <details class="rounded-2xl border border-white/10 bg-[#2B2F33] px-4 py-2 group">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 py-2" aria-label="How We Work - CREATE - Planning (Creative/UX)">
               <div class="flex items-center gap-4">
-                <span class="material-symbols-outlined text-rpr-cyan text-2xl">design_services</span>
-                <p class="text-base font-medium text-white">Planning (Creative/UX)</p>
+                <span class="material-symbols-outlined text-rpr-cyan text-2xl">smart_toy</span>
+                <div class="flex flex-col gap-1">
+                  <span class="text-xs font-bold tracking-[0.3em] text-rpr-cyan">CREATE</span>
+                  <p class="text-base font-semibold text-white m-0">Planning (Creative/UX)</p>
+                </div>
               </div>
               <span class="material-symbols-outlined text-white/60 group-open:rotate-180 transition-transform duration-300">
                 expand_more
@@ -513,11 +522,14 @@
             </p>
           </details>
 
-          <details class="rounded-2xl border border-white/10 bg-slate-900/60 px-4 py-2 group">
-            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 py-2" aria-label="How We Work - Execution">
+          <details class="rounded-2xl border border-white/10 bg-[#2B2F33] px-4 py-2 group">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 py-2" aria-label="How We Work - PLAY - Execution">
               <div class="flex items-center gap-4">
-                <span class="material-symbols-outlined text-rpr-cyan text-2xl">send</span>
-                <p class="text-base font-medium text-white">Execution</p>
+                <span class="material-symbols-outlined text-rpr-cyan text-2xl">rocket_launch</span>
+                <div class="flex flex-col gap-1">
+                  <span class="text-xs font-bold tracking-[0.3em] text-rpr-cyan">PLAY</span>
+                  <p class="text-base font-semibold text-white m-0">Execution</p>
+                </div>
               </div>
               <span class="material-symbols-outlined text-white/60 group-open:rotate-180 transition-transform duration-300">
                 expand_more
@@ -528,11 +540,14 @@
             </p>
           </details>
 
-          <details class="rounded-2xl border border-white/10 bg-slate-900/60 px-4 py-2 group">
-            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 py-2" aria-label="How We Work - Post-mortem Analysis">
+          <details class="rounded-2xl border border-white/10 bg-[#2B2F33] px-4 py-2 group">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 py-2" aria-label="How We Work - REPEAT - Post-mortem Analysis">
               <div class="flex items-center gap-4">
-                <span class="material-symbols-outlined text-rpr-cyan text-2xl">analytics</span>
-                <p class="text-base font-medium text-white">Post‑mortem Analysis</p>
+                <span class="material-symbols-outlined text-rpr-cyan text-2xl">self_improvement</span>
+                <div class="flex flex-col gap-1">
+                  <span class="text-xs font-bold tracking-[0.3em] text-rpr-cyan">REPEAT</span>
+                  <p class="text-base font-semibold text-white m-0">Post‑mortem Analysis</p>
+                </div>
               </div>
               <span class="material-symbols-outlined text-white/60 group-open:rotate-180 transition-transform duration-300">
                 expand_more
