@@ -160,9 +160,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
   getOllieGreeting(): string {
     const joke = this.getDailyJoke();
-    return `Hello. I'm Ollie. Today's insight: "${joke}"
-
-Now—what can I help you balance today?`;
+    return `Today's insight: ${joke}  Now—what can I help you balance today?`;
   }
 
   private scrollToBottom() {
