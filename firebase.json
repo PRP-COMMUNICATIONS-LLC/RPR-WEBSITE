@@ -1,17 +1,11 @@
 {
   "hosting": {
-    "site": "rpr-website-kontrol",
-    "public": "dist/rpr-communications-spa/browser",
+    "target": "verify",
+    "public": "dist/rpr-verify/browser",
     "ignore": [
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
-    ],
-    "rewrites": [
-      {
-        "source": "**",
-        "destination": "/index.html"
-      }
     ]
   }
 }
