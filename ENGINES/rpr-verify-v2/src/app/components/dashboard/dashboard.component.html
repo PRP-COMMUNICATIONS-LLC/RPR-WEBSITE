@@ -1,0 +1,36 @@
+<div class="h-screen w-full bg-black flex flex-col overflow-hidden font-mono p-6 text-zinc-300">
+
+  <div class="grid grid-cols-3 gap-6 mb-6 border-b border-zinc-900 pb-6">
+    <div class="flex flex-col">
+      <span class="text-[9px] text-zinc-600 uppercase tracking-widest">Manifest Records</span>
+      <span class="text-2xl text-white font-bold">{{ totalRecords }}</span>
+    </div>
+
+    <div class="flex flex-col border-l border-zinc-900 pl-6">
+      <span class="text-[9px] text-zinc-600 uppercase tracking-widest">Total Discrepancies</span>
+      <span class="text-2xl font-bold" [ngClass]="discrepancyCount > 0 ? 'text-red-600' : 'text-zinc-700'">
+        {{ discrepancyCount }}
+      </span>
+    </div>
+
+    <div class="flex flex-col border-l border-zinc-900 pl-6">
+      <span class="text-[9px] text-zinc-600 uppercase tracking-widest">Audit Health Score</span>
+      <span class="text-2xl font-bold"
+            [ngClass]="{'text-green-500': auditHealth >= 95, 'text-orange-500': auditHealth < 95 && auditHealth >= 80, 'text-red-600': auditHealth < 80}">
+        {{ auditHealth }}%
+      </span>
+    </div>
+  </div>
+
+  <app-file-upload (onDataParsed)="rowData = $event"></app-file-upload>
+
+  <div class="flex-grow border border-zinc-900 overflow-hidden rounded">
+    <ag-grid-angular
+      style="width: 100%; height: 100%;"
+      class="ag-theme-alpine-dark"
+      [rowData]="rowData"
+      [columnDefs]="columnDefs"
+      [animateRows]="true">
+    </ag-grid-angular>
+  </div>
+</div>
