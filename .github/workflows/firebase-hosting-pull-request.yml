@@ -5,18 +5,20 @@ jobs:
   build_and_preview:
     if: '${{ github.event.pull_request.head.repo.full_name == github.repository }}'
     runs-on: ubuntu-latest
+
+    # NEW MISSION LOGIC: Grant explicit write access for deployment status
+    permissions:
+      checks: write
+      pull-requests: write
+      contents: read
+
     steps:
       - uses: actions/checkout@v4
-
       - name: Install Dependencies & Build
         run: npm ci && npm run build
-
       - name: Deploy to Firebase Hosting
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
-          # ACTION: Ensure this secret is updated in GitHub Settings
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_RPR_VERIFY_B }}'
           projectId: rpr-verify-b
-          # FIX: Sanitize channelId to remove unsupported '/' characters
-          channelId: 'pr-${{ github.event.number }}-preview'
