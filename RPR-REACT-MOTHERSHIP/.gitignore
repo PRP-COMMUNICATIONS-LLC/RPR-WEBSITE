@@ -26,4 +26,7 @@ dist-ssr
 # Environment
 .env
 .env.local
-.env.production
+.env.production.terraform/
+terraform.tfstate
+terraform.tfstate.backup
+.terraform.lock.hcl
