@@ -1,11 +1,13 @@
-import { Radar, Github } from "lucide-react";
+import { Github } from "lucide-react";
 import { WorkflowProvider } from "./contexts/WorkflowContext";
 import { Hero } from "./components/Hero";
 import { Footer } from "./components/Footer";
 import { Foundations } from "./components/Foundations";
 import { Process } from "./components/Process";
+import { Products } from "./components/Products";
 import { Overwatch } from "./components/Overwatch";
 import { AskOllie } from "./components/AskOllie";
+import RprMasterLogo from "./components/brand/RprMasterLogo";
 
 // --- SHARED TEXTURES & UI PRIMITIVES ---
 
@@ -36,19 +38,12 @@ const OllieNeuralPulse = ({ size = "lg" }: { size?: "sm" | "lg" }) => (
 );
 
 const Header = () => (
-  <header className="fixed top-0 w-full z-[100] bg-black/80 backdrop-blur-md border-b border-white/5 flex items-center px-[20px] md:px-12 overflow-hidden h-[108px]">
+  <header className="fixed top-0 w-full z-[100] bg-[#020617] backdrop-blur-md border-b border-white/10 flex items-center px-[20px] md:px-12 overflow-hidden h-[108px]">
     <ArchitectTexture />
     <div className="max-w-7xl mx-auto w-full flex items-center justify-between relative z-10">
       {/* Left: Logo */}
       <div className="flex items-center gap-4 py-2">
-        <div className="relative group h-10 w-10 flex items-center justify-center">
-          <div className="absolute inset-0 bg-cyan-500/20 blur-lg group-hover:bg-cyan-500/40 transition-all duration-700" />
-          <Radar className="text-cyan-400 relative z-10" size={32} />
-        </div>
-        <div className="flex flex-col leading-none">
-          <span className="font-black text-xl tracking-tighter uppercase text-white font-display">RPR</span>
-          <span className="text-[9px] font-bold text-cyan-400 tracking-[0.3em] uppercase mt-1">Communications</span>
-        </div>
+        <RprMasterLogo height={32} />
       </div>
 
       {/* Center: Global nav + section tabs (desktop) */}
@@ -153,6 +148,7 @@ export default function App() {
           <Hero />
           <Foundations />
           <Process />
+          <Products />
           <Overwatch />
           <AskOllie />
         </main>

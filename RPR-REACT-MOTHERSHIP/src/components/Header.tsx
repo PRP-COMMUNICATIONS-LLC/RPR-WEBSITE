@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import logo from '../assets/branding/rpr-communications-white.svg';
 import googleAuth from '../assets/branding/google-auth-black.svg';
 import { Icon } from './Icon';
+import RprMasterLogo from './brand/RprMasterLogo';
 
 export const Header: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -9,7 +9,7 @@ export const Header: React.FC = () => {
   
   return (
     <>
-      <header className="h-[108px] fixed top-0 w-full z-[100] bg-black/80 backdrop-blur-md border-b border-border-dark flex items-center px-[20px] md:px-12 overflow-hidden">
+      <header className="h-[108px] fixed top-0 w-full z-[100] bg-[#020617] backdrop-blur-md border-b border-white/10 flex items-center px-[20px] md:px-12 overflow-hidden">
         {/* Background Strategy Grid */}
         <div className="absolute inset-0 z-0 opacity-10 pointer-events-none">
           <div className="grid grid-cols-8 grid-rows-2 h-full w-full">
@@ -26,14 +26,7 @@ export const Header: React.FC = () => {
         <div className="max-w-7xl mx-auto w-full flex justify-between items-center relative z-10">
           {/* Brand Latch (Left) */}
           <div className="flex items-center gap-4">
-            <div className="relative group h-10 w-10 flex items-center justify-center">
-              <div className="absolute inset-0 bg-primary/20 blur-lg group-hover:bg-primary/40 transition-all duration-700"></div>
-              <img src={logo} alt="RPR Communications" className="h-10 w-10 relative z-10" />
-            </div>
-            <div className="flex flex-col leading-none">
-              <span className="font-black text-xl tracking-tighter uppercase text-white">RPR</span>
-              <span className="text-[9px] font-bold text-primary tracking-[0.3em] uppercase mt-1">Communications</span>
-            </div>
+            <RprMasterLogo height={32} />
           </div>
           
           {/* Strategic Navigation (Center) */}
