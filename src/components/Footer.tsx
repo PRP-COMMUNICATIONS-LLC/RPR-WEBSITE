@@ -1,8 +1,8 @@
 import React from 'react';
 
 /**
- * TS-Λ3 // GLOBAL FOOTER [v1.1.0]
- * Includes "EST. 2025" temporal marker and "TS-Λ3" governance stamp.
+ * TS-Λ3 // GLOBAL FOOTER [v1.1.1]
+ * Updates: Linked "Sovereign Terms" to /sovereign_terms.md
  */
 export const Footer: React.FC = () => {
   return (
@@ -35,7 +35,14 @@ export const Footer: React.FC = () => {
 
         {/* Governance & Links */}
         <div className="flex gap-8 text-[10px] font-bold uppercase text-slate-600">
-          <a className="hover:text-cyan-500 transition-colors" href="#">Sovereign Terms</a>
+          <a 
+            className="hover:text-cyan-500 transition-colors" 
+            href="/sovereign_terms.md" 
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
+            Sovereign Terms
+          </a>
           <span className="text-white/5 font-mono">TS-Λ3</span>
         </div>
 

@@ -1,53 +1,69 @@
 #!/bin/bash
-# RPR-KONTROL | SOVEREIGN CLEANSE STRIKE (v1.0.0)
-# Role: THE ENGINEER
-# Purpose: Liquidate build artifacts and Vite cache to ensure clean React strikes.
-# Authority: TS-Λ3
+# TS-Λ3 | SOVEREIGN CLEANSE [v1.3.0]
+# OBJECTIVE: Comprehensive Health Check & Phase 5 Antigravity Cleanup
+# PATH: /Users/puvansivanasan/PERPLEXITY-NEW/JOBS/2026-001-RPR-WEBSITE/Scripts/sovereign-cleanse.sh
 
-set -e
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo "  INITIATING HARBOR A CLEANSE & VERIFY (PHASE 5)"
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 
-echo "🧹 [SENTINEL] INITIATING SUBSTRATE CLEANSE..."
+# 1. VERIFY GIT STATE
+echo "[1/6] Checking Git substrate integrity..."
+git status -s
+echo "Recent commits:"
+git log --oneline -3
 
-# Targeted folders for Mothership V4
-TARGETS=("node_modules" "dist" "dist-corporate" "dist-kontrol" ".vite")
+# 2. VERIFY TYPESCRIPT (The Gate)
+echo ""
+echo "[2/6] Executing TypeScript integrity check..."
+npx tsc --noEmit
+TS_EXIT_CODE=$?
 
-for dir in "${TARGETS[@]}"; do
-  if [ -d "$dir" ]; then
-    echo "  Liquidating $dir..."
-    rm -rf "$dir"
-  fi
-done
-
-# Clean in React Mothership subdirectory
-if [ -d "RPR-REACT-MOTHERSHIP" ]; then
-  cd RPR-REACT-MOTHERSHIP
-  for dir in "${TARGETS[@]}"; do
-    if [ -d "$dir" ]; then
-      echo "  Liquidating RPR-REACT-MOTHERSHIP/$dir..."
-      rm -rf "$dir"
-    fi
-  done
-  cd ..
+if [ $TS_EXIT_CODE -eq 0 ]; then
+    echo "✅ [SENTINEL] Type environment stable."
+else
+    echo "❌ [SENTINEL] Type errors detected. Cleanup proceeding with caution."
 fi
 
-# Remove .DS_Store files
-find . -name ".DS_Store" -type f -delete 2>/dev/null || true
+# 3. VERIFY BUILD
+echo ""
+echo "[3/6] Running production build verification..."
+npm run build
+BUILD_EXIT_CODE=$?
 
-# Remove Firebase cache
-if [ -d ".firebase" ]; then
-  echo "  Liquidating .firebase cache..."
-  rm -rf .firebase/hosting.*.cache 2>/dev/null || true
+# 4. CLEAN WORKSPACE
+echo ""
+echo "[4/6] Liquidating build artifacts and engine cache..."
+rm -rf dist
+rm -rf .vite
+rm -rf .firebase
+echo "✓ Cache purged."
+
+# 5. REMOVE TELEMETRY & METADATA
+echo "[5/6] Cleaning build telemetry and system metadata..."
+find . -name "*.tsbuildinfo" -type f -delete
+find . -name ".DS_Store" -type f -delete
+echo "✓ Metadata liquidated."
+
+# 6. SUMMARY
+echo ""
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo "  CLEANUP SUMMARY"
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+
+if [ $TS_EXIT_CODE -eq 0 ]; then
+    echo "  TYPESCRIPT : 🟢 PASS"
+else
+    echo "  TYPESCRIPT : 🔴 FAIL"
 fi
 
-if [ -f "package-lock.json" ]; then
-  echo "  Removing package-lock.json..."
-  rm -f package-lock.json
+if [ $BUILD_EXIT_CODE -eq 0 ]; then
+    echo "  BUILD      : 🟢 SUCCESS"
+else
+    echo "  BUILD      : 🔴 FAILED"
 fi
 
-if [ -f "RPR-REACT-MOTHERSHIP/package-lock.json" ]; then
-  echo "  Removing RPR-REACT-MOTHERSHIP/package-lock.json..."
-  rm -f RPR-REACT-MOTHERSHIP/package-lock.json
-fi
+echo "  WORKSPACE  : 🟢 SANITIZED"
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 
-echo "✅ [SENTINEL] CLEANSE COMPLETE. Substrate sanitized."
-echo "Action: Run 'npm install' to re-latch dependencies."
+exit 0
