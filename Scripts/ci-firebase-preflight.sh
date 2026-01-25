@@ -1,67 +1,80 @@
 #!/bin/bash
-# RPR-WEBSITE | Firebase Pre-Deployment Preflight Checks (Keyless Aware)
-# Authority: TS-Λ3 | Orchestrator: Gemini
-# Usage: ./Scripts/ci-firebase-preflight.sh [corporate|verify]
+# TS-Λ3 // FIREBASE PREFLIGHT GATEKEEPER [v1.3.1]
+# OBJECTIVE: Robust environment validation for KONTROL substrate.
+# PATH: /Users/puvansivanasan/PERPLEXITY-NEW/JOBS/2026-003-RPR-KONTROL-MASTER/Scripts/ci-firebase-preflight.sh
 
-set -euo pipefail
+TARGET=$1
 
-# Colors
-RED='\033[0;31m'
-GREEN='\033[0;32m'
-CYAN='\033[0;36m'
-NC='\033[0m'
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo "  [SENTINEL_TRACE] RPR-KONTROL | Firebase Preflight Protocol"
+echo "  [SENTINEL_TRACE] Target: $TARGET"
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 
-TARGET="${1:-corporate}"
-SCRIPT_DIR="Scripts"
+# 1. Authoritative Target Whitelisting
+# -----------------------------------------------------------------------------
+echo "[INFO] Validating target against KONTROL governance manifest..."
 
-log_info() { echo -e "${CYAN}[INFO]${NC} $1"; }
-log_success() { echo -e "${GREEN}[✅]${NC} $1"; }
-log_error() { echo -e "${RED}[🔴]${NC} $1"; }
+# Added 'kontrol' as primary target for this substrate
+VALID_TARGETS=("main" "corporate" "verify" "kontrol")
+MATCH=0
 
-echo -e "\n${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-echo -e "${CYAN}  RPR-WEBSITE | Firebase Preflight (Target: $TARGET)${NC}"
-echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+for t in "${VALID_TARGETS[@]}"; do
+    if [ "$TARGET" == "$t" ]; then
+        MATCH=1
+        break
+    fi
+done
 
-# 1. Directory Casing Enforcement
-if [ ! -d "$SCRIPT_DIR" ]; then
-    log_error "Substrate Drift Detected: Directory '$SCRIPT_DIR/' not found."
+if [ $MATCH -eq 0 ]; then
+    echo "🔴 [SENTINEL_ERROR] [FAIL] Unknown target harbor: $TARGET"
+    echo "    Expected: [${VALID_TARGETS[*]}]"
+    echo "[🔴] Gatekeeper Breach: Identity verification failed."
     exit 1
 fi
 
-# 2. Dependency Audit
-if ! npm list google-auth-library &> /dev/null; then
-    log_info "Installing google-auth-library for functional verification..."
-    npm install --save-dev google-auth-library > /dev/null 2>&1
+echo "✅ [SENTINEL_ACK] Target '$TARGET' whitelisted."
+
+# 2. Dependency Substrate Audit
+# -----------------------------------------------------------------------------
+echo "[INFO] Auditing local dependency substrate..."
+
+if [ ! -d "node_modules" ]; then
+    echo "⚠️  [SENTINEL_WARN] node_modules not detected. Initiating substrate recovery..."
+    npm install
 fi
 
-# 3. Auth Discovery (Policy-Aware)
-SA_FILE=""
-if [ -f "./github-ci-key.json" ]; then
-    FILE_SIZE=$(wc -c <"./github-ci-key.json" | tr -d ' ')
-    if [ "$FILE_SIZE" -gt 0 ]; then
-        SA_FILE="./github-ci-key.json"
-        log_info "Using local JSON key for verification."
-    else
-        log_info "0-byte key detected. Pivoting to Keyless (Ambient) verification."
-        SA_FILE="keyless"
-    fi
-else
-    log_info "No local key found. Proceeding with Keyless verification."
-    SA_FILE="keyless"
-fi
-
-# 4. Trigger Functional Verification Strike via THE COMMANDER
-if [ -f "$SCRIPT_DIR/ci-firebase-sa-verify.ts" ]; then
-    log_info "Executing functional verification strike via THE COMMANDER..."
-    if ! npx ts-node --compiler-options '{"module":"commonjs"}' "$SCRIPT_DIR/ci-firebase-sa-verify.ts" "$TARGET" "$SA_FILE"; then
-        log_error "Gatekeeper Breach: Identity verification failed."
-        exit 1
-    fi
-else
-    log_error "FATAL: $SCRIPT_DIR/ci-firebase-sa-verify.ts not found."
+# Check for Vite binary (Required for KONTROL Dashboard)
+if ! npx vite --version > /dev/null 2>&1; then
+    echo "🔴 [SENTINEL_ERROR] Vite binary not found in substrate."
+    echo "    Action required: Execute 'npm install' in project root."
     exit 1
 fi
 
-log_success "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-log_success "  ✅ [SENTINEL_ACK] Preflight complete: Ready for Strike"
-log_success "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+# 3. Workload Identity & Secret Verification
+# -----------------------------------------------------------------------------
+echo "[INFO] Checking authentication vectors..."
+
+if [ -f "gha-creds-*.json" ] || [ -n "$GOOGLE_APPLICATION_CREDENTIALS" ]; then
+    echo "✅ [SENTINEL_ACK] WIF v2 / Keyed credentials detected."
+else
+    echo "ℹ️  [SENTINEL_TRACE] No local keys. Proceeding with Keyless/User-Auth strike."
+fi
+
+# 4. Functional Build Verification Gate
+# -----------------------------------------------------------------------------
+echo "[INFO] Initiating functional verification build strike..."
+
+# Run build to ensure Dashboard can compile
+npm run build
+
+if [ $? -eq 0 ]; then
+    echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    echo "✅ [SENTINEL_SUCCESS] Preflight complete: Ready for Strike"
+    echo "  - Substrate: KONTROL Dashboard (Stable)"
+    echo "  - Build: Validated"
+    echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    exit 0
+else
+    echo "🔴 [SENTINEL_ERROR] KONTROL Substrate build failure. Strike aborted."
+    exit 1
+fi

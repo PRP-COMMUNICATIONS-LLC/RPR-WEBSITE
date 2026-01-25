@@ -20,11 +20,13 @@
     "paths": {
       "@/*": ["src/*"]
     },
+<<<<<<< HEAD
     "types": ["node", "vite/client"],
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
+<<<<<<< HEAD
   "include": [
     "src",
     "tailwind.config.js",

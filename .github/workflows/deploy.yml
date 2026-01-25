@@ -5,44 +5,43 @@ on:
     branches: [ main ]
   workflow_dispatch:
 
-jobs:
-  deploy:
-    name: Build and Deploy (Keyless)
-    runs-on: ubuntu-latest
-    permissions:
-      contents: 'read'
-      id-token: 'write'
+permissions:
+  contents: read
+  id-token: write
 
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Setup Node.js 20
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: 'npm'
 
       - name: Install Dependencies
-        run: |
-          cd RPR-REACT-MOTHERSHIP
-          npm ci
+        run: npm ci
 
-      - name: Authenticate to Google Cloud (WIF v2)
+      - name: Production Build
+        run: npm run build
+
+      - name: Google Cloud Auth (WIF v2)
         id: auth
         uses: google-github-actions/auth@v2
         with:
-          # Authority: rpr-corporate-site (859831078276)
           workload_identity_provider: 'projects/859831078276/locations/global/workloadIdentityPools/github-pool/providers/github-provider'
           service_account: 'github-actions-deployer@rpr-corporate-site.iam.gserviceaccount.com'
           token_format: 'access_token'
 
-      - name: Execute Harbor B Strike
+      - name: Execute Harbor A Strike
         run: |
-          cd RPR-REACT-MOTHERSHIP
-          # Deploy both targets using the authoritative Project ID
-          npx firebase deploy \
-            --only hosting:corporate,hosting:verify \
-            --project rpr-corporate-site
+          # TS-Λ3 // FIXED: Path corrected to root; Target corrected to 'main'
+          npx firebase-tools deploy \
+            --only hosting:main \
+            --project rpr-corporate-site \
+            --non-interactive
         env:
           FIREBASE_TOKEN: "${{ steps.auth.outputs.access_token }}"
