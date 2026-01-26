@@ -57,7 +57,7 @@ export const Foundations: React.FC = () => {
     <section id="foundations" className="bg-[#050505] py-24 px-6 md:px-12">
       <div className="max-w-7xl mx-auto space-y-12">
         <div className="space-y-4">
-          <h2 className="text-white text-4xl md:text-6xl font-bold uppercase tracking-[-0.05em]" style={{ fontFamily: "'Inter', sans-serif", fontWeight: 700 }}>
+          <h2 className="text-white text-4xl md:text-6xl font-bold uppercase tracking-[-0.05em] font-sans">
             THE FOUNDATIONS
           </h2>
           <p className="text-cyan-400 font-mono tracking-[0.2em] text-sm uppercase">The DNA Pillars</p>
@@ -75,15 +75,19 @@ export const Foundations: React.FC = () => {
                   <div className="w-2/3 h-2/3">{item.glyph}</div>
                 </div>
                 
-                <span className="flex-grow text-white text-xl md:text-3xl font-bold uppercase tracking-[-0.05em]" style={{ fontFamily: "'Inter', sans-serif", fontWeight: 700 }}>
+                <span className="flex-grow text-white text-xl md:text-3xl font-bold uppercase tracking-[-0.05em] font-sans">
                   {item.id} {item.title}
                 </span>
                 
                 <ChevronDown className={`text-zinc-500 transition-transform ${openId === item.id ? 'rotate-180' : ''}`} />
               </button>
               
-              <div className={`overflow-hidden transition-all duration-500 ${openId === item.id ? 'max-h-96 opacity-100 mt-4' : 'max-h-0 opacity-0'}`}>
-                <p className="text-zinc-400 text-lg md:text-xl max-w-3xl ml-18 md:ml-22 leading-relaxed tracking-tight">
+              <div className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                openId === item.id 
+                  ? 'max-h-[1000px] opacity-100 mt-4' 
+                  : 'max-h-0 opacity-0'
+              }`}>
+                <p className="text-zinc-400 text-lg md:text-xl max-w-3xl ml-16 md:ml-20 leading-relaxed tracking-tight">
                   {item.content}
                 </p>
               </div>
