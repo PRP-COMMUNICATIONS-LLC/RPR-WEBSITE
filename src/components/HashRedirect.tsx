@@ -1,4 +1,4 @@
-// STUB FILE - AWAITING PUSH FROM MAC STUDIO
-export function HashRedirect() {
-  return null;
-}
+// src/components/HashRedirect.tsx
+import React from 'react';
+interface HashProps { to: string; }
+export const HashRedirect: React.FC<HashProps> = () => null;

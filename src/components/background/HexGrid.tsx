@@ -1,4 +1,4 @@
-// STUB FILE - AWAITING PUSH FROM MAC STUDIO
-export function HexGrid() {
-  return <div>HexGrid</div>;
-}
+// src/components/background/HexGrid.tsx
+import React from 'react';
+const HexGrid = () => <div id="hex-grid-stub" />;
+export default HexGrid; // Must be default export
