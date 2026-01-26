@@ -1,76 +1,74 @@
-import React from 'react';
-import { useAuth } from '../contexts/AuthContext';
-
 /**
- * TS-Λ3 // HARBOR A LABS [v1.0.0]
- * Formerly: Products.tsx
- * Objective: High-fidelity intelligence landing for internal tooling.
+ * TS-Λ3 // THE LABS // TECHNICAL SHOWCASE [v8.4.0]
+ * RECTIFIED: Integrated Sentinel, Elders, and MYAUDIT.
  */
+import React from 'react';
+import { Shield, Hammer, Lock, Database } from 'lucide-react';
+
+const labsItems = [
+  {
+    title: "THE SENTINEL PROTOCOL",
+    icon: Shield,
+    desc: "Real-time forensic monitoring and operational security latches.",
+    status: "ACTIVE"
+  },
+  {
+    title: "THE ELDERS",
+    icon: Hammer,
+    desc: "Sovereign structural logic and high-fidelity design governance.",
+    status: "ACTIVE"
+  },
+  {
+    title: "RPR KONTROL",
+    icon: Lock,
+    desc: "Centralized command substrate for experiential activations.",
+    status: "INTERNAL"
+  },
+  {
+    title: "MYAUDIT",
+    icon: Database,
+    desc: "Harbor C platform for comprehensive data verification and audit trails.",
+    status: "PROD",
+    link: "https://myaudit-ui.onrender.com/"
+  }
+];
+
 export const Labs: React.FC = () => {
-  const { user } = useAuth();
-
   return (
-    <section className="px-6 md:px-12 py-24 bg-black border-b border-white/10" id="labs">
-      <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col gap-4 mb-16">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-3 text-[10px] font-black tracking-[0.3em] text-cyan-500 uppercase">
-              <span className="w-2 h-2 bg-cyan-500 rounded-full animate-pulse" />
-              INTELLIGENCE SUBSTRATE // LABS
-            </div>
-
-            {user && (
-              <div className="hidden md:flex items-center gap-2 px-3 py-1 bg-cyan-500/10 border border-cyan-500/20 rounded-full">
-                <div className="w-1.5 h-1.5 bg-cyan-500 rounded-full animate-ping" />
-                <span className="text-[8px] font-black text-cyan-500 uppercase tracking-widest">
-                  TELEMETRY HYDRATED // {user.email?.split('@')[0]}
-                </span>
-              </div>
-            )}
-          </div>
-
-          <h2 className="text-4xl md:text-6xl font-black text-white uppercase tracking-tighter">
-            PROTOTYPE <span className="text-zinc-800">ENCLAVES</span>
+    <section id="labs" className="bg-black py-32 px-6 md:px-12 border-b border-zinc-800">
+      <div className="max-w-7xl mx-auto space-y-16">
+        <div className="space-y-4">
+          <h2 className="text-white text-4xl md:text-6xl font-bold uppercase tracking-[-0.05em] font-sans">
+            THE LABS
           </h2>
+          <p className="text-cyan-400 font-mono tracking-[0.2em] text-sm uppercase">Technical Infrastructure</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-          {/* VERIFY LATCH */}
-          <a
-            href="https://verify.rprcomms.com"
-            className="group relative bg-zinc-900/40 border border-white/5 p-12 rounded-2xl hover:border-cyan-500/30 transition-all overflow-hidden"
-          >
-            <div className="relative z-10">
-              <span className="material-symbols-outlined text-cyan-500 text-4xl mb-6">fingerprint</span>
-              <h3 className="text-2xl font-black text-white uppercase mb-4">RPR VERIFY</h3>
-              <p className="text-zinc-500 text-sm leading-relaxed mb-8 uppercase font-medium">
-                Real-time forensic verification engine for clinical data extraction and identity latching.
-              </p>
-              <div className="text-[10px] font-black text-cyan-500 tracking-widest uppercase flex items-center gap-2">
-                INITIATE EXTRACTION <span className="group-hover:translate-x-2 transition-transform">→</span>
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+          {labsItems.map((item) => (
+            <article key={item.title} className="group relative flex flex-col justify-between p-8 bg-[#0A0A0A] border border-zinc-800 rounded-xl hover:border-cyan-500/50 transition-all">
+              <div className="space-y-6">
+                <div className="w-12 h-12 bg-black border border-zinc-800 flex items-center justify-center transition-all group-hover:border-cyan-500/50">
+                  <item.icon size={20} className="text-cyan-400" />
+                </div>
+                <div className="space-y-2">
+                  <h4 className="text-white font-bold tracking-widest font-mono text-xs uppercase">{item.title}</h4>
+                  <p className="text-zinc-500 text-[10px] uppercase font-mono leading-relaxed tracking-tight">{item.desc}</p>
+                </div>
               </div>
-            </div>
-          </a>
-
-          {/* KONTROL GOVERNANCE (Shared with Harbor A) */}
-          <a
-            href="https://kontrol.rprcomms.com"
-            className="group relative bg-zinc-900/40 border border-white/5 p-12 rounded-2xl hover:border-cyan-500/30 transition-all overflow-hidden"
-          >
-            <div className="relative z-10">
-              <span className="material-symbols-outlined text-zinc-500 text-4xl mb-6">token</span>
-              <h3 className="text-2xl font-black text-white uppercase mb-4">RPR KONTROL</h3>
-              <p className="text-zinc-500 text-sm leading-relaxed mb-8 uppercase font-medium">
-                The authoritative governance plane for substrate oversight and telemetry auditing.
-              </p>
-              <div className="text-[10px] font-black text-zinc-500 tracking-widest uppercase flex items-center gap-2">
-                ENTER GOVERNANCE <span className="group-hover:translate-x-2 transition-transform">→</span>
+              
+              <div className="mt-8 flex items-center justify-between border-t border-zinc-900 pt-4">
+                <span className="text-[8px] font-mono text-cyan-600 tracking-widest">{item.status}</span>
+                {item.link && (
+                  <a href={item.link} target="_blank" rel="noopener noreferrer" className="text-[8px] font-mono text-zinc-400 hover:text-white uppercase tracking-widest">
+                    Launch Harbor C →
+                  </a>
+                )}
               </div>
-            </div>
-          </a>
+            </article>
+          ))}
         </div>
       </div>
     </section>
   );
 };
-

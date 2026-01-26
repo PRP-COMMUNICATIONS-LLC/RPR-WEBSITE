@@ -1,11 +1,13 @@
 #!/bin/bash
-# TS-Λ3 | Harbor A Deployment Strike v1.4.0 [Yarn]
+# TS-Λ3 | Harbor A Deployment Strike v1.5.0 [Yarn]
 # Objective: Authoritative execution for Mothership only.
 # Package Manager: Yarn (Homebrew-linked)
+# RECTIFIED: Portable ROOT_PATH for Mac Studio (works regardless of folder relocation)
 
 set -euo pipefail
 
-ROOT_PATH="/Users/puvansivanasan/PERPLEXITY-NEW/JOBS/2026-001-RPR-WEBSITE"
+# RECTIFIED FOR MAC STUDIO: Portable path calculation
+ROOT_PATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd "$ROOT_PATH"
 
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
