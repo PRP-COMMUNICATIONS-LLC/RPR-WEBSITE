@@ -1,5 +1,10 @@
 import React from 'react';
 
+/**
+ * TS-Λ3 // HARBOR A HERO SECTION [v6.2.0]
+ * PRIMARY ACTIVATION: Global Intelligence, Experiential Activation
+ * OPERATIONAL LATCH: LABS + ASK OLLIE dual navigation
+ */
 export const Hero: React.FC = () => {
   return (
     <section className="px-[20px] md:px-32 py-24 md:py-40 max-w-7xl mx-auto grid-bg">
@@ -17,18 +22,23 @@ export const Hero: React.FC = () => {
         <p className="text-lg md:text-2xl text-slate-400 leading-relaxed font-light max-w-2xl uppercase tracking-tight">
           We're a boutique agency and experience studio that actually cares if the campaign moves the needle. We plan campaigns based on real world results through digital, virtual and the physical spaces..with the messy bits in between.
         </p>
-        
-        <p className="text-lg md:text-2xl text-slate-400 leading-relaxed font-light max-w-2xl uppercase tracking-tight mt-6">
-          "We keep it simple to make the story clear, get people to show up and do something, then prove it with live numbers instead of 'vibes' on a slide. If you already have a big shiny campaign, we'll plug in where we're useful. If you don't, we'll build the whole thing. Either way, the goal is the same: less theatre, more results."
-        </p>
 
+        {/* Operational Latch: LABS + ASK OLLIE */}
         <div className="flex flex-col md:flex-row items-stretch md:items-start gap-4 mt-8">
-          <a href="/labs" className="bg-primary text-black px-12 py-5 font-bold uppercase tracking-widest text-xs flex items-center gap-4 group justify-center">
-            View Labs 
+          <a 
+            href="/#labs" 
+            className="bg-primary text-black px-12 py-5 font-bold uppercase tracking-widest text-xs flex items-center gap-4 group justify-center transition-all hover:bg-primary/90"
+          >
+            LABS
             <span className="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
           </a>
-          <a href="#ask-ollie" className="border border-slate-700 px-12 py-5 font-bold uppercase tracking-widest text-xs hover:bg-zinc-900 transition-colors text-center">
-            Inquire Ollie
+          
+          <a 
+            href="/#chat" 
+            className="bg-zinc-900 border border-zinc-800 text-white px-12 py-5 font-bold uppercase tracking-widest text-xs flex items-center gap-4 group justify-center transition-all hover:border-cyan-500/50 hover:bg-zinc-800"
+          >
+            ASK OLLIE
+            <span className="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">chat</span>
           </a>
         </div>
       </div>
