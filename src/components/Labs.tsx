@@ -1,35 +1,36 @@
 import React from 'react';
 
 /**
- * TS-Λ3 // THE LABS // TECHNICAL SHOWCASE [v8.4.0]
+ * TS-Λ3 // THE LABS // TECHNICAL SHOWCASE [v8.5.0]
  * RECTIFIED: Switched to Material Symbols Variable Font.
+ * INTEGRATION: OLLIE card now links to /#chat (AskOllie interface)
+ * INTEGRATION: KONTROL card now links to https://kontrol.rprcomms.com (Governance Latch)
  */
 
 const labsItems = [
-  {
-    title: "THE SENTINEL PROTOCOL",
-    icon: "security",
-    desc: "Real-time forensic monitoring and operational security latches.",
-    status: "ACTIVE"
+  { 
+    title: "THE SENTINEL PROTOCOL", 
+    materialIcon: "all_inclusive", 
+    desc: "Real-time forensic monitoring", 
+    status: "ACTIVE" 
   },
-  {
-    title: "THE ELDERS",
-    icon: "account_tree",
-    desc: "Sovereign structural logic and high-fidelity design governance.",
-    status: "ACTIVE"
+  { 
+    title: "OLLIE", 
+    materialIcon: "smart_toy", 
+    desc: "Sentinel AI Interface", 
+    status: "ACTIVE" 
   },
-  {
-    title: "RPR KONTROL",
-    icon: "terminal",
-    desc: "Centralized command substrate for experiential activations.",
-    status: "INTERNAL"
+  { 
+    title: "THE LABS", 
+    materialIcon: "handyman", 
+    desc: "Technical Infrastructure", 
+    status: "ACTIVE" 
   },
-  {
-    title: "MYAUDIT",
-    icon: "database",
-    desc: "Harbor C platform for comprehensive data verification and audit trails.",
-    status: "PROD",
-    link: "https://myaudit-ui.onrender.com/"
+  { 
+    title: "KONTROL", 
+    materialIcon: "auto_awesome", 
+    desc: "Command Substrate", 
+    status: "INTERNAL" 
   }
 ];
 
@@ -42,12 +43,14 @@ export const Labs: React.FC = () => {
             <h2 className="text-white text-4xl md:text-6xl font-bold uppercase tracking-[-0.05em] font-sans">
               THE LABS
             </h2>
-            <p className="text-cyan-400 font-mono tracking-[0.2em] text-sm uppercase">Technical Infrastructure</p>
+            <p className="text-cyan-400 font-mono tracking-[0.2em] text-sm uppercase">
+              TECHNICAL INFRASTRUCTURE // THE OVERWATCH PROTOCOL
+            </p>
           </div>
 
           {/* Global Labs Action Indicator */}
           <div className="flex items-center gap-3 px-4 py-2 bg-[#0A0A0A] border border-zinc-800 rounded-lg">
-            <span className="material-symbols-outlined text-cyan-400 text-xl animate-pulse">
+            <span className="material-symbols-outlined text-white text-xl animate-pulse">
               handyman
             </span>
             <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest">System Maintenance: Active</span>
@@ -55,31 +58,58 @@ export const Labs: React.FC = () => {
         </div>
 
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-          {labsItems.map((item) => (
-            <article key={item.title} className="group relative flex flex-col justify-between p-8 bg-[#0A0A0A] border border-zinc-800 rounded-xl hover:border-cyan-500/50 transition-all">
-              <div className="space-y-6">
-                {/* UNIFIED CONTAINER SPECIFICATION */}
-                <div className="w-12 h-12 bg-black border border-zinc-800 rounded-xl flex items-center justify-center transition-all group-hover:border-cyan-500/50">
-                  <span className="material-symbols-outlined text-cyan-400 text-2xl">
-                    {item.icon}
-                  </span>
+          {labsItems.map((item) => {
+            const isOllie = item.title === "OLLIE";
+            const isKontrol = item.title === "KONTROL";
+            
+            const CardContent = (
+              <article className={`group relative flex flex-col justify-between p-8 bg-[#0A0A0A] border border-zinc-800 rounded-xl hover:border-white/20 transition-all ${(isOllie || isKontrol) ? 'cursor-pointer' : ''}`}>
+                <div className="space-y-6">
+                  {/* METHODS-STYLE ICON CONTAINER */}
+                  <div className="w-12 h-12 bg-black border border-zinc-800 rounded-xl flex items-center justify-center transition-all group-hover:border-white/20">
+                    <span className="material-symbols-outlined text-white text-2xl">
+                      {item.materialIcon}
+                    </span>
+                  </div>
+                  <div className="space-y-2">
+                    <h4 className="text-white font-bold tracking-widest font-mono text-xs uppercase">{item.title}</h4>
+                    <p className="text-zinc-500 text-[10px] uppercase font-mono leading-relaxed tracking-tight">{item.desc}</p>
+                  </div>
                 </div>
-                <div className="space-y-2">
-                  <h4 className="text-white font-bold tracking-widest font-mono text-xs uppercase">{item.title}</h4>
-                  <p className="text-zinc-500 text-[10px] uppercase font-mono leading-relaxed tracking-tight">{item.desc}</p>
-                </div>
-              </div>
 
-              <div className="mt-8 flex items-center justify-between border-t border-zinc-900 pt-4">
-                <span className="text-[8px] font-mono text-cyan-600 tracking-widest">{item.status}</span>
-                {item.link && (
-                  <a href={item.link} target="_blank" rel="noopener noreferrer" className="text-[8px] font-mono text-zinc-400 hover:text-white uppercase tracking-widest">
-                    Launch Harbor C →
-                  </a>
-                )}
+                <div className="mt-8 flex items-center justify-between border-t border-zinc-900 pt-4">
+                  <span className="text-[8px] font-mono text-cyan-600 tracking-widest">{item.status}</span>
+                  {(isOllie || isKontrol) && (
+                    <span className="material-symbols-outlined text-white text-sm opacity-0 group-hover:opacity-100 transition-opacity">
+                      arrow_forward
+                    </span>
+                  )}
+                </div>
+              </article>
+            );
+
+            if (isOllie) {
+              return (
+                <a key={item.title} href="/#chat" className="block h-full">
+                  {CardContent}
+                </a>
+              );
+            }
+            
+            if (isKontrol) {
+              return (
+                <a key={item.title} href="https://kontrol.rprcomms.com" target="_blank" rel="noopener noreferrer" className="block h-full">
+                  {CardContent}
+                </a>
+              );
+            }
+            
+            return (
+              <div key={item.title} className="h-full">
+                {CardContent}
               </div>
-            </article>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

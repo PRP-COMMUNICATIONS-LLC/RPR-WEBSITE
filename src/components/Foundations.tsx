@@ -51,8 +51,8 @@ export const Foundations: React.FC = () => {
                 className="w-full flex items-center gap-6 text-left py-4"
               >
                 {/* METHODS-STYLE ICON CONTAINER */}
-                <div className="w-12 h-12 md:w-16 md:h-16 bg-[#0A0A0A] border border-zinc-800 rounded-xl flex items-center justify-center group-hover:border-cyan-500/50 transition-all">
-                  <span className="material-symbols-outlined text-cyan-400 text-2xl md:text-3xl">
+                <div className="w-12 h-12 md:w-16 md:h-16 bg-[#0A0A0A] border border-zinc-800 rounded-xl flex items-center justify-center group-hover:border-white/20 transition-all">
+                  <span className="material-symbols-outlined text-white text-2xl md:text-3xl">
                     {item.materialIcon}
                   </span>
                 </div>
@@ -67,11 +67,11 @@ export const Foundations: React.FC = () => {
               </button>
 
               {/* EXPANSION LOGIC */}
-              <div className={`overflow-hidden transition-all duration-500 ease-in-out ${openId === item.id
-                ? 'max-h-[1200px] opacity-100 mt-4'
+              <div className={`overflow-hidden transition-all duration-700 ease-in-out ${openId === item.id
+                ? 'max-h-[1500px] opacity-100 mt-6'
                 : 'max-h-0 opacity-0'
                 }`}>
-                <p className="text-zinc-400 text-lg md:text-xl max-w-3xl ml-16 md:ml-20 leading-relaxed tracking-tight">
+                <p className="text-zinc-400 text-lg md:text-xl max-w-3xl ml-16 md:ml-20 leading-relaxed tracking-tight pb-12">
                   {item.content}
                 </p>
               </div>

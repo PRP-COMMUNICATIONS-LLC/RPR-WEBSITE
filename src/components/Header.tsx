@@ -15,8 +15,7 @@ export const Header: React.FC = () => {
   const navLinks = [
     { name: 'METHODS', href: '/#methods' },
     { name: 'FOUNDATIONS', href: '/#foundations' },
-    { name: 'PROCESS', href: '/#process' },
-    { name: 'OVERWATCH', href: '/#overwatch' },
+    { name: 'LABS', href: '/#labs' },
   ];
 
   return (
@@ -39,7 +38,7 @@ export const Header: React.FC = () => {
           ))}
         </nav>
 
-        {/* Right: Identity Latch Only */}
+        {/* Right: Identity Latch */}
         <div className="flex items-center gap-x-3 md:gap-4">
 
           {user ? (

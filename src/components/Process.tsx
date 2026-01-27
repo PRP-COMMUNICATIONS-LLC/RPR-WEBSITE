@@ -44,11 +44,11 @@ export const Process: React.FC = () => {
           {steps.map((step, i) => (
             <article
               key={i}
-              className="flex flex-col gap-6 p-8 bg-[#0A0A0A] border border-zinc-800 rounded-xl group hover:border-cyan-500/50 transition-all"
+              className="flex flex-col gap-6 p-8 bg-[#0A0A0A] border border-zinc-800 rounded-xl group hover:border-white/20 transition-all"
             >
               {/* UNIFIED CONTAINER SPECIFICATION */}
-              <div className="w-16 h-16 bg-black border border-zinc-800 rounded-xl flex items-center justify-center transition-all group-hover:border-cyan-500/50">
-                <span className="material-symbols-outlined text-cyan-400 text-2xl md:text-3xl">
+              <div className="w-16 h-16 bg-black border border-zinc-800 rounded-xl flex items-center justify-center transition-all group-hover:border-white/20">
+                <span className="material-symbols-outlined text-white text-2xl md:text-3xl">
                   {step.icon}
                 </span>
               </div>

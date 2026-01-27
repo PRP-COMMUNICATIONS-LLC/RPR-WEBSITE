@@ -4,7 +4,6 @@ import { Foundations } from "./Foundations";
 import { Methods } from "./Methods";
 import { Process } from "./Process";
 import { Labs } from "./Labs";
-import { Overwatch } from "./Overwatch";
 import { AskOllie } from "./AskOllie";
 
 /**
@@ -19,7 +18,6 @@ export const Home: React.FC = () => {
       <Methods />
       <Process />
       <Labs />
-      <Overwatch />
       <AskOllie />
     </>
   );

@@ -1,10 +1,8 @@
 /**
  * TS-Λ3 // ASK OLLIE // AI INTERFACE [v1.0.0]
- * RECTIFIED: Switched to Google Material Icons.
+ * RECTIFIED: Switched to Material Symbols Variable Font and White Icons.
  */
 import React from 'react';
-import SendIcon from '@mui/icons-material/Send';
-import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 
 export const AskOllie: React.FC = () => {
   return (
@@ -13,7 +11,9 @@ export const AskOllie: React.FC = () => {
         <div className="p-6 border-b border-zinc-800 flex items-center justify-between bg-zinc-900/50">
           <div className="flex items-center gap-3">
             <div className="w-8 h-8 bg-cyan-500 rounded-sm flex items-center justify-center">
-              <AutoAwesomeIcon sx={{ color: 'black', fontSize: 20 }} />
+              <span className="material-symbols-outlined text-black text-[20px]">
+                auto_awesome
+              </span>
             </div>
             <div>
               <h3 className="text-white text-xs font-black tracking-widest font-mono uppercase">OLLIE // SENTINEL AI</h3>
@@ -39,8 +39,10 @@ export const AskOllie: React.FC = () => {
               placeholder="ASK OLLIE..."
               className="w-full bg-black border border-zinc-800 rounded-lg py-4 px-6 text-xs font-mono text-white placeholder:text-zinc-700 focus:outline-none focus:border-cyan-500/50 transition-all"
             />
-            <button className="absolute right-4 p-2 text-zinc-500 hover:text-cyan-500 transition-colors">
-              <SendIcon sx={{ fontSize: 18 }} />
+            <button className="absolute right-4 p-2 text-zinc-500 hover:text-white transition-colors">
+              <span className="material-symbols-outlined text-[18px]">
+                send
+              </span>
             </button>
           </div>
         </div>

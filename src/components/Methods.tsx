@@ -63,7 +63,7 @@ export const Methods: React.FC = () => {
           {primaryIkons.map((icon) => (
             <article
               key={icon.name}
-              className={`flex flex-col gap-3 rounded-xl border border-zinc-800 bg-[#0A0A0A] p-4 hover:border-cyan-500/50 transition-all ${icon.isRefiner ? 'relative overflow-hidden' : ''
+              className={`flex flex-col gap-3 rounded-xl border border-zinc-800 bg-[#0A0A0A] p-4 hover:border-white/20 transition-all ${icon.isRefiner ? 'relative overflow-hidden' : ''
                 }`}
             >
               {/* Subtle cyan pulse for REPEAT refiner node */}
@@ -72,8 +72,8 @@ export const Methods: React.FC = () => {
               )}
 
               {/* UNIFIED CONTAINER SPECIFICATION */}
-              <div className="w-12 h-12 md:w-16 md:h-16 bg-[#0A0A0A] border border-zinc-800 rounded-xl flex items-center justify-center group-hover:border-cyan-500/50 transition-all">
-                <span className="material-symbols-outlined text-cyan-400 text-2xl md:text-3xl">
+              <div className="w-12 h-12 md:w-16 md:h-16 bg-[#0A0A0A] border border-zinc-800 rounded-xl flex items-center justify-center group-hover:border-white/20 transition-all">
+                <span className="material-symbols-outlined text-white text-2xl md:text-3xl">
                   {icon.icon}
                 </span>
               </div>
