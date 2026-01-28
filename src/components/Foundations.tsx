@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, Suspense } from 'react';
 import { MermaidViewer } from './MermaidViewer';
 import { THE_MOTHERSHIP } from '../data/theMothership';
+import { MothershipGraph } from './MothershipGraph';
 
 /**
  * TS-Λ3 // FOUNDATIONS [v2.2.0]
@@ -30,6 +31,7 @@ const foundations = [
 
 export const Foundations: React.FC = () => {
   const [openId, setOpenId] = useState<string | null>(null);
+  const [viewMode, setViewMode] = useState<"diagram" | "neural_graph">("diagram");
 
   return (
     <section id="foundations" className="bg-[#050505] border-b border-white/5 py-24 px-6 md:px-12">
@@ -83,19 +85,59 @@ export const Foundations: React.FC = () => {
 
         <div className="mt-24 pt-24 border-t border-white/5">
           <div className="space-y-6 mb-12">
-            <h3 className="text-white text-3xl md:text-5xl font-bold uppercase tracking-[-0.05em] font-sans">
-              THE MOTHERSHIP
-            </h3>
-            <p className="text-primary text-xs font-bold uppercase tracking-widest">
-              System Architecture
-            </p>
-            <p className="text-white/50 text-lg max-w-2xl leading-relaxed">
-              The foundational pillars sit atop this sovereign governance structure.
-            </p>
+            <div className="flex items-center justify-between">
+              <div className="space-y-4">
+                <h3 className="text-white text-3xl md:text-5xl font-bold uppercase tracking-[-0.05em] font-sans">
+                  THE MOTHERSHIP
+                </h3>
+                <p className="text-primary text-xs font-bold uppercase tracking-widest">
+                  System Architecture
+                </p>
+                <p className="text-white/50 text-lg max-w-2xl leading-relaxed">
+                  The foundational pillars sit atop this sovereign governance structure.
+                </p>
+              </div>
+              
+              {/* Toggle UI */}
+              <div className="flex gap-2">
+                <button
+                  onClick={() => setViewMode("diagram")}
+                  className={`px-4 py-2 text-xs font-bold uppercase tracking-wider transition-all ${
+                    viewMode === "diagram"
+                      ? "bg-primary text-[#050505] border border-primary"
+                      : "bg-transparent text-zinc-400 border border-white/20 hover:border-primary/50 hover:text-primary"
+                  } rounded-lg`}
+                >
+                  DIAGRAM
+                </button>
+                <button
+                  onClick={() => setViewMode("neural_graph")}
+                  className={`px-4 py-2 text-xs font-bold uppercase tracking-wider transition-all ${
+                    viewMode === "neural_graph"
+                      ? "bg-primary text-[#050505] border border-primary"
+                      : "bg-transparent text-zinc-400 border border-white/20 hover:border-primary/50 hover:text-primary"
+                  } rounded-lg`}
+                >
+                  NEURAL GRAPH
+                </button>
+              </div>
+            </div>
           </div>
 
           <div className="rounded-2xl border border-white/10 bg-white/5 p-6 overflow-x-auto">
-            <MermaidViewer definition={THE_MOTHERSHIP} />
+            {viewMode === "diagram" ? (
+              <MermaidViewer definition={THE_MOTHERSHIP} />
+            ) : (
+              <Suspense fallback={
+                <div className="flex items-center justify-center py-12">
+                  <div className="animate-pulse text-primary font-mono text-sm uppercase tracking-wider">
+                    Loading neural graph...
+                  </div>
+                </div>
+              }>
+                <MothershipGraph />
+              </Suspense>
+            )}
           </div>
         </div>
       </div>
