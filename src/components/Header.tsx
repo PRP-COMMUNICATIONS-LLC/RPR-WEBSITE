@@ -13,9 +13,10 @@ export const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navLinks = [
-    { name: 'METHODS', href: '/#methods' },
     { name: 'FOUNDATIONS', href: '/#foundations' },
-    { name: 'LABS', href: '/#labs' },
+    { name: 'METHODS', href: '/#methods' },
+    { name: 'PROCESS', href: '/#process' },
+    { name: 'OVERWATCH', href: '/#overwatch' },
   ];
 
   return (
@@ -40,17 +41,28 @@ export const Header: React.FC = () => {
 
         {/* Right: Identity Latch */}
         <div className="flex items-center gap-x-3 md:gap-4">
-
-          {user ? (
-            <div className="w-10 h-10 rounded-full border border-cyan-500/50 overflow-hidden shadow-[0_0_15px_rgba(0,224,255,0.3)]">
-              <img src={user.photoURL || ''} alt={user.displayName || 'User'} className="w-full h-full object-cover" />
-            </div>
-          ) : (
-            <button onClick={signIn} className="flex-shrink-0 transition-all hover:opacity-80" aria-label="Sign in">
-              <span className="material-symbols-outlined text-white text-3xl">
+          {/* G-Button: Active only when user is unauthenticated */}
+          {!user && (
+            <button 
+              onClick={signIn} 
+              className="flex-shrink-0 transition-all hover:opacity-80 p-2 group" 
+              aria-label="Identity Latch"
+            >
+              <span className="material-symbols-outlined text-white text-3xl group-hover:text-cyan-400 transition-colors">
                 account_circle
               </span>
             </button>
+          )}
+
+          {/* Identity Avatar: Active when session is live */}
+          {user && (
+            <div className="w-10 h-10 rounded-full border border-cyan-500/50 overflow-hidden shadow-[0_0_15px_rgba(0,224,255,0.3)]">
+              <img 
+                src={user.photoURL || ''} 
+                alt={user.displayName || 'User'} 
+                className="w-full h-full object-cover" 
+              />
+            </div>
           )}
 
           {/* Mobile Menu Toggle (Locked to lg:hidden) */}

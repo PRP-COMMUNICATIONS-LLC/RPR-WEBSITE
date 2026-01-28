@@ -18,7 +18,7 @@ export const THE_MOTHERSHIP = `%%{
       
       subgraph Elders ["THE ELDERS – SENTINEL GOVERNANCE"]
           Architect["THE ARCHITECT (Perplexity)<br/>Strategy & Governance Design"]
-          Engineer["THE ENGINEER (Gemini)<br/>Technical Blueprints & Execution"]
+          Engineer["THE ENGINEER (Gemini 3 Flash)<br/>Technical Blueprints & Execution"]
           Sentinel["THE SENTINEL (RPR)<br/>Enforcement & Forensic Monitoring"]
       end
   

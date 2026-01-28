@@ -53,7 +53,7 @@ export const Methods: React.FC = () => {
     <section id="methods" className="bg-[#050505] py-24 px-6 md:px-12 border-t border-zinc-800">
       <div className="max-w-7xl mx-auto space-y-12">
         <div className="space-y-4">
-          <h2 className="text-white text-4xl md:text-6xl font-bold uppercase tracking-[-0.05em]" style={{ fontFamily: "'Inter', sans-serif", fontWeight: 700 }}>
+          <h2 className="text-white text-4xl md:text-6xl font-bold uppercase tracking-[-0.05em] font-sans">
             THE METHODS
           </h2>
           <p className="text-cyan-400 font-mono tracking-[0.2em] text-sm uppercase">CLIENT LIFECYCLE</p>
@@ -80,7 +80,7 @@ export const Methods: React.FC = () => {
 
               <div className="space-y-2 relative z-10">
                 {/* Primary: Stage Name (ASK, PAY, etc.) - Inter Black 900, High Contrast */}
-                <h4 className="text-2xl md:text-3xl font-black text-white uppercase tracking-tight" style={{ fontFamily: "'Inter', sans-serif", fontWeight: 900 }}>
+                <h4 className="text-2xl md:text-3xl font-black text-white uppercase tracking-tight font-sans">
                   {icon.name}
                 </h4>
 

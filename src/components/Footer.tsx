@@ -16,9 +16,10 @@ export const Footer: React.FC = () => {
         {/* Row 1: Primary Navigation */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
           <nav className="flex flex-wrap gap-x-8 gap-y-4 text-[10px] font-bold tracking-[0.2em] uppercase text-zinc-500">
-            <a href="/#methods" className="hover:text-white transition-colors">Methods</a>
             <a href="/#foundations" className="hover:text-white transition-colors">Foundations</a>
-            <a href="/#labs" className="hover:text-white transition-colors">Labs</a>
+            <a href="/#methods" className="hover:text-white transition-colors">Methods</a>
+            <a href="/#process" className="hover:text-white transition-colors">Process</a>
+            <a href="/#overwatch" className="hover:text-white transition-colors">Overwatch</a>
           </nav>
         </div>
 
