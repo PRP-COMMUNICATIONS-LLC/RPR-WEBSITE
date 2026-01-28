@@ -1,3 +1,9 @@
+/**
+ * TS-Λ3 // THE MOTHERSHIP [v7.6.0]
+ * Formally: OVERWATCH_HIERARCHY_DEFINITION
+ * Sovereign structure visualization for Foundations section
+ * NOTE: MermaidViewer expects pure Mermaid diagram syntax here (no YAML/front-matter).
+ */
 export const THE_MOTHERSHIP = `
 graph TB
     subgraph SovereignAuthority["👤 SOVEREIGN AUTHORITY"]
