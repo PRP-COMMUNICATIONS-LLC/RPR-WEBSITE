@@ -1,6 +1,6 @@
 import React from 'react';
-import { Chessboard } from './Chessboard';
-import { TacticalPath } from './TacticalPath';
+import { CheckmateBoard } from './CheckmateBoard';
+import { LabyrinthVariantBoard } from './LabyrinthVariantBoard';
 
 /**
  * TS-Λ3 // THE OVERWATCH [v2.1.0]
@@ -60,17 +60,24 @@ export const Overwatch: React.FC = () => {
           </div>
         </div>
 
-        {/* Right Column: Visual Modules Stack (40%) */}
+        {/* Right Column: stacked boards – chess on top, labyrinth below */}
         <div className="flex flex-col w-full lg:w-[40%] bg-white/[0.02] justify-center">
-          
-          {/* Top Module: Chessboard — Expanded */}
-          <div className="flex-1 flex flex-col p-8 lg:p-12 border-b border-white/5 items-center justify-center">
-            <Chessboard className="w-full max-w-sm lg:max-w-md" />
-          </div>
+          <div className="flex flex-col items-center gap-10 p-8 lg:p-12">
+            {/* Top: Geometric checkmate board */}
+            <div className="w-full max-w-md space-y-3">
+              <p className="text-[10px] font-mono uppercase tracking-[0.2em] text-cyan-500/70">
+                Geometric Primitive // Checkmate Endgame
+              </p>
+              <CheckmateBoard />
+            </div>
 
-          {/* Bottom Module: Tactical Path — Expanded */}
-          <div className="flex-1 flex flex-col p-8 lg:p-12 items-center justify-center">
-            <TacticalPath className="w-full max-w-sm lg:max-w-md" />
+            {/* Bottom: Labyrinth variant */}
+            <div className="w-full max-w-md space-y-3">
+              <p className="text-[10px] font-mono uppercase tracking-[0.2em] text-cyan-500/70">
+                Geometric Primitive // Planescape Labyrinth
+              </p>
+              <LabyrinthVariantBoard />
+            </div>
           </div>
         </div>
       </div>

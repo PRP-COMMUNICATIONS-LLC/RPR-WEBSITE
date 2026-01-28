@@ -15,7 +15,7 @@ export const Hero: React.FC = () => {
         </div>
         
         <h1 className="text-5xl md:text-8xl font-extrabold tracking-tighter leading-[0.9] text-white uppercase">
-          Global Intelligence,<br/>
+          Global Intelligence<br/>
           <span className="text-primary">Experiential Activation.</span>
         </h1>
         
@@ -29,7 +29,7 @@ export const Hero: React.FC = () => {
             href="/#labs"
             className="flex items-center justify-center gap-2 px-8 py-3 bg-primary text-[#050505] font-bold uppercase text-sm rounded-lg hover:brightness-110 transition-all"
           >
-            <span className="material-symbols-outlined text-base">lab</span>
+            <span className="material-symbols-outlined text-base">science</span>
             Labs
           </a>
           <a
