@@ -1,5 +1,6 @@
 import React from 'react';
 import { Icon } from './Icon';
+import { InsightIcon } from './InsightIcon';
 
 export const Foundations: React.FC = () => {
   const foundations = [
@@ -31,20 +32,33 @@ export const Foundations: React.FC = () => {
           <div className="h-[1px] bg-primary/20 flex-grow"></div>
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-          {foundations.map((foundation, index) => (
-            <div key={index} className="bg-card-dark border border-border-dark p-10 group hover:border-primary hover:bg-primary/5 transition-all rounded-lg">
-              <div className="flex justify-between items-start mb-12">
-                <div className="w-12 h-12 flex items-center justify-center bg-zinc-900 border border-border-dark rounded group-hover:border-primary transition-colors">
-                  <Icon name={foundation.icon} className="text-white group-hover:text-primary transition-colors" size={24} />
+          {foundations.map((foundation, index) => {
+            if (foundation.icon === 'lightbulb') {
+              return (
+                <div key={index} className="bg-card-dark border border-border-dark p-10 group hover:border-primary hover:bg-primary/5 transition-all rounded-lg flex flex-col items-center text-center">
+                  <InsightIcon className="w-48 h-48 sm:w-56 sm:h-56 mb-12" />
+                  <h3 className="text-2xl font-bold uppercase tracking-wider mb-4 text-white group-hover:text-primary transition-colors">{foundation.title}</h3>
+                  <p className="text-sm text-white leading-relaxed font-mono uppercase tracking-tighter">
+                    {foundation.description}
+                  </p>
                 </div>
-                <span className="text-[10px] font-mono text-white/10 uppercase tracking-widest">{foundation.metric}</span>
+              );
+            }
+            return (
+              <div key={index} className="bg-card-dark border border-border-dark p-10 group hover:border-primary hover:bg-primary/5 transition-all rounded-lg">
+                <div className="flex justify-between items-start mb-12">
+                  <div className="w-12 h-12 flex items-center justify-center bg-zinc-900 border border-border-dark rounded group-hover:border-primary transition-colors">
+                    <Icon name={foundation.icon} className="text-white group-hover:text-primary transition-colors" size={24} />
+                  </div>
+                  <span className="text-[10px] font-mono text-white/10 uppercase tracking-widest">{foundation.metric}</span>
+                </div>
+                <h3 className="text-2xl font-bold uppercase tracking-wider mb-4 text-white group-hover:text-primary transition-colors">{foundation.title}</h3>
+                <p className="text-sm text-white leading-relaxed font-mono uppercase tracking-tighter">
+                  {foundation.description}
+                </p>
               </div>
-              <h3 className="text-2xl font-bold uppercase tracking-wider mb-4 text-white group-hover:text-primary transition-colors">{foundation.title}</h3>
-              <p className="text-sm text-white leading-relaxed font-mono uppercase tracking-tighter">
-                {foundation.description}
-              </p>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

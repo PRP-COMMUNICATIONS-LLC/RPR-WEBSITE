@@ -1,16 +1,10 @@
 import React from "react";
+import { IconContainer } from "./IconContainer";
 
 export const InsightIcon: React.FC<{ className?: string }> = ({ className = "" }) => (
-  <div
-    className={
-      "relative w-12 h-12 md:w-14 md:h-14 " +
-      "rounded-[22.5%] bg-gradient-to-br from-[#2C3E50] to-[#1B2631] " +
-      "flex items-center justify-center shadow-2xl overflow-hidden " +
-      className
-    }
-  >
+  <IconContainer className={className}>
     <svg
-      className="w-3/4 h-3/4"
+      className="w-2/3 h-2/3"
       viewBox="0 0 100 100"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -64,5 +58,5 @@ export const InsightIcon: React.FC<{ className?: string }> = ({ className = "" }
         />
       </g>
     </svg>
-  </div>
+  </IconContainer>
 );
