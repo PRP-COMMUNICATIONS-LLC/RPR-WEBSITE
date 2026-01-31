@@ -3,7 +3,7 @@ import { Cpu, Shield, Zap, Globe } from 'lucide-react';
 
 /**
  * TS-Λ3 // LABS SUBSTRATE [v1.8.2]
- * 4-Tier Forensic Evolution Descriptions.
+ * 4-Tier Forensic Evolution Descriptions aligned with C4 narrative.
  */
 export const Labs: React.FC = () => {
   const tiers = [
@@ -11,28 +11,28 @@ export const Labs: React.FC = () => {
       id: "tier-1",
       title: "Tier I: Sentinel Protocol",
       icon: Shield,
-      desc: "The core governance engine managing the forensic evolution of creative substrates.",
+      desc: "The core governance engine managing the forensic evolution of creative substrates. All intent is governed by high-fidelity TypeScript constraint sets.",
       color: "text-white"
     },
     {
       id: "tier-2",
-      title: "Tier II: The Elders & Divisions",
+      title: "Tier II: THE ELDERS & DIVISIONS",
       icon: Cpu,
-      desc: "The Advisory triad bridging strategic intent with operational System 3 divisions.",
+      desc: "The Advisory triad (Perplexity, Gemini, Sentinel) bridging strategic intent with operational System 3 divisions (Creative, Art, Video, Dev).",
       color: "text-slate-200"
     },
     {
       id: "tier-3",
-      title: "Tier III: The Forge",
+      title: "Tier III: THE FORGE",
       icon: Zap,
-      desc: "Internal Intelligence Lab (Jules) staging specialized modules (IKON/Logo) for graduation.",
+      desc: "Internal Intelligence Lab (Jules) staging specialized modules (IKON, Logo, Video) in Firebase Studio for production graduation.",
       color: "text-slate-400"
     },
     {
       id: "tier-4",
-      title: "Tier IV: Client Instances",
+      title: "Tier IV: CLIENT INSTANCES",
       icon: Globe,
-      desc: "Isolated sovereign clones (Labyrinth/MYAUDIT) deployed for external governance.",
+      desc: "Isolated sovereign clones (Labyrinth, MYAUDIT) deployed as standalone DASHBOARD-MAINSITE instances for external governance.",
       color: "text-slate-500"
     }
   ];

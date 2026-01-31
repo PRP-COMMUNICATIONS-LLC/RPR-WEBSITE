@@ -77,7 +77,7 @@ export const MermaidViewer: React.FC<MermaidViewerProps> = ({
         }
 
         // Generate unique ID for this diagram
-        const id = `mermaid-svg-${Date.now()}`;
+        const id = `mermaid-svg-${Math.random().toString(36).substr(2, 9)}-${Date.now()}`;
         
         // Render the diagram to an SVG string
         const { svg } = await mermaid.default.render(id, definition);
