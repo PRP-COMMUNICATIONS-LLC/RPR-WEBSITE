@@ -5,11 +5,11 @@
   "targets": {
     "rpr-corporate-site": {
       "hosting": {
-        "main": [
-          "rpr-corporate-site"
-        ],
         "rpr-corporate-site": [
           "www.rprcomms.com"
+        ],
+        "main": [
+          "rpr-corporate-site"
         ]
       }
     }

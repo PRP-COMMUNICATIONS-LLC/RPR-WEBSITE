@@ -1,43 +1,24 @@
 #!/bin/bash
-# TS-Λ3 | Harbor A Deployment Strike v1.5.0 [Yarn]
-# Objective: Authoritative execution for Mothership only.
-# Package Manager: Yarn (Homebrew-linked)
-# RECTIFIED: Portable ROOT_PATH for Mac Studio (works regardless of folder relocation)
+# RPR-WEBSITE STRIKE v1.7.0 | PHASE 0
+# AUTHORITY: hello@butterdime.com
+# TARGET: rpr-corporate-site (Mothership)
 
-set -euo pipefail
+set -e
 
-# RECTIFIED FOR MAC STUDIO: Portable path calculation
-ROOT_PATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-cd "$ROOT_PATH"
+echo "📡 STEP 1: LOCKING PROJECT CONTEXT..."
+firebase use rpr-corporate-site
 
-echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-echo "  INITIATING HARBOR A DEPLOYMENT STRIKE"
-echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo "🏗️ STEP 2: INITIATING PRODUCTION BUILD [SG-CANONICAL-2026]..."
+npm run build
 
-# 1. Dependency Check
-if [ ! -d "node_modules" ]; then
-    echo "[INFO] node_modules missing. Running yarn install..."
-    yarn install
-fi
+echo "🔍 STEP 3: PRE-DEPLOYMENT TARGET VERIFICATION..."
+# Ensuring 'main' alias is locked to the physical site ID
+firebase target:apply hosting main rpr-corporate-site
 
-# 2. Production Build
-echo "[INFO] Building Mothership substrate..."
-yarn build
+echo "🚢 STEP 4: DEPLOYING MOTHERSHIP..."
+# Shipping strictly to the 'main' target
+firebase deploy --only hosting:main
 
-# 3. Target Latching (Safety check)
-if [ -f "Scripts/latch-targets.sh" ]; then
-    chmod +x Scripts/latch-targets.sh
-    ./Scripts/latch-targets.sh
-fi
-
-# 4. Deployment Strike (Singapore Only)
-echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-echo "  DEPLOYING TO SINGAPORE (asia-southeast1)"
-echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-npx firebase-tools deploy --only hosting:main --project rpr-corporate-site
-
-echo ""
-echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-echo "  ✅ DEPLOYMENT COMPLETE: HARBOR A MOTHERSHIP LATCHED"
-echo "  URL: https://rprcomms.com"
-echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo "✅ PHASE 0 COMPLETE."
+echo "🔗 APEX: https://rprcomms.com"
+echo "🔗 WWW:  https://www.rprcomms.com (Console-Managed Redirect)"
