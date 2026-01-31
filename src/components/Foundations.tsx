@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
+import { Shield, Users, Hammer, LayoutGrid } from 'lucide-react';
 import { MermaidViewer } from './MermaidViewer';
-import { THE_MOTHERSHIP } from '../data/theMothership';
+import { sentinelDiagrams } from '../c4-diagrams/C4DiagramDefinitions-Final';
 
 /**
- * TS-Λ3 // FOUNDATIONS [v2.2.0]
- * Classic accordion: identical rows, collapsed on load,
- * only one open at a time.
+ * TS-Λ3 // FOUNDATIONS [v1.8.2]
+ * Integrated interactive visualizer for the Foundations section.
+ * Note: DNA Pillars (3 pillars) logic is preserved in the first container block.
  */
 const foundations = [
   {
@@ -30,18 +31,30 @@ const foundations = [
 
 export const Foundations: React.FC = () => {
   const [openId, setOpenId] = useState<string | null>(null);
+  const [activeTab, setActiveTab] = useState<keyof typeof sentinelDiagrams>('l1_overwatch');
+
+  const tabs = [
+    { id: 'l1_overwatch', label: 'L1: Overwatch', icon: Shield },
+    { id: 'l2_elders', label: 'L2: Elders', icon: Users },
+    { id: 'l3_forge', label: 'L3: Forge', icon: Hammer },
+    { id: 'l4_instances', label: 'L4: Instances', icon: LayoutGrid }
+  ];
 
   return (
     <section id="foundations" className="bg-[#050505] border-b border-white/5 py-24 px-6 md:px-12">
       <div className="max-w-7xl mx-auto space-y-12">
-        <div className="space-y-4">
+        {/* Section Title */}
+        <div className="space-y-4 mb-16">
           <h2 className="text-white text-4xl md:text-6xl font-bold uppercase tracking-[-0.05em] font-sans">
             THE FOUNDATIONS
           </h2>
           <p className="text-primary font-mono tracking-[0.2em] text-sm uppercase">The DNA Pillars</p>
         </div>
 
-        <div className="grid gap-6">
+        <div className="grid gap-6 mb-24">
+          <p className="text-slate-400 font-mono text-xs uppercase tracking-widest mb-4">
+            [ DNA PILLARS // AUTHORITATIVE MAPPING ]
+          </p>
           {foundations.map((item) => (
             <div key={item.id} className="border-b border-zinc-800 pb-6 group">
               <button
@@ -81,21 +94,39 @@ export const Foundations: React.FC = () => {
           ))}
         </div>
 
-        <div className="mt-24 pt-24 border-t border-white/5">
-          <div className="space-y-6 mb-12">
-            <h3 className="text-white text-3xl md:text-5xl font-bold uppercase tracking-[-0.05em] font-sans">
-              THE MOTHERSHIP
-            </h3>
-            <p className="text-primary text-xs font-bold uppercase tracking-widest">
-              System Architecture
-            </p>
-            <p className="text-white/50 text-lg max-w-2xl leading-relaxed">
-              The foundational pillars sit atop this sovereign governance structure.
-            </p>
-          </div>
+        {/* 🛰️ 2. ARCHITECTURAL INJECTION (THE MOTHERSHIP SUBSTRATE) */}
+        <div className="mt-16 border-t border-slate-800/40 pt-20">
+          <header className="mb-12">
+            <span className="text-sky-500 font-mono text-[10px] uppercase tracking-[0.5em] block mb-4">
+              Phase 1 // The Foundations
+            </span>
+            <h2 className="text-4xl md:text-6xl font-black text-white uppercase tracking-tighter italic">
+              THE <span className="text-sky-500">MOTHERSHIP</span> SUBSTRATE
+            </h2>
+          </header>
 
-          <div className="rounded-2xl border border-white/10 bg-white/5 p-6 overflow-x-auto">
-            <MermaidViewer definition={THE_MOTHERSHIP} />
+          <div className="bg-[#080808] rounded-[2.5rem] border border-slate-800/50 p-8 md:p-12 shadow-2xl">
+            <nav className="flex flex-wrap gap-2 mb-10 bg-slate-900/30 p-2 rounded-2xl border border-slate-800/40">
+              {tabs.map((tab) => (
+                <button
+                  key={tab.id}
+                  onClick={() => setActiveTab(tab.id as any)}
+                  className={`flex-1 min-w-[120px] py-4 rounded-xl transition-all duration-500 flex flex-col items-center gap-1.5 ${activeTab === tab.id ? 'bg-sky-600 text-white shadow-lg' : 'text-slate-500 hover:bg-slate-800/30'
+                    }`}
+                >
+                  <tab.icon className="w-4 h-4" />
+                  <span className="text-[10px] font-black uppercase tracking-widest">{tab.label}</span>
+                </button>
+              ))}
+            </nav>
+            <div className="flex flex-col gap-2 mb-6 ml-2">
+              <h3 className="text-xl font-bold text-white uppercase">{sentinelDiagrams[activeTab].title}</h3>
+              <p className="text-slate-400 text-xs font-mono uppercase tracking-widest">{sentinelDiagrams[activeTab].description}</p>
+            </div>
+            <MermaidViewer
+              definition={sentinelDiagrams[activeTab].definition}
+              className="min-h-[450px]"
+            />
           </div>
         </div>
       </div>
