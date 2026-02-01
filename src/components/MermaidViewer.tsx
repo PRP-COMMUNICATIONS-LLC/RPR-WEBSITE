@@ -3,7 +3,7 @@ import mermaid from 'mermaid';
 
 /**
  * TS-Λ3 // MERMAID VIEWER [v1.8.7]
- * Resolution: Enforced Dark Mode authority and curve basis.
+ * Resolution: Enforced Dark Mode authority and curve basis initialization.
  */
 interface MermaidViewerProps {
   definition: string;
@@ -11,7 +11,11 @@ interface MermaidViewerProps {
   id?: string;
 }
 
-export const MermaidViewer: React.FC<MermaidViewerProps> = ({ definition, className = '', id = 'mermaid-id' }) => {
+export const MermaidViewer: React.FC<MermaidViewerProps> = ({
+  definition,
+  className = '',
+  id = `mermaid-${Math.random().toString(36).substr(2, 9)}`
+}) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -29,12 +33,16 @@ export const MermaidViewer: React.FC<MermaidViewerProps> = ({ definition, classN
             textColor: '#f1f5f9',
             fontFamily: 'Inter, sans-serif'
           },
-          flowchart: { curve: 'basis', padding: 20 }
+          flowchart: {
+            curve: 'basis',
+            padding: 20,
+            useMaxWidth: true
+          }
         });
         const { svg } = await mermaid.render(id, definition);
         if (containerRef.current) containerRef.current.innerHTML = svg;
       } catch (err) {
-        console.error('Render Error:', err);
+        console.error('Mermaid Render Error:', err);
       } finally {
         setIsLoading(false);
       }
@@ -44,8 +52,18 @@ export const MermaidViewer: React.FC<MermaidViewerProps> = ({ definition, classN
 
   return (
     <div className={`w-full overflow-hidden ${className}`}>
-      {isLoading && <div className="h-80 flex items-center justify-center text-sky-500 font-mono text-[10px] uppercase tracking-widest animate-pulse">Seating Authority...</div>}
-      <div ref={containerRef} className={isLoading ? 'hidden' : 'block'} />
+      {isLoading && (
+        <div className="h-80 flex flex-col items-center justify-center bg-black/20 rounded-3xl">
+          <div className="w-8 h-8 border-t-2 border-sky-500 rounded-full animate-spin mb-4"></div>
+          <p className="text-sky-500/60 font-mono text-[10px] uppercase tracking-widest animate-pulse">
+            Seating Authority...
+          </p>
+        </div>
+      )}
+      <div
+        ref={containerRef}
+        className={isLoading ? 'hidden' : 'block transition-all duration-1000'}
+      />
     </div>
   );
 };

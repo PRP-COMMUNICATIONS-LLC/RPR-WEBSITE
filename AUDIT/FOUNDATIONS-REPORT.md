@@ -169,3 +169,18 @@ Action: Seating v1.8.5 Payloads.
 - **BUILD_SMOKE_TEST:** `npm run build` PASSED.
 
 Marker: [2026-02-01 13:15] // JULES // STRIKE COMPLETE. BRAND INTEGRITY RESTORED.
+
+## [2026-01-31 23:55] // MISSION: SURGICAL REPAIR & CONFLICT RESOLUTION (v1.8.7)
+**Audit ID:** STRIKE-v1.8.7-CONFLICT-RESOLVED
+**Status:** RESOLVED
+**Action:** Enforced v1.8.7 substrate across the Mothership.
+**Resolutions:**
+1. **Foundations.tsx**: Seated DNA Pillars Accordion + Integrated SentinelVisualizer. Legacy static diagrams purged.
+2. **Labs.tsx**: Seated 4-Tier graduation narrative (SENTINEL -> ELDERS -> FORGE -> CLIENT).
+3. **MermaidViewer.tsx**: Enforced Dark Mode authority and curve basis initialization.
+4. **Header.tsx**: Canonical labels locked and semantic navigation restored.
+5. **Design Tokens**: Standardized py-24 padding and alternating background colors (#050505 vs #020617) across the entire homepage.
+6. **Mobile Substrate**: Locked mobile overlay to bg-slate-950/60.
+7. **Hero Substrate**: ASK OLLIE icon seated as 'smart_toy'.
+
+**Forensic Signature:** hello@butterdime.com // TS-Λ3

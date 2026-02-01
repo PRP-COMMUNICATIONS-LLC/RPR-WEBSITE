@@ -4,7 +4,7 @@ import { ShieldAlert, Activity, Fingerprint } from 'lucide-react';
 /**
  * TS-Λ3 // OVERWATCH SUBSTRATE [v1.8.7]
  * Mission: Align style tokens with THE FOUNDATIONS and LABS.
- * Style: py-24, bg-[#050505], font-black italic headers.
+ * Style: py-24, bg-[#050505], font-black italic headers, rounded-[2.5rem].
  */
 export const Overwatch: React.FC = () => {
   return (
@@ -34,7 +34,7 @@ export const Overwatch: React.FC = () => {
                 { icon: Fingerprint, label: "Identity Latch" },
                 { icon: ShieldAlert, label: "Sovereign Proxy" }
               ].map((item, i) => (
-                <div key={i} className="p-6 rounded-[2rem] bg-slate-900/10 border border-slate-800 flex items-center gap-4 group hover:border-red-500/30 transition-all duration-500">
+                <div key={i} className="p-6 rounded-[2.5rem] bg-slate-900/10 border border-slate-800 flex items-center gap-4 group hover:border-red-500/30 transition-all duration-700">
                   <item.icon className="w-5 h-5 text-red-500 group-hover:scale-110 transition-transform" />
                   <span className="text-[10px] font-black uppercase tracking-widest text-slate-300">{item.label}</span>
                 </div>
