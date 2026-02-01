@@ -12,9 +12,9 @@ import { Suspense, lazy } from "react";
 const HexGrid = lazy(() => import("./components/background/HexGrid"));
 
 /**
- * TS-Λ3 // ROUTING SUBSTRATE [v5.1.0]
- * SPA routing with redirects for /about and /contact
- * Navigation: BackToTop node added for mobile UX enhancement
+ * TS-Λ3 // ROUTING SUBSTRATE [v1.8.3]
+ * Bugfix: pt-20 alignment for v1.8.3 header (80px).
+ * SPA routing with redirects for /about and /contact.
  */
 export default function App() {
   return (
@@ -27,7 +27,7 @@ export default function App() {
             </Suspense>
             <div className="relative z-10">
               <Header />
-              <main className="pt-[108px] pb-[70px]">
+              <main className="pt-20 pb-[70px]">
                 <Routes>
                   <Route path="/" element={<Home />} />
                   {/* Redirect /about to #foundations anchor on home */}

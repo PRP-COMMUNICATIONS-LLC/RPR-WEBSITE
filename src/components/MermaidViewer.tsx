@@ -1,127 +1,69 @@
 import React, { useEffect, useRef, useState } from 'react';
+import mermaid from 'mermaid';
 
+/**
+ * TS-Λ3 // MERMAID VIEWER [v1.8.7]
+ * Resolution: Enforced Dark Mode authority and curve basis initialization.
+ */
 interface MermaidViewerProps {
   definition: string;
   className?: string;
+  id?: string;
 }
 
-/**
- * TS-Λ3 // MERMAID VIEWER [v6.7.0]
- * Renders Mermaid.js diagrams with dark theme support
- * Enhanced error handling and initialization
- */
-export const MermaidViewer: React.FC<MermaidViewerProps> = ({ 
-  definition, 
-  className = '' 
+export const MermaidViewer: React.FC<MermaidViewerProps> = ({
+  definition,
+  className = '',
+  id = `mermaid-${Math.random().toString(36).substr(2, 9)}`
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-  const initializedRef = useRef(false);
 
   useEffect(() => {
-    const renderMermaid = async () => {
-      if (!containerRef.current) return;
-
+    const render = async () => {
+      if (!containerRef.current || !definition.trim()) return;
       try {
-        // Dynamically import mermaid
-        const mermaid = await import('mermaid');
-        
-        // Initialize mermaid only once (singleton pattern)
-        if (!initializedRef.current) {
-          mermaid.default.initialize({
-            startOnLoad: false,
-            theme: 'dark',
-            themeVariables: {
-              primaryColor: '#00E0FF',
-              primaryTextColor: '#FFFFFF',
-              primaryBorderColor: '#1A1A1A',
-              lineColor: '#64748B',
-              secondaryColor: '#0A0A0A',
-              tertiaryColor: '#050505',
-              background: '#0A0A0A',
-              mainBkg: '#0A0A0A',
-              secondBkg: '#050505',
-              textColor: '#FFFFFF',
-              secondaryTextColor: '#64748B',
-              tertiaryTextColor: '#71717a',
-              secondaryBorderColor: '#27272a',
-              tertiaryBorderColor: '#3f3f46',
-              noteBkgColor: '#0A0A0A',
-              noteTextColor: '#FFFFFF',
-              noteBorderColor: '#1A1A1A',
-              actorBorder: '#1A1A1A',
-              actorBkg: '#0A0A0A',
-              actorTextColor: '#FFFFFF',
-              actorLineColor: '#64748B',
-              signalColor: '#FFFFFF',
-              signalTextColor: '#FFFFFF',
-              labelBoxBkgColor: '#0A0A0A',
-              labelBoxBorderColor: '#1A1A1A',
-              labelTextColor: '#FFFFFF',
-              loopTextColor: '#FFFFFF',
-              activationBorderColor: '#00E0FF',
-              activationBkgColor: '#0A0A0A',
-              sequenceNumberColor: '#FFFFFF',
-            },
-            flowchart: {
-              useMaxWidth: true,
-              htmlLabels: true,
-              curve: 'basis',
-              padding: 20,
-            },
-            // RECTIFIED: Removed invalid 'graph' property
-            // The 'graph TB' syntax in the definition string is handled automatically by Mermaid
-          });
-          initializedRef.current = true;
-        }
-
-        // Generate unique ID for this diagram
-        const id = `mermaid-svg-${Date.now()}`;
-        
-        // Render the diagram to an SVG string
-        const { svg } = await mermaid.default.render(id, definition);
-
-        if (containerRef.current) {
-          containerRef.current.innerHTML = svg;
-        }
-
-        setIsLoading(false);
+        setIsLoading(true);
+        mermaid.initialize({
+          startOnLoad: false,
+          theme: 'dark',
+          themeVariables: {
+            background: '#0a0a0a',
+            primaryColor: '#3b82f6',
+            textColor: '#f1f5f9',
+            fontFamily: 'Inter, sans-serif'
+          },
+          flowchart: {
+            curve: 'basis',
+            padding: 20,
+            useMaxWidth: true
+          }
+        });
+        const { svg } = await mermaid.render(id, definition);
+        if (containerRef.current) containerRef.current.innerHTML = svg;
       } catch (err) {
-        console.error('Mermaid rendering error:', err);
-        setError(err instanceof Error ? err.message : 'Failed to render diagram');
+        console.error('Mermaid Render Error:', err);
+      } finally {
         setIsLoading(false);
       }
     };
-
-    renderMermaid();
-  }, [definition]);
-
-  if (error) {
-    return (
-      <div className={`text-center py-8 text-zinc-500 ${className}`}>
-        <p className="text-sm font-mono uppercase tracking-wider">Diagram unavailable</p>
-        <p className="text-xs mt-2 text-zinc-600">{error}</p>
-        <p className="text-xs mt-2 text-zinc-700">Ensure mermaid package is installed: yarn add mermaid</p>
-      </div>
-    );
-  }
+    render();
+  }, [definition, id]);
 
   return (
-    <div className={className}>
+    <div className={`w-full overflow-hidden ${className}`}>
       {isLoading && (
-        <div className="flex items-center justify-center py-12">
-          <div className="animate-pulse text-cyan-400 font-mono text-sm uppercase tracking-wider">
-            Loading diagram...
-          </div>
+        <div className="h-80 flex flex-col items-center justify-center bg-black/20 rounded-3xl">
+          <div className="w-8 h-8 border-t-2 border-sky-500 rounded-full animate-spin mb-4"></div>
+          <p className="text-sky-500/60 font-mono text-[10px] uppercase tracking-widest animate-pulse">
+            Seating Authority...
+          </p>
         </div>
       )}
-      <div 
-        ref={containerRef} 
-        style={{ minHeight: isLoading ? '200px' : 'auto' }}
-      >
-        {/* Mermaid will inject the SVG here */}
-      </div>
+      <div
+        ref={containerRef}
+        className={isLoading ? 'hidden' : 'block transition-all duration-1000'}
+      />
     </div>
   );
 };
