@@ -3,11 +3,11 @@ import React from 'react';
 /**
  * TS-Λ3 // TAB NAVIGATION SUBSTRATE [v1.8.2]
  * Mission: Canonical Tab Header Locking.
- * Constraints: labels are hard-coded ALL CAPS and immutable.
+ * Correction: Labels are immutable string literals, exactly matching prompt requirement.
  */
 export const NavigationRail: React.FC<{ activeId: string }> = ({ activeId }) => {
 
-  // CANONICAL LABELS (MISSION: Hard-coded string overrides)
+  // CANONICAL LABELS (MISSION: Hard-coded string overrides, no mutations)
   const canonicalTabs = [
     { id: 'foundations', label: 'THE FOUNDATIONS' },
     { id: 'methods', label: 'THE METHODS' },
@@ -16,7 +16,7 @@ export const NavigationRail: React.FC<{ activeId: string }> = ({ activeId }) => 
   ];
 
   return (
-    <div className="w-full flex justify-center py-6 border-b border-white/5 bg-black/20 backdrop-blur-sm">
+    <div className="w-full flex justify-center py-8 border-b border-white/5 bg-black/20 backdrop-blur-md">
       <nav className="flex items-center gap-4 sm:gap-12">
         {canonicalTabs.map((tab) => (
           <button
