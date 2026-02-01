@@ -6,7 +6,18 @@ Port 5173 is in use, trying another one...
 Port 5174 is in use, trying another one...
 Port 5175 is in use, trying another one...
 
-  VITE v5.4.21  ready in 357 ms
+  VITE v5.4.21  ready in 937 ms
 
   ➜  Local:   http://localhost:5176/
   ➜  Network: use --host to expose
+3:36:15 AM [vite] page reload src/components/NavigationRail.tsx
+3:44:57 AM [vite] hmr update /src/components/Header.tsx, /src/styles/index.css
+3:45:09 AM [vite] hmr update /src/components/HomeHero.tsx, /src/styles/index.css
+3:45:20 AM [vite] hmr update /src/components/Labs.tsx, /src/styles/index.css
+3:45:28 AM [vite] hmr update /src/components/Foundations.tsx, /src/styles/index.css
+3:45:35 AM [vite] hmr update /src/components/Overwatch.tsx, /src/styles/index.css
+3:45:43 AM [vite] page reload src/components/Methods.tsx
+3:45:53 AM [vite] hmr update /src/components/Home.tsx, /src/styles/index.css
+3:48:16 AM [vite] hmr update /src/components/Foundations.tsx, /src/styles/index.css
+3:48:16 AM [vite] hmr update /src/components/Labs.tsx, /src/styles/index.css
+3:48:16 AM [vite] hmr update /src/components/MermaidViewer.tsx, /src/styles/index.css

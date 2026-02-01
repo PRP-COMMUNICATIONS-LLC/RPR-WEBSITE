@@ -1,9 +1,11 @@
 import React from 'react';
 
 /**
- * TS-Λ3 // TAB NAVIGATION SUBSTRATE [v1.8.2]
+ * TS-Λ3 // TAB NAVIGATION SUBSTRATE [v1.8.3]
+ * [GHOST // SEQUESTERED]
  * Mission: Canonical Tab Header Locking.
  * Correction: Labels are immutable string literals, exactly matching prompt requirement.
+ * Status: Unused in v1.8.3+, preserved for forensic record only.
  */
 export const NavigationRail: React.FC<{ activeId: string }> = ({ activeId }) => {
 
@@ -21,7 +23,7 @@ export const NavigationRail: React.FC<{ activeId: string }> = ({ activeId }) => 
         {canonicalTabs.map((tab) => (
           <button
             key={tab.id}
-            className={`text-[9px] sm:text-[10px] font-black tracking-[0.3em] uppercase transition-all relative py-2 ${
+            className={`text-[9px] sm:text-[10px] font-black tracking-[0.3em] transition-all relative py-2 ${
               activeId === tab.id ? 'text-sky-400' : 'text-slate-500 hover:text-slate-200'
             }`}
           >

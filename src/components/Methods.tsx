@@ -9,10 +9,10 @@ export interface IkonMeta {
 }
 
 /**
- * TS-Λ3 // THE METHODS // CLIENT LIFECYCLE [v8.2.0]
+ * TS-Λ3 // THE METHODS // CLIENT LIFECYCLE [v1.8.7]
  * Authoritative 5-Column IKON Grid: ASK → PAY → PLAN → PLAY → REPEAT
  * Typography Hierarchy: Stage Name (Primary) → Description (Secondary) → Subtitle (Tertiary)
- * Icon System: Material Symbols Variable Font (lightbulb, heart_check, layers, play_for_work, cycle)
+ * Icon System: Material Symbols Variable Font
  */
 export const Methods: React.FC = () => {
   const primaryIkons: IkonMeta[] = [
@@ -53,7 +53,7 @@ export const Methods: React.FC = () => {
     <section id="methods" className="bg-[#050505] py-24 px-6 md:px-12 border-t border-zinc-800">
       <div className="max-w-7xl mx-auto space-y-12">
         <div className="space-y-4">
-          <h2 className="text-white text-4xl md:text-6xl font-bold uppercase tracking-[-0.05em] font-sans">
+          <h2 className="text-white text-4xl md:text-6xl font-bold uppercase tracking-[-0.05em] font-sans italic">
             THE METHODS
           </h2>
           <p className="text-cyan-400 font-mono tracking-[0.2em] text-sm uppercase">CLIENT LIFECYCLE</p>
@@ -63,7 +63,7 @@ export const Methods: React.FC = () => {
           {primaryIkons.map((icon) => (
             <article
               key={icon.name}
-              className={`flex flex-col gap-3 rounded-xl border border-zinc-800 bg-[#0A0A0A] p-4 hover:border-white/20 transition-all ${icon.isRefiner ? 'relative overflow-hidden' : ''
+              className={`flex flex-col gap-3 rounded-[2rem] border border-zinc-800 bg-[#0A0A0A] p-6 hover:border-white/20 transition-all ${icon.isRefiner ? 'relative overflow-hidden' : ''
                 }`}
             >
               {/* Subtle cyan pulse for REPEAT refiner node */}

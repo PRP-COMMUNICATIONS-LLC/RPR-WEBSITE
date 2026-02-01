@@ -2,13 +2,13 @@ import React from 'react';
 import { ShieldAlert, Activity, Fingerprint } from 'lucide-react';
 
 /**
- * TS-Λ3 // OVERWATCH SUBSTRATE [v1.8.2]
+ * TS-Λ3 // OVERWATCH SUBSTRATE [v1.8.7]
  * Mission: Align style tokens with THE FOUNDATIONS and LABS.
- * Constraints: py-24, bg-[#050505], font-black italic headers.
+ * Style: py-24, bg-[#050505], font-black italic headers.
  */
 export const Overwatch: React.FC = () => {
   return (
-    <section id="overwatch" className="py-24 relative overflow-hidden bg-[#050505]">
+    <section id="overwatch" className="py-24 relative overflow-hidden bg-[#050505] border-t border-white/5">
       <div className="max-w-7xl mx-auto px-6">
         
         {/* SECTION HEADER: Re-aligned to Foundations design logic */}
@@ -48,7 +48,7 @@ export const Overwatch: React.FC = () => {
               <Activity className="w-8 h-8 text-red-500 animate-pulse mb-8" />
               <div>
                 <span className="text-[9px] font-mono text-red-400 uppercase tracking-widest block mb-2">Authority Status // Active</span>
-                <p className="text-2xl font-bold text-white uppercase italic tracking-tight">Sovereign Gatekeeper</p>
+                <p className="text-2xl font-bold text-white uppercase italic tracking-tight leading-none">Sovereign Gatekeeper</p>
               </div>
             </div>
           </div>

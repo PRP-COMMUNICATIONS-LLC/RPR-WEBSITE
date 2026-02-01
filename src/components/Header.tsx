@@ -1,15 +1,14 @@
 import React, { useState } from 'react';
 import { Menu, X, Globe } from 'lucide-react';
-import { Link } from 'react-router-dom';
 
 /**
- * TS-Λ3 // HEADER SUBSTRATE [v1.8.3]
- * Bugfix: Restored Link components for SEO/Routing.
- * Mission: Hard-locked labels + 60% Mobile Overlay.
+ * TS-Λ3 // HEADER SUBSTRATE [v1.8.7]
+ * Bugfix: Logo Rollback & Semantic Anchor Strike.
+ * Mission: Restore canonical RPRCOMMS wordmark + 60% Mobile Overlay.
  * Authority: hello@butterdime.com
  */
 
-const CANONICAL_NAV = [
+const NAV_ITEMS = [
   { id: 'foundations', label: 'THE FOUNDATIONS' },
   { id: 'methods', label: 'THE METHODS' },
   { id: 'overwatch', label: 'THE OVERWATCH' },
@@ -23,28 +22,26 @@ export const Header: React.FC = () => {
     <header className="fixed top-0 left-0 right-0 z-[100] bg-black/40 backdrop-blur-md border-b border-white/5">
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
 
-        {/* 1. LOGO SUBSTRATE (v1.8.2 Aligned) */}
-        <Link to="/" className="flex items-center gap-3 h-full group">
+        {/* 1. LOGO SUBSTRATE (v1.8.7: Rollback to Canonical) */}
+        <a href="/" className="flex items-center gap-3 h-full group">
           <div className="flex items-center justify-center p-1.5 bg-slate-900 border border-slate-800 rounded-lg group-hover:border-sky-500/50 transition-colors">
             <img
               src="/rpr-logo-icon.svg"
               alt="RPR LOGO"
-              className="w-6 h-6 sm:w-10 sm:h-10 transition-all duration-300"
+              className="w-6 h-6 sm:w-8 sm:h-8 transition-all duration-300"
+              onError={(e) => (e.currentTarget.src = "https://raw.githubusercontent.com/lucide-react/lucide/main/icons/shield.svg")}
             />
           </div>
-          <div className="hidden sm:flex flex-col">
-            <span className="text-lg font-black text-white italic tracking-tighter uppercase leading-none group-hover:text-sky-500 transition-colors">
+          <div className="flex items-center">
+            <span className="text-xl font-black text-white italic tracking-tighter uppercase leading-none group-hover:text-sky-500 transition-colors">
               RPR<span className="text-sky-500">COMMS</span>
             </span>
-            <span className="text-[7px] font-mono text-slate-500 uppercase tracking-widest mt-1">
-              Sovereign Identity // v1.8.3
-            </span>
           </div>
-        </Link>
+        </a>
 
-        {/* 2. DESKTOP NAV (v1.8.3: Restored Links) */}
+        {/* 2. DESKTOP NAV (Semantic anchors + Locked Labels) */}
         <nav className="hidden md:flex items-center gap-8">
-          {CANONICAL_NAV.map((item) => (
+          {NAV_ITEMS.map((item) => (
             <a
               key={item.id}
               href={`#${item.id}`}
@@ -66,7 +63,7 @@ export const Header: React.FC = () => {
         </button>
       </div>
 
-      {/* 4. MOBILE OVERLAY (v1.8.3: 60% Transparency Locked) */}
+      {/* 4. MOBILE OVERLAY (60% Transparency Locked) */}
       {isMenuOpen && (
         <div className="fixed inset-0 z-40 md:hidden flex flex-col items-center justify-center animate-in fade-in duration-300">
           <div
@@ -75,7 +72,7 @@ export const Header: React.FC = () => {
           />
 
           <nav className="relative z-50 flex flex-col items-center gap-10">
-            {CANONICAL_NAV.map((item) => (
+            {NAV_ITEMS.map((item) => (
               <a
                 key={item.id}
                 href={`#${item.id}`}

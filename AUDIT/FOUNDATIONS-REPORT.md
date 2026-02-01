@@ -150,3 +150,22 @@ Action: Seating v1.8.3 Payloads.
 - **BUILD_SMOKE_TEST:** `npm run build` PASSED.
 
 Marker: [2026-02-01 12:15] // JULES // STRIKE COMPLETE. SUBSTRATE STABILIZED.
+
+---
+
+🔍 BUGFIX STRIKE: HERO & LOGO CORRECTION (v1.8.5)
+Mission ID: BUGFIX-HERO-20260201-v1.8.5
+Authority: hello@butterdime.com
+
+[2026-02-01 13:00] // BUGFIX-HERO-20260201-v1.8.5
+Agent: Jules
+Action: Seating v1.8.5 Payloads.
+
+🧪 STRIKE_LOG_ENTRY
+- **INDEX_HTML:** Material Symbols stylesheet and font weights authorized.
+- **HOME_HERO:** v1.8.4 SEATED. `smart_toy` icon corrected for Ask Ollie interface.
+- **HOME_SUBSTRATE:** v1.8.4 HIERARCHY LATCHED. `ProductInventory` stubbed to support new sequence.
+- **HEADER:** v1.8.5 LOGO ROLLBACK. Purged versioned subtitle to restore canonical wordmark.
+- **BUILD_SMOKE_TEST:** `npm run build` PASSED.
+
+Marker: [2026-02-01 13:15] // JULES // STRIKE COMPLETE. BRAND INTEGRITY RESTORED.
