@@ -1,197 +1,61 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Cpu, Shield, Zap, Globe } from 'lucide-react';
 
 /**
- * TS-Λ3 // THE LABS // 4-TIER MASTER HIERARCHY [v9.2.0]
- * RECTIFIED: Multi-tier tactical stack with White-to-Grey color protocol
- * TIER I: Apex Governance (THE SENTINEL PROTOCOL)
- * TIER II: The Elders (Architect, Engineer, Sentinel)
- * TIER III: Inhouse Products (RPR VERIFY, OLLIE, RPR KONTROL + Clipboard Latch)
- * TIER IV: Client Web Solutions (MYAUDIT)
+ * TS-Λ3 // LABS SUBSTRATE [v1.8.7]
+ * Resolution: Aligned with 4-Tier graduation narrative and Foundations styling.
+ * Alternating: bg-[#050505]
  */
-
 export const Labs: React.FC = () => {
-  const [copied, setCopied] = useState(false);
+  const tiers = [
+    {
+      id: "t1",
+      title: "Tier I: SENTINEL Protocol",
+      icon: Shield,
+      desc: "The core governance engine managing the forensic evolution of creative substrates."
+    },
+    {
+      id: "t2",
+      title: "Tier II: THE ELDERS",
+      icon: Cpu,
+      desc: "The Advisory triad bridging strategic intent with operational System 3 divisions."
+    },
+    {
+      id: "t3",
+      title: "Tier III: THE FORGE",
+      icon: Zap,
+      desc: "Internal Intelligence Lab staging specialized modules (IKON, Logo, Video) in Firebase Studio."
+    },
+    {
+      id: "t4",
+      title: "Tier IV: CLIENT INSTANCES",
+      icon: Globe,
+      desc: "Isolated sovereign clones (Labyrinth, MYAUDIT) deployed as standalone dashboard instances."
+    }
+  ];
 
-  const handleCopy = (e: React.MouseEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
-    navigator.clipboard.writeText("https://kontrol.rprcomms.com");
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000); // Reset state after 2s
-  };
   return (
-    <section id="labs" className="bg-black py-32 px-6 md:px-12 border-b border-zinc-800">
-      <div className="max-w-7xl mx-auto space-y-16">
-        {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
-          <div className="space-y-4">
-            <h2 className="text-white text-4xl md:text-6xl font-bold uppercase tracking-[-0.05em] font-sans">
-              THE LABS
-            </h2>
-            <p className="text-cyan-400 font-mono tracking-[0.2em] text-sm uppercase">
-              TECHNICAL INFRASTRUCTURE // THE OVERWATCH PROTOCOL
-            </p>
-          </div>
-
-          {/* Global Labs Action Indicator */}
-          <div className="flex items-center gap-3 px-4 py-2 bg-[#0A0A0A] border border-zinc-800 rounded-lg">
-            <span className="material-symbols-outlined text-white text-xl animate-pulse">
-              handyman
-            </span>
-            <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest">System Maintenance: Active</span>
-          </div>
-        </div>
-
-        <div className="space-y-16">
-          {/* TIER I: Apex Governance */}
-          <div className="space-y-6">
-            <article className="group relative flex flex-col justify-between p-8 bg-[#0A0A0A] border border-zinc-800 rounded-xl hover:border-white/20 transition-all">
-              <div className="space-y-6">
-                <div className="w-12 h-12 bg-black border border-zinc-800 rounded-xl flex items-center justify-center transition-all group-hover:border-white/20">
-                  <span className="material-symbols-outlined text-white text-2xl">
-                    all_inclusive
-                  </span>
-                </div>
-                <div className="space-y-2">
-                  <h4 className="text-white font-bold tracking-widest font-mono text-xs uppercase">THE SENTINEL PROTOCOL</h4>
-                  <p className="text-zinc-400 text-[10px] uppercase font-mono leading-relaxed tracking-tight">Real-time forensic monitoring and governance enforcement</p>
-                </div>
-              </div>
-              <div className="mt-8 flex items-center justify-between border-t border-zinc-900 pt-4">
-                <span className="text-[8px] font-mono text-cyan-600 tracking-widest">ACTIVE</span>
-              </div>
-            </article>
-          </div>
-
-          {/* TIER II: The Elders */}
-          <div className="space-y-6">
-            <h3 className="text-white text-xl font-bold uppercase tracking-widest font-mono">THE ELDERS</h3>
-            <div className="grid gap-4 md:grid-cols-3">
-              {[
-                { title: "THE ARCHITECT", icon: "chess_knight", desc: "Strategy & Governance Design", status: "ACTIVE" },
-                { title: "THE ENGINEER", icon: "chess_bishop", desc: "Technical Blueprints & Execution", status: "ACTIVE" },
-                { title: "THE SENTINEL", icon: "chess_rook", desc: "Enforcement & Forensic Monitoring", status: "ACTIVE" }
-              ].map((elder) => (
-                <article key={elder.title} className="group relative flex flex-col justify-between p-8 bg-[#0A0A0A] border border-zinc-800 rounded-xl hover:border-white/20 transition-all">
-                  <div className="space-y-6">
-                    <div className="w-12 h-12 bg-black border border-zinc-800 rounded-xl flex items-center justify-center transition-all group-hover:border-white/20">
-                      <span className="material-symbols-outlined text-white text-2xl">
-                        {elder.icon}
-                      </span>
-                    </div>
-                    <div className="space-y-2">
-                      <h4 className="text-white font-bold tracking-widest font-mono text-xs uppercase">{elder.title}</h4>
-                      <p className="text-zinc-400 text-[10px] uppercase font-mono leading-relaxed tracking-tight">{elder.desc}</p>
-                    </div>
-                  </div>
-                  <div className="mt-8 flex items-center justify-between border-t border-zinc-900 pt-4">
-                    <span className="text-[8px] font-mono text-cyan-600 tracking-widest">{elder.status}</span>
-                  </div>
-                </article>
-              ))}
+    <section id="labs" className="py-24 bg-[#050505] border-t border-white/5">
+      <div className="max-w-7xl mx-auto px-6">
+        <header className="mb-20 text-center">
+          <h2 className="text-5xl font-black text-white uppercase tracking-tighter italic mb-4">
+            PROTOTYPE <span className="text-sky-500">ENCLAVE</span>
+          </h2>
+          <p className="text-slate-500 font-mono text-[10px] uppercase tracking-[0.4em]">
+            Sovereign Evolution // Product Graduation Path
+          </p>
+        </header>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {tiers.map((t) => (
+            <div
+              key={t.id}
+              className="group bg-slate-900/10 border border-slate-800/50 p-8 rounded-[2.5rem] hover:border-sky-500/30 transition-all duration-700"
+            >
+              <t.icon className="w-6 h-6 text-sky-500 mb-6 group-hover:scale-110 transition-transform" />
+              <h3 className="text-lg font-bold uppercase mb-4 text-white">{t.title}</h3>
+              <p className="text-slate-400 text-sm leading-relaxed">{t.desc}</p>
             </div>
-          </div>
-
-          {/* TIER III: Inhouse Products */}
-          <div className="space-y-6">
-            <h3 className="text-white text-xl font-bold uppercase tracking-widest font-mono">INHOUSE PRODUCTS</h3>
-            <div className="grid gap-4 md:grid-cols-3">
-              {[
-                { title: "RPR VERIFY", icon: "verified_user", desc: "Identity verification substrate", status: "ACTIVE", link: null },
-                { title: "OLLIE", icon: "smart_toy", desc: "Sentinel AI Interface", status: "ACTIVE", link: "/#chat" },
-                { title: "RPR KONTROL", icon: "auto_awesome", desc: "Command Substrate", status: "THE MOTHERSHIP", link: "https://kontrol.rprcomms.com" }
-              ].map((product) => {
-                const isKontrol = product.title === "RPR KONTROL";
-                
-                const CardContent = (
-                  <article className={`group relative flex flex-col justify-between p-8 bg-[#0A0A0A] border border-zinc-800 rounded-xl hover:border-white/20 transition-all ${product.link ? 'cursor-pointer' : ''}`}>
-                    <div className="space-y-6">
-                      <div className="w-12 h-12 bg-black border border-zinc-800 rounded-xl flex items-center justify-center transition-all group-hover:border-white/20">
-                        <span className="material-symbols-outlined text-white text-2xl">
-                          {product.icon}
-                        </span>
-                      </div>
-                      <div className="space-y-2">
-                        <h4 className="text-white font-bold tracking-widest font-mono text-xs uppercase">{product.title}</h4>
-                        <p className="text-zinc-400 text-[10px] uppercase font-mono leading-relaxed tracking-tight">{product.desc}</p>
-                      </div>
-                    </div>
-                    <div className="mt-8 flex items-center justify-between border-t border-zinc-900 pt-4">
-                      <span className="text-[8px] font-mono text-cyan-600 tracking-widest">{product.status}</span>
-                      <div className="flex items-center gap-3">
-                        {isKontrol && (
-                          <button 
-                            onClick={handleCopy}
-                            className="flex items-center gap-2 px-3 py-1.5 bg-zinc-900 border border-zinc-800 rounded-lg hover:border-white/30 transition-all group/copy"
-                          >
-                            <span className="material-symbols-outlined text-xs text-zinc-500 group-hover/copy:text-white transition-colors">
-                              {copied ? 'done' : 'content_copy'}
-                            </span>
-                            <span className="text-[10px] font-mono text-zinc-500 group-hover/copy:text-white uppercase tracking-tighter transition-colors">
-                              {copied ? 'LATCHED' : 'COPY LATCH'}
-                            </span>
-                          </button>
-                        )}
-                        {product.link && !isKontrol && (
-                          <span className="material-symbols-outlined text-white text-sm opacity-0 group-hover:opacity-100 transition-opacity">
-                            arrow_forward
-                          </span>
-                        )}
-                        {isKontrol && (
-                          <span className="material-symbols-outlined text-white text-sm opacity-0 group-hover:opacity-100 transition-opacity">
-                            arrow_forward
-                          </span>
-                        )}
-                      </div>
-                    </div>
-                  </article>
-                );
-
-                if (product.link) {
-                  // Internal links (OLLIE) use regular anchor, external links (KONTROL) use target="_blank"
-                  const isExternal = product.link.startsWith('http');
-                  return isExternal ? (
-                    <a key={product.title} href={product.link} target="_blank" rel="noopener noreferrer" className="block h-full">
-                      {CardContent}
-                    </a>
-                  ) : (
-                    <a key={product.title} href={product.link} className="block h-full">
-                      {CardContent}
-                    </a>
-                  );
-                }
-                
-                return (
-                  <div key={product.title} className="h-full">
-                    {CardContent}
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-
-          {/* TIER IV: Client Web Solutions */}
-          <div className="space-y-6">
-            <h3 className="text-white text-xl font-bold uppercase tracking-widest font-mono">CLIENT WEB SOLUTIONS</h3>
-            <div className="grid gap-4 md:grid-cols-1">
-              <article className="group relative flex flex-col justify-between p-8 bg-[#0A0A0A] border border-zinc-800 rounded-xl hover:border-white/20 transition-all">
-                <div className="space-y-6">
-                  <div className="w-12 h-12 bg-black border border-zinc-800 rounded-xl flex items-center justify-center transition-all group-hover:border-white/20">
-                    <span className="material-symbols-outlined text-white text-2xl">
-                      database
-                    </span>
-                  </div>
-                  <div className="space-y-2">
-                    <h4 className="text-white font-bold tracking-widest font-mono text-xs uppercase">MYAUDIT</h4>
-                    <p className="text-zinc-400 text-[10px] uppercase font-mono leading-relaxed tracking-tight">Client audit and verification platform</p>
-                  </div>
-                </div>
-                <div className="mt-8 flex items-center justify-between border-t border-zinc-900 pt-4">
-                  <span className="text-[8px] font-mono text-cyan-600 tracking-widest">ACTIVE</span>
-                </div>
-              </article>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>

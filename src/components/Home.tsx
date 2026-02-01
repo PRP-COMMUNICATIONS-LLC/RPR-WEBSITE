@@ -1,28 +1,36 @@
 import React from 'react';
-import { Hero } from "./Hero";
-import { Foundations } from "./Foundations";
-import { Methods } from "./Methods";
-import { Process } from "./Process";
-import { Overwatch } from "./Overwatch";
-import { Labs } from "./Labs";
-import { AskOllie } from "./AskOllie";
+import { HomeHero } from './HomeHero';
+import { Foundations } from './Foundations';
+import { Methods } from './Methods';
+import { Labs } from './Labs';
+import { ProductInventory } from './ProductInventory';
+import { Overwatch } from './Overwatch';
 
 /**
- * TS-Λ3 // HOME PAGE [v5.2.0]
- * Contains all main sections of the Mothership
- * Navigation: FOUNDATIONS → METHODS → PROCESS → OVERWATCH → LABS
- * Engineering Cycle: Foundations → Methods → Process → Overwatch (strategic closure)
+ * TS-Λ3 // HOME SUBSTRATE [v1.8.7]
+ * Seating: HomeHero -> Foundations -> Methods -> Labs -> Product Inventory -> Overwatch.
+ * Authority: hello@butterdime.com
  */
 export const Home: React.FC = () => {
   return (
-    <>
-      <Hero />
+    <div className="flex flex-col">
+      {/* 🚀 HERO SUBSTRATE (v1.8.7 LATCHED) */}
+      <HomeHero />
+
+      {/* 🏛️ ARCHITECTURAL SUBSTRATE (DNA Pillars + Bible) */}
       <Foundations />
+
+      {/* 📈 OPERATIONAL SUBSTRATE (The Methods) */}
       <Methods />
-      <Process />
-      <Overwatch />
+
+      {/* 🧪 PROTOTYPE ENCLAVE (4-Tier Labs) */}
       <Labs />
-      <AskOllie />
-    </>
+
+      {/* 📦 PRODUCT INVENTORY (Level 4 Graduation) */}
+      <ProductInventory />
+
+      {/* 🛡️ STRATEGIC COMMAND */}
+      <Overwatch />
+    </div>
   );
 };

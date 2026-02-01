@@ -2,9 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 /**
- * TS-Λ3 // GLOBAL FOOTER [v5.0.0]
+ * TS-Λ3 // GLOBAL FOOTER [v1.8.7]
  * IMPLEMENTATION: Three-row governance layout.
  * ALIGNMENT: Harbor A Mothership (rprcomms.com).
+ * BUGFIX: Semantic Anchor alignment with Header.
  */
 export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -13,13 +14,13 @@ export const Footer: React.FC = () => {
     <footer className="w-full bg-[#050505] border-t border-white/5 pt-16 pb-8 px-6 md:px-12 mt-20">
       <div className="max-w-7xl mx-auto flex flex-col gap-12">
 
-        {/* Row 1: Primary Navigation */}
+        {/* Row 1: Primary Navigation (Aligned with Header) */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
           <nav className="flex flex-wrap gap-x-8 gap-y-4 text-[10px] font-bold tracking-[0.2em] uppercase text-zinc-500">
-            <a href="/#foundations" className="hover:text-white transition-colors">Foundations</a>
-            <a href="/#methods" className="hover:text-white transition-colors">Methods</a>
-            <a href="/#process" className="hover:text-white transition-colors">Process</a>
-            <a href="/#overwatch" className="hover:text-white transition-colors">Overwatch</a>
+            <a href="/#foundations" className="hover:text-white transition-colors">THE FOUNDATIONS</a>
+            <a href="/#methods" className="hover:text-white transition-colors">THE METHODS</a>
+            <a href="/#overwatch" className="hover:text-white transition-colors">THE OVERWATCH</a>
+            <a href="/#labs" className="hover:text-white transition-colors">LABS</a>
           </nav>
         </div>
 

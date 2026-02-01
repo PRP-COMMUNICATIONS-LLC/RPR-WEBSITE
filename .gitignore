@@ -1,23 +1,19 @@
-*.rtf
-
-# ========================================
-# HARBOR A MOTHERSHIP - GIT IGNORE MANIFEST
-# ========================================
-
-# Manifest Dependencies
+# Dependency Directories
 node_modules/
-.pnp
-.pnp.js
-
-# Testing
-coverage/
-
-# Production Build Output
 dist/
-build/
+
+# Logs & Debris
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+dev_server.log
+
+# Environment & OS
+.env
+.env.local
+.DS_Store
 
 # IDE / System Metadata
-.DS_Store
 .vscode/
 !.vscode/extensions.json
 .idea/

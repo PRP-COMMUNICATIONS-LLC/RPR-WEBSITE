@@ -9,10 +9,11 @@ export interface IkonMeta {
 }
 
 /**
- * TS-Λ3 // THE METHODS // CLIENT LIFECYCLE [v8.2.0]
+ * TS-Λ3 // THE METHODS // CLIENT LIFECYCLE [v1.8.7]
  * Authoritative 5-Column IKON Grid: ASK → PAY → PLAN → PLAY → REPEAT
  * Typography Hierarchy: Stage Name (Primary) → Description (Secondary) → Subtitle (Tertiary)
- * Icon System: Material Symbols Variable Font (lightbulb, heart_check, layers, play_for_work, cycle)
+ * Icon System: Material Symbols Variable Font
+ * Alignment: py-24, bg-[#020617], rounded-[2.5rem]
  */
 export const Methods: React.FC = () => {
   const primaryIkons: IkonMeta[] = [
@@ -50,47 +51,44 @@ export const Methods: React.FC = () => {
   ];
 
   return (
-    <section id="methods" className="bg-[#050505] py-24 px-6 md:px-12 border-t border-zinc-800">
+    <section id="methods" className="bg-[#020617] py-24 px-6 md:px-12 border-t border-white/5">
       <div className="max-w-7xl mx-auto space-y-12">
         <div className="space-y-4">
-          <h2 className="text-white text-4xl md:text-6xl font-bold uppercase tracking-[-0.05em] font-sans">
-            THE METHODS
+          <h2 className="text-white text-4xl md:text-6xl font-black text-white uppercase tracking-tighter italic leading-none">
+            THE <span className="text-sky-500 font-black">METHODS</span>
           </h2>
-          <p className="text-cyan-400 font-mono tracking-[0.2em] text-sm uppercase">CLIENT LIFECYCLE</p>
+          <p className="text-sky-500 font-mono tracking-[0.4em] text-[10px] uppercase">CLIENT LIFECYCLE</p>
         </div>
 
-        <div className="grid gap-4 md:grid-cols-3 lg:grid-cols-5">
+        <div className="grid gap-6 md:grid-cols-3 lg:grid-cols-5">
           {primaryIkons.map((icon) => (
             <article
               key={icon.name}
-              className={`flex flex-col gap-3 rounded-xl border border-zinc-800 bg-[#0A0A0A] p-4 hover:border-white/20 transition-all ${icon.isRefiner ? 'relative overflow-hidden' : ''
+              className={`flex flex-col gap-3 rounded-[2.5rem] border border-slate-800/50 bg-slate-900/10 p-8 hover:border-sky-500/30 transition-all duration-700 ${icon.isRefiner ? 'relative overflow-hidden' : ''
                 }`}
             >
               {/* Subtle cyan pulse for REPEAT refiner node */}
               {icon.isRefiner && (
-                <div className="absolute inset-0 bg-cyan-500/5 animate-pulse pointer-events-none" style={{ animationDuration: '3s' }} />
+                <div className="absolute inset-0 bg-sky-500/5 animate-pulse pointer-events-none" style={{ animationDuration: '3s' }} />
               )}
 
               {/* UNIFIED CONTAINER SPECIFICATION */}
-              <div className="w-12 h-12 md:w-16 md:h-16 bg-[#0A0A0A] border border-zinc-800 rounded-xl flex items-center justify-center group-hover:border-white/20 transition-all">
-                <span className="material-symbols-outlined text-white text-2xl md:text-3xl">
+              <div className="w-12 h-12 bg-slate-900 border border-slate-800 rounded-xl flex items-center justify-center group-hover:border-sky-500/20 transition-all">
+                <span className="material-symbols-outlined text-sky-500 text-2xl">
                   {icon.icon}
                 </span>
               </div>
 
               <div className="space-y-2 relative z-10">
-                {/* Primary: Stage Name (ASK, PAY, etc.) - Inter Black 900, High Contrast */}
-                <h4 className="text-2xl md:text-3xl font-black text-white uppercase tracking-tight font-sans">
+                <h4 className="text-xl font-bold text-white uppercase tracking-tight">
                   {icon.name}
                 </h4>
 
-                {/* Secondary: Description - Zinc-400 */}
-                <p className="text-sm text-zinc-400 leading-relaxed mt-1">
+                <p className="text-sm text-slate-400 leading-relaxed">
                   {icon.description}
                 </p>
 
-                {/* Tertiary: Subtitle - Mono, Cyan-500 */}
-                <p className="text-xs font-mono uppercase tracking-[0.2em] text-cyan-500 mt-2">
+                <p className="text-[10px] font-mono uppercase tracking-[0.2em] text-sky-500 mt-2">
                   {icon.subtitle}
                 </p>
               </div>
