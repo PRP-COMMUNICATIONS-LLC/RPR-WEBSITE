@@ -11,7 +11,7 @@ export const Hero: React.FC = () => {
       {/* Background Pulse */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-slate-900/20 via-black to-black" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 py-24 flex flex-col items-center text-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 py-24 flex flex-col items-start text-left">
         {/* Badge */}
         <div className="mb-10 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm">
           <span className="text-white/40 text-[10px] font-mono uppercase tracking-[0.3em]">
@@ -31,7 +31,7 @@ export const Hero: React.FC = () => {
         </p>
 
         {/* CTAs */}
-        <div className="flex flex-wrap justify-center gap-4">
+        <div className="flex flex-wrap justify-start gap-4">
           <a
             href="#foundations"
             className="px-8 py-4 bg-cyan-500 text-black rounded-xl font-black text-xs uppercase tracking-widest hover:bg-cyan-400 transition-colors shadow-[0_0_20px_rgba(6,182,212,0.3)]"
