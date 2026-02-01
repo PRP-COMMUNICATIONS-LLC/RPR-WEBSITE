@@ -81,7 +81,7 @@ export const Header: React.FC = () => {
       {isMenuOpen && (
         <div className="fixed inset-0 z-[40] lg:hidden flex flex-col items-center justify-center animate-in fade-in duration-300">
           <div
-            className="absolute inset-0 bg-black/90 backdrop-blur-xl"
+            className="absolute inset-0 bg-black/60 backdrop-blur-xl"
             onClick={() => setIsMenuOpen(false)}
           />
 
