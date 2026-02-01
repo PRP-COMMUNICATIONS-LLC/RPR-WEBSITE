@@ -20,9 +20,9 @@ export const Hero: React.FC = () => {
         </div>
 
         {/* Headline */}
-        <h1 className="text-4xl md:text-7xl lg:text-8xl font-black tracking-tighter italic leading-[0.9] uppercase mb-10">
+        <h1 className="text-4xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-[0.9] uppercase mb-10">
           <span className="text-white block">GLOBAL INTELLIGENCE,</span>
-          <span className="text-cyan-400 block">EXPERIENTIAL ACTIVATION.</span>
+          <span className="italic text-cyan-400 block">EXPERIENTIAL ACTIVATION.</span>
         </h1>
 
         {/* Body */}

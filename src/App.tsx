@@ -2,10 +2,7 @@
 
 import { useEffect } from 'react';
 import { Header } from './components/Header';
-import { Hero } from './components/Hero';
-import { Foundations } from './components/Foundations';
-import { Labs } from './components/Labs';
-import { Overwatch } from './components/Overwatch';
+import { Home } from './components/Home';
 
 /**
  * TS-Λ3 // HARBOR A MAIN SUBSTRATE [v1.8.8 FIX & FREEZE]
@@ -32,21 +29,7 @@ export default function App() {
       <Header />
 
       <main className="flex flex-col">
-        {/* HERO SECTION (Vercel Frozen Baseline - White/Cyan-400 Title) */}
-        <Hero />
-
-        {/* FOUNDATIONS (3-Pillar Grid + Sentinel Visualizer) - ID: #foundations */}
-        <Foundations />
-
-        {/* METHODS (Dynamic Anchor Block) - ID: #methods */}
-        {/* Note: Logic seated here to ensure nav anchor parity if no dedicated component exists */}
-        <div id="methods" className="invisible h-0" aria-hidden="true" />
-
-        {/* LABS (Prototype Enclave - 4-Tier Grid) - ID: #labs */}
-        <Labs />
-
-        {/* OVERWATCH (Strategic Command Authority) - ID: #overwatch */}
-        <Overwatch />
+        <Home />
       </main>
 
       {/* GLOBAL FOOTER (Frozen baseline) */}

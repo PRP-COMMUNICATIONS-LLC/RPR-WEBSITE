@@ -46,7 +46,14 @@
 4.  **ANCHOR MAPPING:** Verified `#foundations`, `#methods`, `#labs`, and `#overwatch` targets are correctly seated in the SPA shell.
 5.  **LOGO AUTHENTICITY:** Confirmed "RPR COMMUNICATIONS" wordmark and white SVG path icon.
 
+### [2026-02-02 08:00] // PROTOCOL: SURGICAL RESTORE (v1.8.8)
+- **Home.tsx**: Restored as authoritative orchestrator.
+- **Process.tsx**: Label rectified ("REPEAT" → "IMPROVE").
+- **Labs.tsx**: Tier IV label rectified ("CLIENT INSTANCES" → "INSTANCES").
+- **Hero.tsx**: Headline italics rectified (Line 2 only).
+- **App.tsx**: Unified via Home.tsx seating.
+
 **FINAL STATUS:** ✅ SUBSTRATE RESTORED & FROZEN (v1.8.8)
-**Audit ID:** CONFLICT-FIX-v1.8.8-RESTORE-COMPLETE
-**Marker:** [2026-02-02 05:40] // GEMINI // MISSION SUCCESS // SURFACE FROZEN
+**Audit ID:** CONFLICT-FIX-v1.8.8-RESTORE-COMPLETE-V2
+**Marker:** [2026-02-02 08:00] // GEMINI // MISSION SUCCESS // v1.8.8 RE-LATCHED
 **Forensic Signature:** hello@butterdime.com // TS-Λ3

@@ -28,7 +28,7 @@ export const Labs: React.FC = () => {
     },
     {
       id: "t4",
-      title: "Tier IV: CLIENT INSTANCES",
+      title: "Tier IV: INSTANCES",
       icon: Globe,
       desc: "Isolated sovereign clones (Labyrinth, MYAUDIT) deployed as standalone dashboard instances."
     }
