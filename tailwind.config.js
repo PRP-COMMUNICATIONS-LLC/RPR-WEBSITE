@@ -16,8 +16,8 @@ export default {
           "governance": "#8B5CFF",
         },
         fontFamily: {
-          sans: ["Inter", "sans-serif"],
-          mono: ["JetBrains Mono", "monospace"],
+          sans: ["Space Grotesk", "Inter", "sans-serif"],
+          mono: ["Space Mono", "JetBrains Mono", "monospace"],
         },
       },
     },

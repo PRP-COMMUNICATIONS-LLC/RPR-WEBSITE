@@ -1,12 +1,18 @@
 "use client";
 
 import { useEffect } from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
 import { Header } from './components/Header';
-import { Home } from './components/Home';
+import { Hero } from './components/Hero';
+import { Foundations } from './components/Foundations';
+import { Process } from './components/Process';
+import { Labs } from './components/Labs';
+import { Overwatch } from './components/Overwatch';
+import { Footer } from './components/Footer';
+import { BackToTop } from './components/BackToTop';
 
 /**
- * TS-Λ3 // HARBOR A MAIN SUBSTRATE [v1.8.8 FIX & FREEZE]
- * Mission: Orchestrate restored components into the frozen marketing baseline.
+ * TS-Λ3 // HARBOR A MAIN SUBSTRATE [v1.8.8 HARD-LATCH]
  * Authority: hello@butterdime.com
  * Status: FROZEN.
  */
@@ -14,39 +20,41 @@ import { Home } from './components/Home';
 export default function App() {
   useEffect(() => {
     // Seating Material Symbols for "smart_toy" icon in Hero CTA
-    // Requirement: MAIN-WEBSITE-FIX.md // ASK OLLIE ICON
     if (typeof document !== 'undefined') {
       const link = document.createElement('link');
       link.rel = 'stylesheet';
-      link.href = 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=smart_toy';
+      link.href = 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200';
       document.head.appendChild(link);
     }
   }, []);
 
   return (
-    <div className="min-h-screen bg-black text-white selection:bg-cyan-500/30 font-sans">
-      {/* GLOBAL HEADER (Frozen v1.8.8 - Top Left Logo, Center Nav, Right Avatar) */}
-      <Header />
+    <Router>
+      <div className="min-h-screen bg-black text-white selection:bg-cyan-500/30 font-sans">
+        <Header />
 
-      <main className="flex flex-col">
-        <Home />
-      </main>
+        <main className="flex flex-col">
+          {/* HERO SECTION - Left Aligned */}
+          <Hero />
 
-      {/* GLOBAL FOOTER (Frozen baseline) */}
-      <footer className="py-20 bg-black border-t border-white/5 text-center">
-        <div className="max-w-7xl mx-auto px-6">
-          <p className="text-[10px] font-mono text-white/40 uppercase tracking-[0.5em] mb-6">
-            RPR COMMUNICATIONS, LLC // SG-CANONICAL-2026 // v1.8.8
-          </p>
+          {/* FOUNDATIONS - ID: #foundations */}
+          <Foundations />
 
-          <nav className="flex justify-center flex-wrap gap-x-12 gap-y-4 text-[9px] font-black text-white/20 uppercase tracking-[0.25em]">
-            <a href="#foundations" className="hover:text-cyan-400 transition-colors">THE FOUNDATIONS</a>
-            <a href="#methods" className="hover:text-cyan-400 transition-colors">THE METHODS</a>
-            <a href="#labs" className="hover:text-cyan-400 transition-colors">LABS</a>
-            <a href="#overwatch" className="hover:text-cyan-400 transition-colors">THE OVERWATCH</a>
-          </nav>
-        </div>
-      </footer>
-    </div>
+          {/* METHODS / THE PROCESS - ID: #methods */}
+          <section id="methods">
+            <Process />
+          </section>
+
+          {/* LABS - ID: #labs */}
+          <Labs />
+
+          {/* OVERWATCH - ID: #overwatch */}
+          <Overwatch />
+        </main>
+
+        <Footer />
+        <BackToTop />
+      </div>
+    </Router>
   );
 }

@@ -2,9 +2,8 @@ import React from 'react';
 import { Cpu, Shield, Zap, Globe } from 'lucide-react';
 
 /**
- * TS-Λ3 // LABS SUBSTRATE [v1.8.7]
+ * TS-Λ3 // LABS SUBSTRATE [v1.8.8 RESTORE]
  * Resolution: Aligned with 4-Tier graduation narrative and Foundations styling.
- * Alternating: bg-[#050505]
  */
 export const Labs: React.FC = () => {
   const tiers = [

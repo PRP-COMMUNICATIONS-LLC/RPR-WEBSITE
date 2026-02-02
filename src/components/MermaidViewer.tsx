@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, useId } from 'react';
 import mermaid from 'mermaid';
 
 /**
@@ -14,8 +14,10 @@ interface MermaidViewerProps {
 export const MermaidViewer: React.FC<MermaidViewerProps> = ({ 
   definition, 
   className = '',
-  id = `mermaid-${Math.random().toString(36).substr(2, 9)}`
+  id: providedId
 }) => {
+  const generatedId = useId().replace(/:/g, '');
+  const id = providedId || `mermaid-${generatedId}`;
   const containerRef = useRef<HTMLDivElement>(null);
   const [isLoading, setIsLoading] = useState(true);
 
