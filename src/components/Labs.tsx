@@ -1,58 +1,39 @@
 import React from 'react';
-import { Cpu, Shield, Zap, Globe } from 'lucide-react';
+import { Shield, Cpu, Zap, Globe } from 'lucide-react';
 
 /**
  * TS-Λ3 // LABS SUBSTRATE [v1.8.8 RESTORE]
- * Resolution: Aligned with 4-Tier graduation narrative and Foundations styling.
+ * Narrative: Graduation Path (Sentinel -> Elders -> Forge -> Instances)
+ * Tier IV: INSTANCES (Rectified from Client Instances)
  */
+
 export const Labs: React.FC = () => {
   const tiers = [
-    {
-      id: "t1",
-      title: "Tier I: SENTINEL Protocol",
-      icon: Shield,
-      desc: "The core governance engine managing the forensic evolution of creative substrates."
-    },
-    {
-      id: "t2",
-      title: "Tier II: THE ELDERS",
-      icon: Cpu,
-      desc: "The Advisory triad bridging strategic intent with operational System 3 divisions."
-    },
-    {
-      id: "t3",
-      title: "Tier III: THE FORGE",
-      icon: Zap,
-      desc: "Internal Intelligence Lab staging specialized modules (IKON, Logo, Video) in Firebase Studio."
-    },
-    {
-      id: "t4",
-      title: "Tier IV: INSTANCES",
-      icon: Globe,
-      desc: "Isolated sovereign clones (Labyrinth, MYAUDIT) deployed as standalone dashboard instances."
-    }
+    { title: "SENTINEL Protocol", icon: Shield, desc: "Governance engine managing the forensic evolution of substrates." },
+    { title: "THE ELDERS", icon: Cpu, desc: "Advisory triad bridging strategic intent with operational execution." },
+    { title: "THE FORGE", icon: Zap, desc: "Internal Intelligence Lab staging specialized product modules." },
+    { title: "INSTANCES", icon: Globe, desc: "Isolated sovereign clones deployed as standalone dashboards." }
   ];
 
   return (
-    <section id="labs" className="py-24 bg-black border-t border-white/5">
+    <section id="labs" className="py-24 bg-[#020617] border-t border-white/5">
       <div className="max-w-7xl mx-auto px-6">
-        <header className="mb-20 text-center">
-          <h2 className="text-5xl font-black text-white uppercase tracking-tighter italic mb-4">
+        <header className="mb-16 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight italic mb-4 uppercase font-sans">
             PROTOTYPE <span className="text-cyan-400">ENCLAVE</span>
           </h2>
-          <p className="text-white/40 font-mono text-[10px] uppercase tracking-[0.4em]">
-            Sovereign Evolution // Product Graduation Path
-          </p>
+          <p className="text-slate-500 text-sm font-medium italic uppercase tracking-[0.2em]">Product Graduation Path</p>
         </header>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {tiers.map((t) => (
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {tiers.map((t, i) => (
             <div
-              key={t.id}
-              className="group bg-white/5 border border-white/10 p-8 rounded-[2.5rem] hover:border-cyan-500/30 transition-all duration-700"
+              key={i}
+              className="group bg-white/5 border border-white/10 p-8 rounded-[2.5rem] hover:bg-white/10 hover:border-cyan-500/20 transition-all duration-500"
             >
-              <t.icon className="w-6 h-6 text-cyan-400 mb-6 group-hover:scale-110 transition-transform" />
-              <h3 className="text-lg font-bold uppercase mb-4 text-white">{t.title}</h3>
-              <p className="text-white/60 text-sm leading-relaxed">{t.desc}</p>
+              <t.icon className="w-5 h-5 text-cyan-400 mb-6 group-hover:scale-110 transition-transform" />
+              <h3 className="text-white font-bold mb-4 uppercase tracking-tight">{t.title}</h3>
+              <p className="text-slate-400 text-xs leading-relaxed">{t.desc}</p>
             </div>
           ))}
         </div>

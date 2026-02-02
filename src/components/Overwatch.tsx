@@ -3,8 +3,7 @@ import { ShieldAlert, Activity, Fingerprint } from 'lucide-react';
 
 /**
  * TS-Λ3 // OVERWATCH SUBSTRATE [v1.8.8 RESTORE]
- * Purpose: Strategic Command Authority
- * Theme: Authority Status // Active
+ * Strategic Command Authority
  */
 export const Overwatch: React.FC = () => {
   return (
@@ -15,14 +14,14 @@ export const Overwatch: React.FC = () => {
           <span className="text-red-500 font-mono text-[10px] uppercase tracking-[0.5em] block mb-4">
             Phase 1 // Strategic Authority
           </span>
-          <h2 className="text-4xl md:text-6xl font-black text-white uppercase tracking-tighter italic leading-none">
+          <h2 className="text-4xl md:text-6xl font-black text-white uppercase tracking-tighter italic leading-none font-sans">
             THE <span className="text-red-500 font-black">OVERWATCH</span> COMMAND
           </h2>
         </header>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           <div className="space-y-8">
-            <p className="text-slate-400 text-sm leading-relaxed max-w-xl font-sans">
+            <p className="text-slate-400 text-sm leading-relaxed max-w-xl font-sans italic">
               The Overwatch substrate represents the final sovereign decision authority.
               It governs the graduation path from The Forge into production tools.
             </p>
@@ -34,7 +33,7 @@ export const Overwatch: React.FC = () => {
               ].map((item, i) => (
                 <div key={i} className="p-6 rounded-[2rem] bg-slate-900/10 border border-slate-800 flex items-center gap-4 group hover:border-red-500/30 transition-all duration-500">
                   <item.icon className="w-5 h-5 text-red-500 group-hover:scale-110 transition-transform" />
-                  <span className="text-[10px] font-black uppercase tracking-widest text-slate-300">{item.label}</span>
+                  <span className="text-[10px] font-black uppercase tracking-widest text-slate-300 font-mono">{item.label}</span>
                 </div>
               ))}
             </div>
@@ -46,7 +45,7 @@ export const Overwatch: React.FC = () => {
               <Activity className="w-8 h-8 text-red-500 animate-pulse mb-8" />
               <div>
                 <span className="text-[9px] font-mono text-red-400 uppercase tracking-widest block mb-2">Authority Status // Active</span>
-                <p className="text-2xl font-bold text-white uppercase italic tracking-tight">Sovereign Gatekeeper</p>
+                <p className="text-2xl font-bold text-white uppercase italic tracking-tight font-sans">Sovereign Gatekeeper</p>
               </div>
             </div>
           </div>

@@ -1,44 +1,51 @@
 import React, { useState } from 'react';
-import { Shield, Users, Hammer, LayoutGrid } from 'lucide-react';
+import { Shield, Cpu, Zap, LayoutGrid } from 'lucide-react';
 import { sentinelDiagrams } from '../c4-diagrams/C4DiagramDefinitions-Final';
 import { MermaidViewer } from './MermaidViewer';
+
+/**
+ * TS-Λ3 // SENTINEL VISUALIZER [v1.8.8]
+ * Mission: 4-tab C4 diagram selector with Stitch-approved Bauhaus styling.
+ */
+
+const tabs = [
+  { id: 'l1_overwatch', label: 'L1: OVERWATCH', icon: Shield },
+  { id: 'l2_elders', label: 'L2: ELDERS', icon: Cpu },
+  { id: 'l3_forge', label: 'L3: FORGE', icon: Zap },
+  { id: 'l4_instances', label: 'L4: INSTANCES', icon: LayoutGrid },
+] as const;
 
 export const SentinelVisualizer: React.FC = () => {
   const [activeTab, setActiveTab] = useState<keyof typeof sentinelDiagrams>('l1_overwatch');
 
-  const tabs = [
-    { id: 'l1_overwatch', label: 'L1: Overwatch', icon: Shield },
-    { id: 'l2_elders', label: 'L2: Elders', icon: Users },
-    { id: 'l3_forge', label: 'L3: Forge', icon: Hammer },
-    { id: 'l4_instances', label: 'L4: Instances', icon: LayoutGrid }
-  ];
-
   return (
-    <div className="bg-black rounded-[2.5rem] border border-white/10 p-8 md:p-12 shadow-2xl">
-      <nav className="flex flex-wrap gap-2 mb-10 bg-white/5 p-2 rounded-2xl border border-white/5">
+    <div className="w-full">
+      {/* TAB NAVIGATION */}
+      <div className="flex items-center justify-center gap-2 mb-8 overflow-x-auto pb-2 scrollbar-hide">
         {tabs.map((tab) => (
           <button
             key={tab.id}
-            onClick={() => setActiveTab(tab.id as any)}
-            className={`flex-1 min-w-[120px] py-4 rounded-xl transition-all duration-500 flex flex-col items-center gap-1.5 ${
-              activeTab === tab.id ? 'bg-cyan-500 text-black shadow-lg shadow-cyan-500/20' : 'text-white/40 hover:bg-white/5'
-            }`}
+            onClick={() => setActiveTab(tab.id)}
+            className={`
+              px-6 py-4 rounded-xl transition-all duration-500 flex flex-col items-center gap-2 min-w-[120px]
+              ${activeTab === tab.id
+                ? 'bg-cyan-500 text-black shadow-[0_0_20px_rgba(6,182,212,0.3)]'
+                : 'text-white/40 hover:text-white hover:bg-white/5'}
+            `}
           >
-            <tab.icon className={`w-4 h-4 ${activeTab === tab.id ? 'text-black' : 'text-cyan-400'}`} />
-            <span className="text-[10px] font-black uppercase tracking-widest">{tab.label}</span>
+            <tab.icon size={18} />
+            <span className="text-[9px] font-black tracking-widest uppercase">
+              {tab.label}
+            </span>
           </button>
         ))}
-      </nav>
-
-      <div className="flex flex-col gap-2 mb-6 ml-2">
-          <h3 className="text-xl font-bold text-white uppercase tracking-tight">{sentinelDiagrams[activeTab].title}</h3>
-          <p className="text-white/40 text-[10px] font-mono uppercase tracking-widest">{sentinelDiagrams[activeTab].description}</p>
       </div>
 
-      <div className="bg-white/[0.02] rounded-3xl p-4 border border-white/5">
+      {/* MERMAID CANVAS */}
+      <div className="bg-black/40 rounded-3xl border border-white/10 p-8 flex items-center justify-center min-h-[450px]">
         <MermaidViewer
+          id={activeTab}
           definition={sentinelDiagrams[activeTab].definition}
-          className="min-h-[450px]"
         />
       </div>
     </div>

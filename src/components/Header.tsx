@@ -4,7 +4,8 @@ import { Menu, X } from 'lucide-react';
 /**
  * TS-Λ3 // HEADER SUBSTRATE [v1.8.8 RESTORE]
  * Visual: RPR-BLACK-LOGO-V2 (fill-white)
- * Nav: FOUNDATIONS | METHODS | OVERWATCH
+ * Nav Order: FOUNDATIONS | METHODS | OVERWATCH
+ * Identity: Google dark brand button seated.
  */
 
 const LogoIcon = () => (
@@ -27,7 +28,8 @@ export const Header: React.FC = () => {
   return (
     <header className="fixed top-0 left-0 w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/10 h-20 flex items-center">
       <div className="max-w-7xl mx-auto px-6 w-full flex items-center justify-between">
-        <a href="/" className="flex items-center gap-4 no-underline group">
+
+        <a href="/" className="flex items-center gap-4 no-underline group shrink-0">
           <LogoIcon />
           <span className="text-sm md:text-base font-bold text-white tracking-[0.2em] uppercase font-mono">
             RPR COMMUNICATIONS
@@ -36,16 +38,21 @@ export const Header: React.FC = () => {
 
         <nav className="hidden lg:flex items-center gap-10">
           {['FOUNDATIONS', 'METHODS', 'OVERWATCH'].map((item) => (
-            <a key={item} href={`#${item.toLowerCase()}`} className="text-[11px] font-bold text-white/60 hover:text-white transition-colors uppercase tracking-[0.25em] font-mono">
+            <a
+              key={item}
+              href={`#${item.toLowerCase()}`}
+              className="text-[11px] font-bold text-white/60 hover:text-white transition-colors uppercase tracking-[0.25em] font-mono"
+            >
               {item}
             </a>
           ))}
         </nav>
 
         <div className="flex items-center gap-4">
-          <button className="hidden lg:block w-8 h-8 rounded-md overflow-hidden border border-white/10 hover:border-cyan-500/50 transition-all">
+          <button className="hidden lg:block w-8 h-8 rounded-md overflow-hidden border border-white/10 hover:border-cyan-500/50 transition-all shadow-lg hover:shadow-cyan-500/20">
             <img src="/assets/web_dark_sq_na@1x.png" alt="Google Identity" className="w-full h-full object-cover" />
           </button>
+
           <button onClick={() => setIsOpen(!isOpen)} className="lg:hidden text-white/60 hover:text-white p-1">
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -53,9 +60,14 @@ export const Header: React.FC = () => {
       </div>
 
       {isOpen && (
-        <div className="lg:hidden absolute top-20 left-0 w-full bg-black/95 backdrop-blur-xl border-b border-white/10 p-8 flex flex-col gap-6">
+        <div className="lg:hidden absolute top-20 left-0 w-full bg-black/95 backdrop-blur-xl border-b border-white/10 p-8 flex flex-col gap-6 animate-in fade-in">
           {['FOUNDATIONS', 'METHODS', 'OVERWATCH'].map((item) => (
-            <a key={item} href={`#${item.toLowerCase()}`} onClick={() => setIsOpen(false)} className="text-lg font-bold text-white uppercase tracking-widest font-mono">
+            <a
+              key={item}
+              href={`#${item.toLowerCase()}`}
+              onClick={() => setIsOpen(false)}
+              className="text-lg font-bold text-white uppercase tracking-widest font-mono"
+            >
               {item}
             </a>
           ))}
