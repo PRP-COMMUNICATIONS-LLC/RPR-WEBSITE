@@ -8,12 +8,6 @@ import { Menu, X } from 'lucide-react';
  * Authority: hello@butterdime.com
  */
 
-const NAV_ITEMS = [
-  { id: 'foundations', label: 'FOUNDATIONS' },
-  { id: 'methods', label: 'METHODS' },
-  { id: 'overwatch', label: 'OVERWATCH' }
-];
-
 export const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -40,15 +34,24 @@ export const Header: React.FC = () => {
 
         {/* 2. DESKTOP NAV (Semantic anchors + Locked Labels) */}
         <nav className="hidden lg:flex items-center gap-8">
-          {NAV_ITEMS.map((item) => (
-            <a
-              key={item.id}
-              href={`#${item.id}`}
-              className="text-xs font-mono text-white/80 hover:text-white tracking-widest transition-colors uppercase"
-            >
-              {item.label}
-            </a>
-          ))}
+          <a
+            href="#foundations"
+            className="text-xs font-mono text-white/80 hover:text-white tracking-widest transition-colors uppercase"
+          >
+            FOUNDATIONS
+          </a>
+          <a
+            href="#methods"
+            className="text-xs font-mono text-white/80 hover:text-white tracking-widest transition-colors uppercase"
+          >
+            METHODS
+          </a>
+          <a
+            href="#overwatch"
+            className="text-xs font-mono text-white/80 hover:text-white tracking-widest transition-colors uppercase"
+          >
+            OVERWATCH
+          </a>
         </nav>
 
         {/* 3. MOBILE TRIGGER */}
@@ -69,16 +72,27 @@ export const Header: React.FC = () => {
           />
 
           <nav className="relative z-50 flex flex-col items-center gap-10">
-            {NAV_ITEMS.map((item) => (
-              <a
-                key={item.id}
-                href={`#${item.id}`}
-                onClick={() => setIsMenuOpen(false)}
-                className="text-2xl text-white/90 py-4 font-mono tracking-wider uppercase hover:text-white transition-colors"
-              >
-                {item.label}
-              </a>
-            ))}
+            <a
+              href="#foundations"
+              onClick={() => setIsMenuOpen(false)}
+              className="text-2xl text-white/90 py-4 font-mono tracking-wider uppercase hover:text-white transition-colors"
+            >
+              FOUNDATIONS
+            </a>
+            <a
+              href="#methods"
+              onClick={() => setIsMenuOpen(false)}
+              className="text-2xl text-white/90 py-4 font-mono tracking-wider uppercase hover:text-white transition-colors"
+            >
+              METHODS
+            </a>
+            <a
+              href="#overwatch"
+              onClick={() => setIsMenuOpen(false)}
+              className="text-2xl text-white/90 py-4 font-mono tracking-wider uppercase hover:text-white transition-colors"
+            >
+              OVERWATCH
+            </a>
           </nav>
         </div>
       )}
