@@ -1,5 +1,4 @@
 import React from 'react';
-import { Cpu, Shield, Zap, Globe } from 'lucide-react';
 
 /**
  * TS-Λ3 // LABS SUBSTRATE [v1.8.7]
@@ -11,25 +10,25 @@ export const Labs: React.FC = () => {
     {
       id: "t1",
       title: "Tier I: SENTINEL Protocol",
-      icon: Shield,
+      icon: "shield",
       desc: "The core governance engine managing the forensic evolution of creative substrates."
     },
     {
       id: "t2",
       title: "Tier II: THE ELDERS",
-      icon: Cpu,
+      icon: "memory",
       desc: "The Advisory triad bridging strategic intent with operational System 3 divisions."
     },
     {
       id: "t3",
       title: "Tier III: THE FORGE",
-      icon: Zap,
+      icon: "bolt",
       desc: "Internal Intelligence Lab staging specialized modules (IKON, Logo, Video) in Firebase Studio."
     },
     {
       id: "t4",
       title: "Tier IV: CLIENT INSTANCES",
-      icon: Globe,
+      icon: "public",
       desc: "Isolated sovereign clones (Labyrinth, MYAUDIT) deployed as standalone dashboard instances."
     }
   ];
@@ -37,21 +36,26 @@ export const Labs: React.FC = () => {
   return (
     <section id="labs" className="py-24 bg-[#050505] border-t border-white/5">
       <div className="max-w-7xl mx-auto px-6">
-        <header className="mb-20 text-center">
-          <h2 className="text-5xl font-black text-white uppercase tracking-tighter italic mb-4">
-            PROTOTYPE <span className="text-sky-500">ENCLAVE</span>
-          </h2>
-          <p className="text-slate-500 font-mono text-[10px] uppercase tracking-[0.4em]">
-            Sovereign Evolution // Product Graduation Path
-          </p>
-        </header>
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 text-left">
+          LABS
+        </h2>
+        <div className="w-16 h-1 bg-cyan-400 mb-8"></div>
+        <p className="text-left text-white/60 text-base md:text-lg leading-relaxed mb-12 max-w-3xl">
+          Our product creation process. From a unified governance to in-house agency run solutions to stand-alone client run products for their own business needs.
+        </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {tiers.map((t) => (
             <div
               key={t.id}
               className="group bg-slate-900/10 border border-slate-800/50 p-8 rounded-[2.5rem] hover:border-sky-500/30 transition-all duration-700"
             >
-              <t.icon className="w-6 h-6 text-sky-500 mb-6 group-hover:scale-110 transition-transform" />
+              <div className="flex justify-center mb-6">
+                <div className="w-20 h-20 md:w-24 md:h-24 rounded-2xl bg-black/80 shadow-[0_0_40px_rgba(0,0,0,0.6)] p-3 flex items-center justify-center">
+                  <span className="material-symbols-outlined text-cyan-400 text-4xl">
+                    {t.icon}
+                  </span>
+                </div>
+              </div>
               <h3 className="text-lg font-bold uppercase mb-4 text-white">{t.title}</h3>
               <p className="text-slate-400 text-sm leading-relaxed">{t.desc}</p>
             </div>

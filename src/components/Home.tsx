@@ -1,36 +1,41 @@
 import React from 'react';
-import { HomeHero } from './HomeHero';
+import { Hero } from './Hero';
 import { Foundations } from './Foundations';
 import { Methods } from './Methods';
+import { Process } from './Process';
 import { Labs } from './Labs';
-import { ProductInventory } from './ProductInventory';
 import { Overwatch } from './Overwatch';
 
 /**
- * TS-Λ3 // HOME SUBSTRATE [v1.8.7]
- * Seating: HomeHero -> Foundations -> Methods -> Labs -> Product Inventory -> Overwatch.
+ * TS-Λ3 // HOME SUBSTRATE [v1.8.8]
+ * Seating: Hero -> Foundations -> Methods (5-step) -> Process (4-step) -> Labs -> Overwatch.
  * Authority: hello@butterdime.com
  */
 export const Home: React.FC = () => {
   return (
-    <div className="flex flex-col">
-      {/* 🚀 HERO SUBSTRATE (v1.8.7 LATCHED) */}
-      <HomeHero />
+    <>
+      <Hero />
 
-      {/* 🏛️ ARCHITECTURAL SUBSTRATE (DNA Pillars + Bible) */}
-      <Foundations />
+      <section id="foundations">
+        <Foundations />
+      </section>
 
-      {/* 📈 OPERATIONAL SUBSTRATE (The Methods) */}
-      <Methods />
+      <section id="methods">
+        <Methods />
+      </section>
 
-      {/* 🧪 PROTOTYPE ENCLAVE (4-Tier Labs) */}
-      <Labs />
+      <section id="process">
+        <Process />
+      </section>
 
-      {/* 📦 PRODUCT INVENTORY (Level 4 Graduation) */}
-      <ProductInventory />
+      {/* Labs and Overwatch are STRUCTURE FROZEN, CONTENT TBD (v1.8.9) */}
+      <section id="labs">
+        <Labs />
+      </section>
 
-      {/* 🛡️ STRATEGIC COMMAND */}
-      <Overwatch />
-    </div>
+      <section id="overwatch">
+        <Overwatch />
+      </section>
+    </>
   );
 };

@@ -1,90 +1,87 @@
 import React from 'react';
 
-export interface IkonMeta {
-  name: string;
-  subtitle: string;
-  description: string;
-  icon: string;
-  isRefiner?: boolean; // Flag for REPEAT node visual distinction
-}
-
 /**
- * TS-Λ3 // THE METHODS // CLIENT LIFECYCLE [v1.8.7]
- * Authoritative 5-Column IKON Grid: ASK → PAY → PLAN → PLAY → REPEAT
+ * TS-Λ3 // THE METHODS // CLIENT LIFECYCLE [v1.8.9]
+ * Authoritative 5-Column IKON Grid: ASK → PAY → MAKE → PLAY → REPEAT
+ * Premium icon tiles with glow effect
  * Typography Hierarchy: Stage Name (Primary) → Description (Secondary) → Subtitle (Tertiary)
- * Icon System: Material Symbols Variable Font
- * Alignment: py-24, bg-[#020617], rounded-[2.5rem]
+ * Icon System: Material Symbols Variable Font via Icon helper
+ * Alignment: px-4 sm:px-6 lg:px-8 py-24, max-w-screen-2xl
  */
 export const Methods: React.FC = () => {
-  const primaryIkons: IkonMeta[] = [
+  const methods = [
     {
-      name: 'DISCOVER',
+      key: 'ASK',
+      title: 'ASK',
       subtitle: 'Strategic Planning',
-      description: 'Define problem, map consumer journey, set success metrics.',
-      icon: 'lightbulb'
+      body: 'Define problem, map consumer journey, set success metrics.',
+      icon: 'group',
     },
     {
-      name: 'DELIVER',
+      key: 'PAY',
+      title: 'PAY',
       subtitle: 'Client Approval',
-      description: 'Align on risks, timelines and budgets; get sign-off.',
-      icon: 'heart_check'
+      body: 'Align on risks, timelines and budgets; get sign-off.',
+      icon: 'sync',
     },
     {
-      name: 'MEASURE',
+      key: 'MAKE',
+      title: 'MAKE',
       subtitle: 'Planning',
-      description: 'Develop concepts, plan channels, build the roadmap.',
-      icon: 'layers'
+      body: 'Develop concepts, plan channels, build the roadmap.',
+      icon: 'build',
     },
     {
-      name: 'IMPROVE',
+      key: 'PLAY',
+      title: 'PLAY',
       subtitle: 'Execution',
-      description: 'Produce assets, launch and monitor performance in market.',
-      icon: 'play_for_work'
-    }
+      body: 'Produce assets, launch and monitor performance in market.',
+      icon: 'rocket_launch',
+    },
+    {
+      key: 'REPEAT',
+      title: 'REPEAT',
+      subtitle: 'Post Analysis',
+      body: 'Review results, capture insights, improve the journey.',
+      icon: 'self_improvement',
+    },
   ];
 
   return (
-    <section id="methods" className="bg-[#020617] py-24 px-6 md:px-12 border-t border-white/5">
-      <div className="max-w-7xl mx-auto space-y-12">
-        <div className="space-y-4">
-          <h2 className="text-white text-4xl md:text-6xl font-black text-white uppercase tracking-tighter italic leading-none">
-            THE <span className="text-sky-500 font-black">METHODS</span>
-          </h2>
-          <p className="text-sky-500 font-mono tracking-[0.4em] text-[10px] uppercase">CLIENT LIFECYCLE</p>
-        </div>
+    <section id="methods" className="px-4 sm:px-6 lg:px-8 py-24">
+      <div className="max-w-screen-2xl mx-auto">
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 text-left">
+          THE METHODS
+        </h2>
+        <div className="w-16 h-1 bg-cyan-400 mb-8"></div>
+        <p className="text-left text-white/60 text-base md:text-lg leading-relaxed mb-12 max-w-3xl">
+          A continuous loop from strategy to post-campaign insight.
+        </p>
 
-        <div className="grid gap-6 md:grid-cols-3 lg:grid-cols-5">
-          {primaryIkons.map((icon) => (
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
+          {methods.map((m) => (
             <article
-              key={icon.name}
-              className={`flex flex-col gap-3 rounded-[2.5rem] border border-slate-800/50 bg-slate-900/10 p-8 hover:border-sky-500/30 transition-all duration-700 ${icon.isRefiner ? 'relative overflow-hidden' : ''
-                }`}
+              key={m.key}
+              className="bg-black rounded-3xl py-10 px-8 flex flex-col items-center text-center"
             >
-              {/* Subtle cyan pulse for REPEAT refiner node */}
-              {icon.isRefiner && (
-                <div className="absolute inset-0 bg-sky-500/5 animate-pulse pointer-events-none" style={{ animationDuration: '3s' }} />
-              )}
-
-              {/* UNIFIED CONTAINER SPECIFICATION */}
-              <div className="w-12 h-12 bg-slate-900 border border-slate-800 rounded-xl flex items-center justify-center group-hover:border-sky-500/20 transition-all">
-                <span className="material-symbols-outlined text-sky-500 text-2xl">
-                  {icon.icon}
-                </span>
+              {/* Icon tile with glow */}
+              <div className="mb-6 rounded-2xl bg-black/80 shadow-[0_0_40px_rgba(0,0,0,0.6)] p-6">
+                <div className="w-16 h-16 rounded-2xl bg-neutral-900 flex items-center justify-center">
+                  <span className="material-symbols-outlined text-white text-3xl">
+                    {m.icon}
+                  </span>
+                </div>
               </div>
 
-              <div className="space-y-2 relative z-10">
-                <h4 className="text-xl font-bold text-white uppercase tracking-tight">
-                  {icon.name}
-                </h4>
-
-                <p className="text-sm text-slate-400 leading-relaxed">
-                  {icon.description}
-                </p>
-
-                <p className="text-[10px] font-mono uppercase tracking-[0.2em] text-sky-500 mt-2">
-                  {icon.subtitle}
-                </p>
-              </div>
+              <h3 className="text-lg font-semibold tracking-[0.5em] text-white mb-2">
+                {m.title}
+              </h3>
+              <p className="text-sm text-white/60 mb-3">
+                {m.subtitle}
+              </p>
+              <p className="text-sm text-white/60 leading-relaxed">
+                {m.body}
+              </p>
             </article>
           ))}
         </div>

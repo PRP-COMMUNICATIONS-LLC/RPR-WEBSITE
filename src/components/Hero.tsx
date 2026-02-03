@@ -28,7 +28,10 @@ export const Hero: React.FC = () => {
             href="https://rprcomms.com/labs"
             className="inline-flex items-center gap-2 bg-cyan-500 text-black px-6 py-3 rounded hover:bg-cyan-400 transition-colors text-sm font-semibold tracking-wider uppercase"
           >
-            HIGHLIGHTS
+            <span className="material-symbols-outlined text-[18px]">
+              auto_awesome_motion
+            </span>
+            LABS
           </a>
           <button
             className="inline-flex items-center gap-2 bg-transparent border border-white/20 text-white/80 px-6 py-3 rounded hover:border-white/40 hover:text-white transition-colors text-sm font-semibold tracking-wider uppercase"

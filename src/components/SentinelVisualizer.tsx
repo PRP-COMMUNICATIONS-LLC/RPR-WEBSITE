@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Shield, Users, Hammer, LayoutGrid } from 'lucide-react';
 import { sentinelDiagrams } from '../c4-diagrams/C4DiagramDefinitions-Final';
 import { MermaidViewer } from './MermaidViewer';
 
@@ -7,10 +6,10 @@ export const SentinelVisualizer: React.FC = () => {
   const [activeTab, setActiveTab] = useState<keyof typeof sentinelDiagrams>('l1_overwatch');
 
   const tabs = [
-    { id: 'l1_overwatch', label: 'L1: Overwatch', icon: Shield },
-    { id: 'l2_elders', label: 'L2: Elders', icon: Users },
-    { id: 'l3_forge', label: 'L3: Forge', icon: Hammer },
-    { id: 'l4_instances', label: 'L4: Instances', icon: LayoutGrid }
+    { id: 'l1_overwatch', label: 'L1: Overwatch', icon: 'shield' },
+    { id: 'l2_elders', label: 'L2: Elders', icon: 'group' },
+    { id: 'l3_forge', label: 'L3: Forge', icon: 'build' },
+    { id: 'l4_instances', label: 'L4: Instances', icon: 'grid_view' }
   ];
 
   return (
@@ -24,7 +23,9 @@ export const SentinelVisualizer: React.FC = () => {
               activeTab === tab.id ? 'bg-sky-600 text-white shadow-lg' : 'text-slate-500 hover:bg-slate-800/30'
             }`}
           >
-            <tab.icon className="w-4 h-4" />
+            <span className="material-symbols-outlined text-base">
+              {tab.icon}
+            </span>
             <span className="text-[10px] font-black uppercase tracking-widest">{tab.label}</span>
           </button>
         ))}

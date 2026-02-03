@@ -8,8 +8,8 @@ interface IconProps {
 
 export const Icon: React.FC<IconProps> = ({ name, className = '', size = 24 }) => {
   return (
-    <span 
-      className={`material-symbols-outlined ${className}`}
+    <span
+      className={`material-icons ${className}`}
       style={{ fontSize: size }}
     >
       {name}
