@@ -1,88 +1,54 @@
 import React from 'react';
 
+// ICON CONTRACT IMPORTS
+import AskIcon from './icons/methods_01_ask_dynamic_form.svg';
+import PayIcon from './icons/methods_02_pay_send_money.svg';
+import MakeIcon from './icons/methods_03_make_construction.svg';
+import PlayIcon from './icons/methods_04_play_rocket_launch.svg';
+import RepeatIcon from './icons/methods_05_repeat_update.svg';
+
 /**
- * TS-Λ3 // THE METHODS // CLIENT LIFECYCLE [v1.8.9]
- * Authoritative 5-Column IKON Grid: ASK → PAY → MAKE → PLAY → REPEAT
- * Premium icon tiles with glow effect
- * Typography Hierarchy: Stage Name (Primary) → Description (Secondary) → Subtitle (Tertiary)
- * Icon System: Material Symbols Variable Font via Icon helper
- * Alignment: px-4 sm:px-6 lg:px-8 py-24, max-w-screen-2xl
+ * TS-Λ3 // THE METHODS [v2.1.3]
+ * Mission: Icons Strike & Subheading Alignment
  */
+
+const steps = [
+  { label: 'ASK', icon: AskIcon, description: 'Sovereign intake and requirement mapping via dynamic forensic forms.', output: 'Intent Schema // Briefing Latch' },
+  { label: 'PAY', icon: PayIcon, description: 'Transparent commitment and resource allocation for the Vertical Strike.', output: 'Project Ledger // Resource Lock' },
+  { label: 'MAKE', icon: MakeIcon, description: 'Structural synthesis and logic weaving within The Forge.', output: 'Production Artifacts // Build Chunk' },
+  { label: 'PLAY', icon: PlayIcon, description: 'Live deployment and high-fidelity testing across the Singapore Harbor.', output: 'Sovereign Launch // Edge Activation' },
+  { label: 'REPEAT', icon: RepeatIcon, description: 'Continuous refinement based on forensic feedback loops and RLHF.', output: 'Substrate Optimization // vNext' }
+];
+
 export const Methods: React.FC = () => {
-  const methods = [
-    {
-      key: 'ASK',
-      title: 'ASK',
-      subtitle: 'Strategic Planning',
-      body: 'Define problem, map consumer journey, set success metrics.',
-      icon: 'group',
-    },
-    {
-      key: 'PAY',
-      title: 'PAY',
-      subtitle: 'Client Approval',
-      body: 'Align on risks, timelines and budgets; get sign-off.',
-      icon: 'sync',
-    },
-    {
-      key: 'MAKE',
-      title: 'MAKE',
-      subtitle: 'Planning',
-      body: 'Develop concepts, plan channels, build the roadmap.',
-      icon: 'build',
-    },
-    {
-      key: 'PLAY',
-      title: 'PLAY',
-      subtitle: 'Execution',
-      body: 'Produce assets, launch and monitor performance in market.',
-      icon: 'rocket_launch',
-    },
-    {
-      key: 'REPEAT',
-      title: 'REPEAT',
-      subtitle: 'Post Analysis',
-      body: 'Review results, capture insights, improve the journey.',
-      icon: 'self_improvement',
-    },
-  ];
-
   return (
-    <section id="methods" className="px-4 sm:px-6 lg:px-8 py-24">
+    <section id="methods" className="bg-black py-24 px-6 md:px-12 border-t border-white/5">
       <div className="max-w-screen-2xl mx-auto">
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 text-left">
-          THE METHODS
-        </h2>
-        <div className="w-16 h-1 bg-cyan-400 mb-8"></div>
-        <p className="text-left text-white/60 text-base md:text-lg leading-relaxed mb-12 max-w-3xl">
-          A continuous loop from strategy to post-campaign insight.
-        </p>
+        <div className="space-y-4 mb-16 text-left border-l-2 border-cyan-400 pl-8">
+          <h2 className="text-white text-4xl md:text-6xl font-bold uppercase tracking-tight italic font-sans">
+            THE <span className="text-cyan-400">METHODS</span>
+          </h2>
+          <p className="text-white/40 font-mono tracking-[0.1em] text-xs md:text-sm uppercase leading-relaxed max-w-xl">
+            Developing tailor-made solutions to our corporate clients
+          </p>
+        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
-          {methods.map((m) => (
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+          {steps.map((step, i) => (
             <article
-              key={m.key}
-              className="bg-black rounded-3xl py-10 px-8 flex flex-col items-center text-center"
+              key={i}
+              className="flex flex-col gap-6 p-8 bg-white/5 border border-white/10 rounded-[2.5rem] group hover:border-cyan-500/30 transition-all duration-700"
             >
-              {/* Icon tile with glow */}
-              <div className="mb-6 rounded-2xl bg-black/80 shadow-[0_0_40px_rgba(0,0,0,0.6)] p-3">
-                <div className="w-10 h-10 rounded-2xl bg-neutral-900 flex items-center justify-center">
-                  <span className="material-symbols-outlined text-white text-2xl">
-                    {m.icon}
-                  </span>
+              <div className="mb-2">
+                <img src={step.icon} alt={step.label} className="w-16 h-16 object-contain mb-4" />
+              </div>
+              <div className="space-y-4">
+                <h4 className="text-xl font-bold text-white uppercase tracking-tight">{step.label}</h4>
+                <p className="text-xs text-white/60 leading-relaxed italic h-16">{step.description}</p>
+                <div className="pt-4 border-t border-white/5">
+                  <p className="text-[9px] font-mono text-cyan-500 uppercase tracking-widest">{step.output}</p>
                 </div>
               </div>
-
-
-              <h3 className="text-lg font-semibold tracking-[0.5em] text-white mb-2">
-                {m.title}
-              </h3>
-              <p className="text-sm text-white/60 mb-3">
-                {m.subtitle}
-              </p>
-              <p className="text-sm text-white/60 leading-relaxed">
-                {m.body}
-              </p>
             </article>
           ))}
         </div>

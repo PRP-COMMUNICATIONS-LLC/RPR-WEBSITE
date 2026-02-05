@@ -7,13 +7,14 @@ import { Labs } from './Labs';
 import { Overwatch } from './Overwatch';
 
 /**
- * TS-Λ3 // HOME SUBSTRATE [v1.8.8]
- * Seating: Hero -> Foundations -> Methods (5-step) -> Process (4-step) -> Labs -> Overwatch.
+ * TS-Λ3 // HOME SUBSTRATE [v2.1.0]
+ * Seating: Hero -> Foundations -> Methods -> Labs -> Overwatch.
  * Authority: hello@butterdime.com
  */
 export const Home: React.FC = () => {
   return (
-    <>
+    <div className="flex flex-col">
+      {/* 🚀 HERO SUBSTRATE (v6.2.0 LATCHED) */}
       <Hero />
 
       <section id="foundations">
@@ -28,14 +29,8 @@ export const Home: React.FC = () => {
         <Process />
       </section>
 
-      {/* Labs and Overwatch are STRUCTURE FROZEN, CONTENT TBD (v1.8.9) */}
-      <section id="labs">
-        <Labs />
-      </section>
-
-      <section id="overwatch">
-        <Overwatch />
-      </section>
-    </>
+      {/* 🛡️ STRATEGIC COMMAND */}
+      <Overwatch />
+    </div>
   );
 };
