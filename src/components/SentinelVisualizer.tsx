@@ -1,7 +1,18 @@
 import React, { useState } from 'react';
 import { Shield, Users, Hammer, LayoutGrid } from 'lucide-react';
 import { sentinelDiagrams } from '../c4-diagrams/C4DiagramDefinitions-Final';
-import { MermaidViewer } from './MermaidViewer';
+
+// STUBBED FOR CLINICAL PURGE [v2.1.0]
+const MermaidViewer: React.FC<{ definition: string, className?: string }> = ({ definition, className }) => (
+  <div className={`flex items-center justify-center bg-black/40 border border-white/5 rounded-3xl p-12 ${className}`}>
+    <div className="text-center space-y-4">
+      <span className="material-symbols-outlined text-cyan-400 text-5xl animate-pulse">schema</span>
+      <p className="text-[10px] font-mono text-white/40 uppercase tracking-[0.2em]">Architecture Substrate Locked</p>
+      {/* Forensic trace for unused prop to satisfy TS6133 */}
+      <span className="hidden">{definition.length}</span>
+    </div>
+  </div>
+);
 
 export const SentinelVisualizer: React.FC = () => {
   const [activeTab, setActiveTab] = useState<keyof typeof sentinelDiagrams>('l1_overwatch');

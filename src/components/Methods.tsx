@@ -1,25 +1,17 @@
 import React from 'react';
 
-// ICON CONTRACT IMPORTS [v2.4.2]
-import AskIcon from './icons/methods_01_ask_dynamic_form.svg';
-import PayIcon from './icons/methods_02_pay_send_money.svg';
-import MakeIcon from './icons/methods_03_make_construction.svg';
-import PlayIcon from './icons/methods_04_play_rocket_launch.svg';
-import RepeatIcon from './icons/methods_05_repeat_update.svg';
-
 /**
  * TS-Λ3 // THE METHODS [v2.4.2 ALIGNED]
- * Ikon Harbor: 5 SVG imports active.
- * Header Drift: No // prefix seated.
+ * Ikon Harbor: Transitioned to Material Symbols for clinical substrate.
  * Registry: ASK -> #overwatch / PAY -> /labs / MAKE -> #foundations
  */
 
 const steps = [
-  { label: 'ASK', id: '#overwatch', icon: AskIcon, description: 'Sovereign intake and requirement mapping via dynamic forensic forms.', output: 'Intent Schema // Briefing Latch' },
-  { label: 'PAY', id: '/labs', icon: PayIcon, description: 'Transparent commitment and resource allocation for the Vertical Strike.', output: 'Project Ledger // Resource Lock' },
-  { label: 'MAKE', id: '#foundations', icon: MakeIcon, description: 'Structural synthesis and logic weaving within The Forge.', output: 'Production Artifacts // Build Chunk' },
-  { label: 'PLAY', id: '#methods', icon: PlayIcon, description: 'Live deployment and high-fidelity testing across the Singapore Harbor.', output: 'Sovereign Launch // Edge Activation' },
-  { label: 'REPEAT', id: '#foundations', icon: RepeatIcon, description: 'Continuous refinement based on forensic feedback loops and RLHF.', output: 'Substrate Optimization // vNext' }
+  { label: 'ASK', id: '#overwatch', icon: 'quiz', description: 'Sovereign intake and requirement mapping via dynamic forensic forms.', output: 'Intent Schema // Briefing Latch' },
+  { label: 'PAY', id: '/labs', icon: 'payments', description: 'Transparent commitment and resource allocation for the Vertical Strike.', output: 'Project Ledger // Resource Lock' },
+  { label: 'MAKE', id: '#foundations', icon: 'construction', description: 'Structural synthesis and logic weaving within The Forge.', output: 'Production Artifacts // Build Chunk' },
+  { label: 'PLAY', id: '#methods', icon: 'rocket_launch', description: 'Live deployment and high-fidelity testing across the Singapore Harbor.', output: 'Sovereign Launch // Edge Activation' },
+  { label: 'REPEAT', id: '#foundations', icon: 'update', description: 'Continuous refinement based on forensic feedback loops and RLHF.', output: 'Substrate Optimization // vNext' }
 ];
 
 export const Methods: React.FC = () => {
@@ -43,7 +35,9 @@ export const Methods: React.FC = () => {
               className="flex flex-col gap-6 p-8 bg-white/5 border border-white/10 rounded-[2.5rem] group hover:border-cyan-500/30 transition-all duration-700 no-underline"
             >
               <div className="mb-2">
-                <img src={step.icon} alt={step.label} className="w-16 h-16 object-contain mb-4 group-hover:scale-110 transition-transform invert brightness-200" />
+                <span className="material-symbols-outlined text-cyan-400" style={{ fontSize: '48px' }}>
+                  {step.icon}
+                </span>
               </div>
               <div className="space-y-4">
                 <h4 className="text-xl font-bold text-white uppercase tracking-tight">{step.label}</h4>
