@@ -1,21 +1,20 @@
 import React from 'react';
-import { HomeHero } from './HomeHero';
+import { Hero } from './Hero';
 import { Foundations } from './Foundations';
 import { Methods } from './Methods';
 import { Labs } from './Labs';
-import { ProductInventory } from './ProductInventory';
 import { Overwatch } from './Overwatch';
 
 /**
- * TS-Λ3 // HOME SUBSTRATE [v1.8.7]
- * Seating: HomeHero -> Foundations -> Methods -> Labs -> Product Inventory -> Overwatch.
+ * TS-Λ3 // HOME SUBSTRATE [v2.1.0]
+ * Seating: Hero -> Foundations -> Methods -> Labs -> Overwatch.
  * Authority: hello@butterdime.com
  */
 export const Home: React.FC = () => {
   return (
     <div className="flex flex-col">
-      {/* 🚀 HERO SUBSTRATE (v1.8.7 LATCHED) */}
-      <HomeHero />
+      {/* 🚀 HERO SUBSTRATE (v6.2.0 LATCHED) */}
+      <Hero />
 
       {/* 🏛️ ARCHITECTURAL SUBSTRATE (DNA Pillars + Bible) */}
       <Foundations />
@@ -25,9 +24,6 @@ export const Home: React.FC = () => {
 
       {/* 🧪 PROTOTYPE ENCLAVE (4-Tier Labs) */}
       <Labs />
-
-      {/* 📦 PRODUCT INVENTORY (Level 4 Graduation) */}
-      <ProductInventory />
 
       {/* 🛡️ STRATEGIC COMMAND */}
       <Overwatch />

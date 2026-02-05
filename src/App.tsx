@@ -4,19 +4,30 @@ import { WorkflowProvider } from "./contexts/WorkflowContext";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import { Home } from "./components/Home";
+import { MyAudit } from "./pages/labs/MyAudit";
 import { LegalStub } from "./components/LegalStub";
 import { HashRedirect } from "./components/HashRedirect";
 import { BackToTop } from "./components/BackToTop";
-import { Suspense, lazy } from "react";
+import { Suspense, lazy, useEffect } from "react";
 
 const HexGrid = lazy(() => import("./components/background/HexGrid"));
 
 /**
- * TS-Λ3 // ROUTING SUBSTRATE [v1.8.3]
+ * TS-Λ3 // ROUTING SUBSTRATE [v2.1.3]
  * Bugfix: pt-20 alignment for v1.8.3 header (80px).
  * SPA routing with redirects for /about and /contact.
+ * Update: Added Material Symbols font loader.
  */
 export default function App() {
+  useEffect(() => {
+    if (typeof document !== 'undefined') {
+      const link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=smart_toy';
+      document.head.appendChild(link);
+    }
+  }, []);
+
   return (
     <BrowserRouter>
       <AuthProvider>
@@ -36,6 +47,7 @@ export default function App() {
                   <Route path="/contact" element={<HashRedirect to="/#methods" />} />
                   {/* Dynamic legal document routing */}
                   <Route path="/legal/:docId" element={<LegalStub />} />
+                  <Route path="/labs/myaudit" element={<MyAudit />} />
                   {/* Catch-all redirect to home */}
                   <Route path="*" element={<HashRedirect to="/" />} />
                 </Routes>

@@ -1,35 +1,38 @@
 import React from 'react';
-import { Cpu, Shield, Zap, Globe } from 'lucide-react';
+import SentinelIcon from './icons/the_sentinel_protocol.svg';
+import BishopIcon from './icons/rpr-icon-chess_bishop.svg';
+import AssistantDeviceIcon from './icons/perplexity_command-icon-assistant_device.svg';
+import KnightIcon from './icons/rpr-icon-chess_knight.svg';
 
 /**
- * TS-Λ3 // LABS SUBSTRATE [v1.8.7]
- * Resolution: Aligned with 4-Tier graduation narrative and Foundations styling.
- * Alternating: bg-[#050505]
+ * TS-Λ3 // LABS SUBSTRATE [v2.1.0]
+ * Resolution: Aligned with 4-Tier graduation narrative and Bauhaus icon contract.
+ * Authority: hello@butterdime.com
  */
 export const Labs: React.FC = () => {
   const tiers = [
     {
       id: "t1",
       title: "Tier I: SENTINEL Protocol",
-      icon: Shield,
+      icon: SentinelIcon,
       desc: "The core governance engine managing the forensic evolution of creative substrates."
     },
     {
       id: "t2",
       title: "Tier II: THE ELDERS",
-      icon: Cpu,
+      icon: BishopIcon,
       desc: "The Advisory triad bridging strategic intent with operational System 3 divisions."
     },
     {
       id: "t3",
       title: "Tier III: THE FORGE",
-      icon: Zap,
+      icon: AssistantDeviceIcon,
       desc: "Internal Intelligence Lab staging specialized modules (IKON, Logo, Video) in Firebase Studio."
     },
     {
       id: "t4",
-      title: "Tier IV: CLIENT INSTANCES",
-      icon: Globe,
+      title: "Tier IV: INSTANCES",
+      icon: KnightIcon,
       desc: "Isolated sovereign clones (Labyrinth, MYAUDIT) deployed as standalone dashboard instances."
     }
   ];
@@ -51,7 +54,13 @@ export const Labs: React.FC = () => {
               key={t.id}
               className="group bg-slate-900/10 border border-slate-800/50 p-8 rounded-[2.5rem] hover:border-sky-500/30 transition-all duration-700"
             >
-              <t.icon className="w-6 h-6 text-sky-500 mb-6 group-hover:scale-110 transition-transform" />
+              <div className="mb-6 w-8 h-8 flex items-center justify-center">
+                <img
+                  src={t.icon}
+                  alt={t.title}
+                  className="w-full h-full object-contain group-hover:scale-110 transition-transform invert brightness-200"
+                />
+              </div>
               <h3 className="text-lg font-bold uppercase mb-4 text-white">{t.title}</h3>
               <p className="text-slate-400 text-sm leading-relaxed">{t.desc}</p>
             </div>

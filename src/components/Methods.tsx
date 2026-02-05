@@ -1,96 +1,53 @@
 import React from 'react';
 
-export interface IkonMeta {
-  name: string;
-  subtitle: string;
-  description: string;
-  icon: string;
-  isRefiner?: boolean; // Flag for REPEAT node visual distinction
-}
+// ICON CONTRACT IMPORTS
+import AskIcon from './icons/methods_01_ask_dynamic_form.svg';
+import PayIcon from './icons/methods_02_pay_send_money.svg';
+import MakeIcon from './icons/methods_03_make_construction.svg';
+import PlayIcon from './icons/methods_04_play_rocket_launch.svg';
+import RepeatIcon from './icons/methods_05_repeat_update.svg';
 
 /**
- * TS-Λ3 // THE METHODS // CLIENT LIFECYCLE [v1.8.7]
- * Authoritative 5-Column IKON Grid: ASK → PAY → PLAN → PLAY → REPEAT
- * Typography Hierarchy: Stage Name (Primary) → Description (Secondary) → Subtitle (Tertiary)
- * Icon System: Material Symbols Variable Font
- * Alignment: py-24, bg-[#020617], rounded-[2.5rem]
+ * TS-Λ3 // THE METHODS [v2.1.3]
+ * Mission: Icons Strike & Subheading Alignment
  */
-export const Methods: React.FC = () => {
-  const primaryIkons: IkonMeta[] = [
-    {
-      name: 'ASK',
-      subtitle: 'Strategic Planning',
-      description: 'Define problem, map consumer journey, set success metrics.',
-      icon: 'lightbulb'
-    },
-    {
-      name: 'PAY',
-      subtitle: 'Client Approval',
-      description: 'Align on risks, timelines and budgets; get sign-off.',
-      icon: 'heart_check'
-    },
-    {
-      name: 'PLAN',
-      subtitle: 'Planning',
-      description: 'Develop concepts, plan channels, build the roadmap.',
-      icon: 'layers'
-    },
-    {
-      name: 'PLAY',
-      subtitle: 'Execution',
-      description: 'Produce assets, launch and monitor performance in market.',
-      icon: 'play_for_work'
-    },
-    {
-      name: 'REPEAT',
-      subtitle: 'Post Analysis',
-      description: 'Refining the loop for next cycle based on forensic telemetry.',
-      icon: 'cycle',
-      isRefiner: true // Visual distinction for the loop refiner node
-    }
-  ];
 
+const steps = [
+  { label: 'ASK', icon: AskIcon, description: 'Sovereign intake and requirement mapping via dynamic forensic forms.', output: 'Intent Schema // Briefing Latch' },
+  { label: 'PAY', icon: PayIcon, description: 'Transparent commitment and resource allocation for the Vertical Strike.', output: 'Project Ledger // Resource Lock' },
+  { label: 'MAKE', icon: MakeIcon, description: 'Structural synthesis and logic weaving within The Forge.', output: 'Production Artifacts // Build Chunk' },
+  { label: 'PLAY', icon: PlayIcon, description: 'Live deployment and high-fidelity testing across the Singapore Harbor.', output: 'Sovereign Launch // Edge Activation' },
+  { label: 'REPEAT', icon: RepeatIcon, description: 'Continuous refinement based on forensic feedback loops and RLHF.', output: 'Substrate Optimization // vNext' }
+];
+
+export const Methods: React.FC = () => {
   return (
-    <section id="methods" className="bg-[#020617] py-24 px-6 md:px-12 border-t border-white/5">
-      <div className="max-w-7xl mx-auto space-y-12">
-        <div className="space-y-4">
-          <h2 className="text-white text-4xl md:text-6xl font-black text-white uppercase tracking-tighter italic leading-none">
-            THE <span className="text-sky-500 font-black">METHODS</span>
+    <section id="methods" className="bg-black py-24 px-6 md:px-12 border-t border-white/5">
+      <div className="max-w-screen-2xl mx-auto">
+        <div className="space-y-4 mb-16 text-left border-l-2 border-cyan-400 pl-8">
+          <h2 className="text-white text-4xl md:text-6xl font-bold uppercase tracking-tight italic font-sans">
+            THE <span className="text-cyan-400">METHODS</span>
           </h2>
-          <p className="text-sky-500 font-mono tracking-[0.4em] text-[10px] uppercase">CLIENT LIFECYCLE</p>
+          <p className="text-white/40 font-mono tracking-[0.1em] text-xs md:text-sm uppercase leading-relaxed max-w-xl">
+            Developing tailor-made solutions to our corporate clients
+          </p>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-3 lg:grid-cols-5">
-          {primaryIkons.map((icon) => (
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+          {steps.map((step, i) => (
             <article
-              key={icon.name}
-              className={`flex flex-col gap-3 rounded-[2.5rem] border border-slate-800/50 bg-slate-900/10 p-8 hover:border-sky-500/30 transition-all duration-700 ${icon.isRefiner ? 'relative overflow-hidden' : ''
-                }`}
+              key={i}
+              className="flex flex-col gap-6 p-8 bg-white/5 border border-white/10 rounded-[2.5rem] group hover:border-cyan-500/30 transition-all duration-700"
             >
-              {/* Subtle cyan pulse for REPEAT refiner node */}
-              {icon.isRefiner && (
-                <div className="absolute inset-0 bg-sky-500/5 animate-pulse pointer-events-none" style={{ animationDuration: '3s' }} />
-              )}
-
-              {/* UNIFIED CONTAINER SPECIFICATION */}
-              <div className="w-12 h-12 bg-slate-900 border border-slate-800 rounded-xl flex items-center justify-center group-hover:border-sky-500/20 transition-all">
-                <span className="material-symbols-outlined text-sky-500 text-2xl">
-                  {icon.icon}
-                </span>
+              <div className="mb-2">
+                <img src={step.icon} alt={step.label} className="w-16 h-16 object-contain mb-4" />
               </div>
-
-              <div className="space-y-2 relative z-10">
-                <h4 className="text-xl font-bold text-white uppercase tracking-tight">
-                  {icon.name}
-                </h4>
-
-                <p className="text-sm text-slate-400 leading-relaxed">
-                  {icon.description}
-                </p>
-
-                <p className="text-[10px] font-mono uppercase tracking-[0.2em] text-sky-500 mt-2">
-                  {icon.subtitle}
-                </p>
+              <div className="space-y-4">
+                <h4 className="text-xl font-bold text-white uppercase tracking-tight">{step.label}</h4>
+                <p className="text-xs text-white/60 leading-relaxed italic h-16">{step.description}</p>
+                <div className="pt-4 border-t border-white/5">
+                  <p className="text-[9px] font-mono text-cyan-500 uppercase tracking-widest">{step.output}</p>
+                </div>
               </div>
             </article>
           ))}
