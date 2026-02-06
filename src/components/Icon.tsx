@@ -11,6 +11,7 @@ interface IconProps {
   className?: string;
   size?: number | string;
   variant?: "outlined" | "rounded" | "sharp";
+  fill?: 0 | 1;
 }
 
 export const Icon: React.FC<IconProps> = ({
@@ -18,6 +19,7 @@ export const Icon: React.FC<IconProps> = ({
   className = "",
   size = 24,
   variant = "outlined",
+  fill = 0,
 }) => {
   const baseClass =
     variant === "outlined"
@@ -29,7 +31,10 @@ export const Icon: React.FC<IconProps> = ({
   return (
     <span
       className={`${baseClass} ${className}`}
-      style={{ fontSize: size }}
+      style={{
+        fontSize: size,
+        fontVariationSettings: `'FILL' ${fill}, 'wght' 400, 'GRAD' 0, 'opsz' 48`
+      }}
     >
       {name}
     </span>

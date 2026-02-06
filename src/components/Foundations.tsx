@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { SentinelVisualizer } from './SentinelVisualizer';
+import { SectionHeading } from './SectionHeading';
 
 /**
  * TS-Λ3 // FOUNDATIONS SUBSTRATE [v2.1.3]
@@ -31,18 +32,15 @@ export const Foundations: React.FC = () => {
   const [openPillar, setOpenPillar] = useState<string | null>("truth");
 
   return (
-    <section id="foundations" className="py-24 relative overflow-hidden bg-[#050505] border-t border-white/5">
+    <section id="foundations" className="py-24 relative overflow-hidden bg-sovereign-bg-primary border-t border-sovereign-border-subtle">
       <div className="max-w-screen-2xl mx-auto px-6">
 
         {/* MOTHERSHIP HEADER ALIGNMENT [v2.1.3] */}
-        <div className="space-y-4 mb-16 text-left border-l-2 border-cyan-400 pl-8">
-          <h2 className="text-white text-4xl md:text-6xl font-bold uppercase tracking-tight italic font-sans">
-            THE <span className="text-cyan-400">MOTHERSHIP</span>
-          </h2>
-          <p className="text-cyan-400 font-mono tracking-widest text-xs md:text-sm uppercase leading-relaxed max-w-xl">
-            Crafting a virtual clone of your physical business entity
-          </p>
-        </div>
+        <SectionHeading
+          title="The Mothership"
+          kicker="Core Entity"
+          className="mb-16 border-l-2 border-sovereign-actor-cyan pl-8"
+        />
 
         {/* DNA PILLARS ACCORDION */}
         <div className="space-y-4 mb-24">

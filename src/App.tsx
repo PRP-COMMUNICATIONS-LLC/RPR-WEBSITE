@@ -1,6 +1,7 @@
 import { BrowserRouter } from "react-router-dom";
 import { Header } from "./components/Header";
 import { Hero } from "./components/Hero";
+import { Architecture } from "./components/Architecture";
 import { Foundations } from "./components/Foundations";
 import { Methods } from "./components/Methods";
 import { SentinelVisualizer } from "./components/SentinelVisualizer";
@@ -29,6 +30,7 @@ export default function App() {
           <Header />
           <main className="pt-20">
             <Hero />
+            <Architecture />
             <section id="foundations">
               <Foundations />
             </section>

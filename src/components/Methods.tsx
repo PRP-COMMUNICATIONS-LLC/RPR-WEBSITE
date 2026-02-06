@@ -1,5 +1,6 @@
 import React from 'react';
 import { Icon } from './Icon';
+import { SectionHeading } from './SectionHeading';
 
 /**
  * TS-Λ3 // THE METHODS [v2.4.2 ALIGNED]
@@ -17,16 +18,13 @@ const steps = [
 
 export const Methods: React.FC = () => {
   return (
-    <section id="methods" className="bg-black py-24 px-6 md:px-12 border-t border-white/5">
+    <section id="methods" className="bg-sovereign-bg-primary py-24 px-6 md:px-12 border-t border-sovereign-border-subtle">
       <div className="max-w-screen-2xl mx-auto">
-        <div className="space-y-4 mb-16 text-left border-l-2 border-cyan-400 pl-8">
-          <h2 className="text-white text-4xl md:text-6xl font-bold uppercase tracking-tight italic font-sans">
-            THE <span className="text-cyan-400">METHODS</span>
-          </h2>
-          <p className="text-white/40 font-mono tracking-[0.1em] text-xs md:text-sm uppercase leading-relaxed max-w-xl">
-            Developing tailor-made solutions to our corporate clients
-          </p>
-        </div>
+        <SectionHeading
+          title="The Methods"
+          kicker="Operational Loop"
+          className="mb-16 border-l-2 border-sovereign-actor-cyan pl-8"
+        />
 
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
           {steps.map((step, i) => (
