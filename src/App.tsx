@@ -14,6 +14,19 @@ import { useLocation } from "react-router-dom";
 
 const HexGrid = lazy(() => import("./components/background/HexGrid"));
 
+export interface NodeData {
+  id: string;
+  name: string;
+  type: string;
+  description: string;
+  auditTrail: {
+    timestamp: string;
+    user: string;
+    action: string;
+    details: string;
+  }[];
+}
+
 /**
  * TS-Λ3 // ROUTING SUBSTRATE [v2.1.3]
  * Bugfix: pt-20 alignment for v1.8.3 header (80px).
