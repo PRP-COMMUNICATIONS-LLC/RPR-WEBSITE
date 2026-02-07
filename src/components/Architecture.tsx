@@ -24,24 +24,17 @@ const SYSTEMS = [
     iconFill: 0 as const,
   },
   {
-    title: "The Methods",
-    kicker: "L3 // OPERATIONAL LOOP",
-    description: "Developing tailor-made solutions. ASK, PAY, MAKE, PLAY, REPEAT. Continuous refinement via forensic feedback.",
-    iconName: "schema",
-    iconFill: 1 as const,
-  },
-  {
-    title: "Labs",
-    kicker: "L4 // INNOVATION TIER",
-    description: "Experimental activation and sovereign solutions. Tiered graduation from Sentinel Protocol to active Instances.",
-    iconName: "science",
-    iconFill: 1 as const,
-  },
-  {
     title: "Overwatch",
     kicker: "L0 // GOVERNANCE",
     description: "Sovereign governance and requirement mapping. The Sentinel Protocol ensures bit-perfect alignment with intent.",
     iconName: "shield_person",
+    iconFill: 1 as const,
+  },
+  {
+    title: "The Methods",
+    kicker: "L3 // OPERATIONAL LOOP",
+    description: "Developing tailor-made solutions. ASK, PAY, MAKE, PLAY, REPEAT. Continuous refinement via forensic feedback.",
+    iconName: "schema",
     iconFill: 1 as const,
   },
 ];
@@ -56,7 +49,7 @@ export const Architecture: React.FC = () => {
           className="mb-16 border-l-2 border-sovereign-actor-cyan pl-8"
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {SYSTEMS.map((system, i) => (
             <SystemCard
               key={i}

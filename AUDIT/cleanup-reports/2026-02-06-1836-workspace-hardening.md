@@ -11,11 +11,11 @@
 The workspace has been hardened to ensure a bit-perfect starting state for the v2.1.0 content injection. All legacy debris has been sequestered, and the core Sovereign substrate has been verified.
 
 ## 📦 2. FORENSIC BACKUP
-- **Snapshot:** `/app/backups/jules-workspace-20260206-183330.tar.gz`
+- **Snapshot:** `backups/jules-workspace-20260206-183330.tar.gz`
 - **Scope:** Full `/app` directory excluding heavy/irrelevant artifacts (`node_modules`, `.git`, `dist`, `backups`, `quarantine`).
 
 ## 🗑️ 3. QUARANTINE MANIFEST
-- **Quarantine Path:** `/app/quarantine/components-20260206-1834`
+- **Quarantine Path:** `quarantine/components-20260206-1834`
 - **Items Sequestered:** 0
 - **Note:** Environment was already at the target hardened state for `src/components/`.
 

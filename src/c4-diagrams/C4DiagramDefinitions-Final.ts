@@ -16,7 +16,7 @@ export const sentinelDiagrams: Record<string, C4Diagram> = {
     title: 'L1: OVERWATCH COMMAND',
     description: 'Sovereign Governance: The Sentinel Protocol',
     definition: `flowchart TD
-    OW["🛡️ OVERWATCH COMMAND<br/>(Founder Authority + Advisor Interface)"]
+    OW["🛡️ OVERWATCH COMMAND<br/>(Founder Authority + Perplexity Command)"]
     subgraph L2_Network ["THE QUANTUM NETWORK"]
         Brain["⚙️ RPR KONTROL"]
     end
@@ -35,8 +35,8 @@ export const sentinelDiagrams: Record<string, C4Diagram> = {
     definition: `graph TB
     subgraph Matrix ["SHARED_STATE_DECISION_MATRIX"]
         direction LR
-        ARCH["🐎 ARCHITECT"]
-        ENG["♟️ ENGINEER"]
+        ARCH["🐎 ARCHITECT (Perplexity)"]
+        ENG["♟️ ENGINEER (Gemini)"]
         SENT["🏰 SENTINEL"]
     end
     subgraph L3_SubTier ["THE AGENCY & THE FORGE"]

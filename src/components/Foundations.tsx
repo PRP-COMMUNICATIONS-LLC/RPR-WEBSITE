@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
-import { SentinelVisualizer } from './SentinelVisualizer';
 import { SectionHeading } from './SectionHeading';
 
 /**
  * TS-Λ3 // FOUNDATIONS SUBSTRATE [v2.1.3]
- * Resolution: DNA Pillars Accordion + Integrated SentinelVisualizer.
+ * Resolution: DNA Pillars Accordion + Integrated MothershipVisualizer.
  * Mission: Mothership Header Alignment & Content Purge.
  * Authority: hello@butterdime.com
  */
@@ -74,9 +73,7 @@ export const Foundations: React.FC = () => {
         </div>
 
         {/* INTEGRATED VISUALIZER SUBSTRATE */}
-        <div className="border-t border-slate-800/40 pt-20">
-          <SentinelVisualizer />
-        </div>
+        {/* Mission: MothershipVisualizer moved to its own section below Foundations and Methods. */}
       </div>
     </section>
   );

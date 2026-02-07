@@ -1,18 +1,13 @@
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
-import { LogoIcon } from './LogoIcon';
+
+import { useAuth } from '../contexts/AuthContext';
 
 /**
- * TS-Λ3 // HEADER SUBSTRATE [v2.1.2-STRIKE]
- * CLASSIFICATION: CLINICAL HARDENING
+ * TS-Λ3 // HEADER SUBSTRATE [v2.5.0]
+ * CLASSIFICATION: SOVEREIGN IDENTITY
  * AUTHORITY: hello@butterdime.com
  */
-
-// NOTE: Auth logic stubbed for Clinical Purge Phase
-// Previous import from '../contexts/AuthContext' quarantined.
-const useAuth = () => ({
-  user: null, // Set to { displayName: "Jules" } to verify Post-Auth state
-});
 
 const UserAuthIcon = () => (
   <svg width="40" height="40" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
@@ -54,22 +49,53 @@ const JSAvatar = () => (
 );
 
 const NAV_ITEMS = [
-  { id: 'foundations', label: 'FOUNDATIONS' },
-  { id: 'methods', label: 'METHODS' },
+  { id: 'foundations', label: 'THE FOUNDATIONS' },
+  { id: 'methods', label: 'THE METHODS' },
+  { id: 'mothership', label: 'THE MOTHERSHIP' },
   { id: 'overwatch', label: 'OVERWATCH' }
 ];
 
 export const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const { user } = useAuth();
+  const { user, signIn } = useAuth();
 
   return (
     <header className="fixed top-0 left-0 w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/10 h-20 flex items-center">
       <div className="max-w-7xl mx-auto px-6 w-full flex items-center justify-between">
 
-        {/* LOGO INJECTION [v2.6.2] */}
+        {/* LOGO INJECTION [v2.6.2] - INLINED */}
         <a href="/" className="flex items-center no-underline group shrink-0">
-          <LogoIcon className="h-10 w-auto text-white" />
+          <svg
+            width="503"
+            height="104"
+            viewBox="0 0 503 104"
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-10 w-auto text-white"
+          >
+            <defs>
+              <style type="text/css">
+                {`
+                  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap');
+                  .logo-text { font-family: 'Inter', sans-serif; font-weight: 900; text-transform: uppercase; letter-spacing: 0.1em; }
+                  .glow-filter { filter: drop-shadow(0 0 10px #FFFFFF66); }
+                `}
+              </style>
+            </defs>
+            <g className="glow-filter">
+              <g transform="translate(40, 31.2)">
+                <g transform="translate(0, 0) scale(0.08125)">
+                  <path
+                    d="M366.26,256L256,56L145.74,256L35.48,456H256h220.52L366.26,256z M462.43,448.02H327.14     c-52.29-17.46-99.26-47.08-123.05-72.78c12.09,3.24,29.59,6.3,53.32,6.78c43.69,0.87,71.69-14.09,71.69-14.09s-0.04-0.49-0.13-1.36     l0.44,1.33c10.53-38.31,14.66-76.67,9.8-143.39l20.22,36.67L462.43,448.02z M255.21,246.4c0,0,17.34,12.57,41.66,53.19     c15.5,25.89,23.07,61.65,23.07,61.65s-27.12,11.27-63.76,11.1c-37.52-0.53-63.59-9.51-63.59-9.51s5.81-34.7,21.66-61.82     C230.29,270.35,255.21,246.4,255.21,246.4z M153.41,261.17L256.42,74.33l70.68,128.2c8.42,51.22,5.65,107.88-2.38,140.27     c-3.5-14.36-9.64-32.72-20.28-49.2c-28.27-43.79-47.74-58.99-47.74-58.99s-0.36,0.2-1.01,0.63     c-42.74,11.66-77.73,28.09-123.62,64.64L153.41,261.17z M50.4,448.02l69.84-126.68c39.4-37.4,94.72-65.51,118.02-70.6     c-9.71,10.52-22.24,27.08-35.09,52.2c-18.12,35.42-20.61,64.11-20.61,64.11s0.59,0.37,1.78,0.99l-1.55-0.36     c29.53,30.52,56.36,49.88,116.46,80.35h-42.83H50.4z"
+                    fill="currentColor"
+                  />
+                </g>
+              </g>
+              <text x="88.6" y="52" className="logo-text" fontSize="32" dominantBaseline="central">
+                <tspan fill="#FFFFFF">RPR</tspan>
+                <tspan fill="#FFFFFF" dx="10">COMMUNICATIONS</tspan>
+              </text>
+            </g>
+          </svg>
         </a>
 
         {/* DESKTOP NAV [v2.1.2] */}
@@ -87,6 +113,7 @@ export const Header: React.FC = () => {
 
         <div className="flex items-center gap-4">
           <button
+            onClick={user ? undefined : signIn}
             className={`hidden lg:block transition-all hover:scale-105 ${!user ? 'w-10 h-10 rounded-md overflow-hidden' : ''}`}
           >
             {user ? <JSAvatar /> : <UserAuthIcon />}
@@ -98,36 +125,28 @@ export const Header: React.FC = () => {
         </div>
       </div>
 
-      {/* MOBILE OVERLAY [v2.1.2-HARDENED] */}
+      {/* MOBILE OVERLAY [v2.5.0] */}
       {isOpen && (
-        <div className="fixed inset-0 z-[100] bg-black/60 backdrop-blur-2xl flex flex-col p-8 animate-in fade-in duration-300">
-          <div className="flex justify-end mb-12">
-            <button onClick={() => setIsOpen(false)} className="p-2 text-white/60 hover:text-white">
-              <X size={32} />
-            </button>
-          </div>
-
-          <nav className="flex flex-col gap-10 mb-auto">
+        <div className="fixed inset-0 z-40 lg:hidden flex flex-col items-center justify-center animate-in fade-in duration-300">
+          <div className="absolute inset-0 bg-black/60 backdrop-blur-2xl" onClick={() => setIsOpen(false)} />
+          <nav className="relative z-50 flex flex-col items-center gap-10">
             {NAV_ITEMS.map((item) => (
               <a
                 key={item.id}
                 href={`#${item.id}`}
                 onClick={() => setIsOpen(false)}
-                className="text-4xl font-black text-white uppercase tracking-tighter italic font-mono hover:text-cyan-400 transition-colors"
+                className="text-2xl font-black text-white italic tracking-tighter hover:text-cyan-500 transition-all uppercase"
               >
                 {item.label}
               </a>
             ))}
+            <button
+              onClick={user ? undefined : signIn}
+              className={`transition-all hover:scale-105 ${!user ? 'w-10 h-10 rounded-md overflow-hidden' : ''}`}
+            >
+              {user ? <JSAvatar /> : <UserAuthIcon />}
+            </button>
           </nav>
-
-          <button className="flex items-center justify-between p-6 bg-white/5 rounded-2xl border border-white/10 mt-auto">
-            <span className="text-xs font-black text-slate-400 tracking-widest uppercase italic">
-              {user ? "Identity Latched" : "Identity Latch"}
-            </span>
-            <div className="flex items-center gap-3 w-10 h-10 shrink-0">
-               {user ? <JSAvatar /> : <UserAuthIcon />}
-            </div>
-          </button>
         </div>
       )}
     </header>

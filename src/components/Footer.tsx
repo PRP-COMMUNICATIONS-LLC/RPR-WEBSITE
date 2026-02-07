@@ -19,8 +19,8 @@ export const Footer: React.FC = () => {
           <nav className="flex flex-wrap gap-x-8 gap-y-4 text-[10px] font-bold tracking-[0.2em] uppercase text-zinc-500">
             <a href="/#foundations" className="hover:text-white transition-colors">THE FOUNDATIONS</a>
             <a href="/#methods" className="hover:text-white transition-colors">THE METHODS</a>
+            <a href="/#mothership" className="hover:text-white transition-colors">THE MOTHERSHIP</a>
             <a href="/#overwatch" className="hover:text-white transition-colors">THE OVERWATCH</a>
-            <a href="/#labs" className="hover:text-white transition-colors">LABS</a>
           </nav>
         </div>
 

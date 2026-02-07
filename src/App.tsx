@@ -1,12 +1,16 @@
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { AuthProvider } from "./contexts/AuthContext";
+import { WorkflowProvider } from "./contexts/WorkflowContext";
 import { Header } from "./components/Header";
 import { Hero } from "./components/Hero";
 import { Architecture } from "./components/Architecture";
 import { Foundations } from "./components/Foundations";
 import { Methods } from "./components/Methods";
-import { SentinelVisualizer } from "./components/SentinelVisualizer";
+import { MothershipSection } from "./components/MothershipSection";
+import { MothershipVisualizer } from "./components/MothershipVisualizer";
+import { Labs } from "./components/Labs";
+import { Overwatch } from "./components/Overwatch";
 import { Footer } from "./components/Footer";
-import { useEffect } from "react";
 
 /**
  * TS-Λ3 // CLINICAL SUBSTRATE [v2.1.0]
@@ -14,50 +18,37 @@ import { useEffect } from "react";
  * MISSION: ENVIRONMENT HARDENING (Phase 1)
  */
 
-export interface NodeData {
-  id: string;
-  name: string;
-  type: string;
-  description: string;
-  auditTrail: Array<{
-    timestamp: string;
-    user: string;
-    action: string;
-    details: string;
-  }>;
-}
-
 export default function App() {
-  useEffect(() => {
-    if (typeof document !== 'undefined') {
-      const link = document.createElement('link');
-      link.rel = 'stylesheet';
-      link.href = 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200';
-      document.head.appendChild(link);
-    }
-  }, []);
-
   return (
     <BrowserRouter>
-      <div className="min-h-screen bg-[#050505] text-slate-100 font-sans selection:bg-cyan-500/30 antialiased overflow-x-hidden relative">
-        <div className="relative z-10">
-          <Header />
-          <main className="pt-20">
-            <Hero />
-            <Architecture />
-            <section id="foundations">
-              <Foundations />
-            </section>
-            <section id="methods">
-              <Methods />
-            </section>
-            <section id="visualizer">
-              <SentinelVisualizer />
-            </section>
-          </main>
-          <Footer />
-        </div>
-      </div>
+      <AuthProvider>
+        <WorkflowProvider>
+          <div className="min-h-screen bg-[#050505] text-slate-100 font-sans selection:bg-cyan-500/30 antialiased overflow-x-hidden relative">
+            <div className="relative z-10">
+              <Header />
+              <Routes>
+            <Route path="/" element={
+              <main className="pt-20">
+                <Hero />
+                <Architecture />
+                <Foundations />
+                <Methods />
+                <MothershipSection />
+                <MothershipVisualizer />
+                <Overwatch />
+              </main>
+            } />
+            <Route path="/labs" element={
+              <main className="pt-20">
+                <Labs />
+              </main>
+            } />
+          </Routes>
+              <Footer />
+            </div>
+          </div>
+        </WorkflowProvider>
+      </AuthProvider>
     </BrowserRouter>
   );
 }
