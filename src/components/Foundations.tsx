@@ -1,79 +1,88 @@
-import React, { useState } from 'react';
-import { ChevronDown } from 'lucide-react';
-import { SectionHeading } from './SectionHeading';
-
-/**
- * TS-Λ3 // FOUNDATIONS SUBSTRATE [v2.1.3]
- * Resolution: DNA Pillars Accordion + Integrated MothershipVisualizer.
- * Mission: Mothership Header Alignment & Content Purge.
- * Authority: hello@butterdime.com
- */
-
-const dnaPillars = [
-  {
-    id: "truth",
-    title: "Source of Truth",
-    content: "We reject the 'pretty story' sitting on top of bad data. Our governance mandates that every strategic message is seated in reality."
-  },
-  {
-    id: "insight",
-    title: "The Insight (UI)",
-    content: "High-fidelity substrates for Agencies and SMEs require forensic clarity."
-  },
-  {
-    id: "experience",
-    title: "The Experience (UX)",
-    content: "We fix fewer, better problems by auditing the friction within the creative lifecycle."
-  }
-];
+import React from 'react';
+import { SourceOfTruthIcon } from './icons/dna-pillars/SourceOfTruthIcon';
+import { UserInsightIcon } from './icons/dna-pillars/UserInsightIcon';
+import { ConsumerJourneyIcon } from './icons/dna-pillars/ConsumerJourneyIcon';
 
 export const Foundations: React.FC = () => {
-  const [openPillar, setOpenPillar] = useState<string | null>("truth");
+  const pillars = [
+    {
+      id: 'source-of-truth',
+      icon: SourceOfTruthIcon,
+      title: 'Source of Truth',
+      description:
+        'A single source of truth is the foundation of every strategic move. We consolidate scattered data—your brand guidelines, customer insights, campaign performance, competitive intelligence—into a unified operational substrate. This isn\'t just a repository; it\'s a living, queryable knowledge base that ensures every decision is grounded in verified reality, not assumption.',
+    },
+    {
+      id: 'user-insight',
+      icon: UserInsightIcon,
+      title: 'User Insight',
+      description:
+        'Understanding your audience isn\'t optional—it\'s existential. We go beyond surface-level demographics to map behavioral patterns, motivations, pain points, and aspirations. Through ethnographic research, sentiment analysis, and real-world observation, we build psychographic profiles that reveal not just who your customers are, but why they make the choices they do. This depth transforms campaigns from messages into meaningful conversations.',
+    },
+    {
+      id: 'consumer-journey',
+      icon: ConsumerJourneyIcon,
+      title: 'Consumer Journey',
+      description:
+        'Every touchpoint matters. We chart the complete arc of the consumer experience—from first awareness through consideration, decision, and post-purchase loyalty. By identifying friction points, emotional triggers, and moments of truth across digital, physical, and hybrid spaces, we engineer journeys that feel intuitive, rewarding, and human. The result: campaigns that don\'t interrupt experiences, but become part of them.',
+    },
+  ];
 
   return (
-    <section id="foundations" className="py-24 relative overflow-hidden bg-sovereign-bg-primary border-t border-sovereign-border-subtle">
-      <div className="max-w-screen-2xl mx-auto px-6">
-
-        {/* MOTHERSHIP HEADER ALIGNMENT [v2.1.3] */}
-        <SectionHeading
-          title="The Mothership"
-          kicker="Core Entity"
-          className="mb-16 border-l-2 border-sovereign-actor-cyan pl-8"
-        />
-
-        {/* DNA PILLARS ACCORDION */}
-        <div className="space-y-4 mb-24">
-          {dnaPillars.map((p) => (
-            <div
-              key={p.id}
-              className={`border border-slate-800/60 rounded-[2rem] overflow-hidden transition-all duration-500 ${
-                openPillar === p.id ? 'bg-slate-900/20 border-cyan-500/30' : 'bg-transparent'
-              }`}
-            >
-              <button
-                onClick={() => setOpenPillar(openPillar === p.id ? null : p.id)}
-                className="w-full flex items-center justify-between p-8 text-left group"
-              >
-                <span className={`text-xl font-bold uppercase tracking-tight ${
-                  openPillar === p.id ? 'text-white' : 'text-slate-500'
-                }`}>
-                  {p.title}
-                </span>
-                <ChevronDown className={`w-5 h-5 transition-transform ${
-                  openPillar === p.id ? 'rotate-180 text-cyan-500' : 'text-slate-700'
-                }`} />
-              </button>
-              {openPillar === p.id && (
-                <div className="px-8 pb-8 text-slate-400 text-sm leading-relaxed max-w-3xl animate-in fade-in slide-in-from-top-2">
-                  {p.content}
-                </div>
-              )}
-            </div>
-          ))}
+    <section
+      id="foundations"
+      className="relative bg-black py-24 px-6 md:px-12 border-t border-white/10"
+    >
+      <div className="max-w-screen-2xl mx-auto">
+        {/* Section Header */}
+        <div className="mb-16 text-center">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight">
+            The DNA of Strategy
+          </h2>
+          <p className="text-white/60 text-base md:text-lg max-w-3xl mx-auto font-light leading-relaxed">
+            Every campaign we design begins with three foundational pillars. These aren't
+            buzzwords—they're the operational substrate that ensures every dollar, every message,
+            and every interaction is calibrated for measurable impact.
+          </p>
         </div>
 
-        {/* INTEGRATED VISUALIZER SUBSTRATE */}
-        {/* Mission: MothershipVisualizer moved to its own section below Foundations and Methods. */}
+        {/* 3-Column Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {pillars.map((pillar) => {
+            const IconComponent = pillar.icon;
+            return (
+              <div
+                key={pillar.id}
+                className="group relative bg-[#0a0a0a] border border-white/10 rounded-2xl p-8 transition-all duration-300 hover:border-cyan-500/50 hover:shadow-[0_0_30px_rgba(34,211,238,0.15)]"
+              >
+                {/* Icon */}
+                <div className="mb-6 flex justify-center">
+                  <IconComponent className="transition-transform duration-300 group-hover:scale-110" />
+                </div>
+
+                {/* Title */}
+                <h3 className="text-2xl font-bold text-white mb-4 text-center tracking-tight">
+                  {pillar.title}
+                </h3>
+
+                {/* Description */}
+                <p className="text-white/70 text-sm leading-relaxed text-center font-light">
+                  {pillar.description}
+                </p>
+
+                {/* Subtle glow effect on hover */}
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-cyan-500/0 via-cyan-500/0 to-cyan-500/0 group-hover:from-cyan-500/5 group-hover:via-cyan-500/10 group-hover:to-cyan-500/5 transition-all duration-500 pointer-events-none" />
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Footer Note (Optional) */}
+        <div className="mt-16 text-center">
+          <p className="text-white/40 text-xs uppercase tracking-widest font-mono">
+            Strategic Foundations · Verified Reality · Measurable Impact
+          </p>
+        </div>
       </div>
     </section>
   );
