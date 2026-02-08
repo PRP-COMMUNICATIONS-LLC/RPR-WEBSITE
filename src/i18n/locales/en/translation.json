@@ -1,0 +1,105 @@
+{
+  "header": {
+    "nav": {
+      "home": "Home",
+      "foundations": "Foundations",
+      "labs": "Labs",
+      "methods": "Methods",
+      "overwatch": "Overwatch",
+      "contact": "Contact"
+    },
+    "cta": "Get Started"
+  },
+  "hero": {
+    "tagline": "CREATIVE STRATEGY + OPERATIONAL RIGOR",
+    "title": "WE BUILD CAMPAIGNS THAT ACTUALLY MOVE THE NEEDLE.",
+    "subtitle": "WE'RE A BOUTIQUE AGENCY AND EXPERIENCE STUDIO THAT ACTUALLY CARES IF THE CAMPAIGN MOVES THE NEEDLE. WE PLAN CAMPAIGNS BASED ON REAL WORLD RESULTS THROUGH DIGITAL, VIRTUAL AND THE PHYSICAL SPACES..WITH THE MESSY BITS IN BETWEEN.",
+    "cta": {
+      "primary": "START A PROJECT",
+      "secondary": "ASK OLLIE"
+    }
+  },
+  "foundations": {
+    "title": "The DNA of Strategy",
+    "subtitle": "Every campaign we design begins with three foundational pillars. These aren't buzzwords—they're the operational substrate that ensures every dollar, every message, and every interaction is calibrated for measurable impact.",
+    "pillars": {
+      "sourceOfTruth": {
+        "title": "Source of Truth",
+        "description": "A single source of truth is the foundation of every strategic move. We consolidate scattered data—your brand guidelines, customer insights, campaign performance, competitive intelligence—into a unified operational substrate. This isn't just a repository; it's a living, queryable knowledge base that ensures every decision is grounded in verified reality, not assumption."
+      },
+      "userInsight": {
+        "title": "User Insight",
+        "description": "Understanding your audience isn't optional—it's existential. We go beyond surface-level demographics to map behavioral patterns, motivations, pain points, and aspirations. Through ethnographic research, sentiment analysis, and real-world observation, we build psychographic profiles that reveal not just who your customers are, but why they make the choices they do. This depth transforms campaigns from messages into meaningful conversations."
+      },
+      "consumerJourney": {
+        "title": "Consumer Journey",
+        "description": "Every touchpoint matters. We chart the complete arc of the consumer experience—from first awareness through consideration, decision, and post-purchase loyalty. By identifying friction points, emotional triggers, and moments of truth across digital, physical, and hybrid spaces, we engineer journeys that feel intuitive, rewarding, and human. The result: campaigns that don't interrupt experiences, but become part of them."
+      }
+    },
+    "footer": "Strategic Foundations · Verified Reality · Measurable Impact"
+  },
+  "labs": {
+    "title": "Labs",
+    "subtitle": "Where innovation meets execution",
+    "projects": {
+      "myaudit": {
+        "title": "MyAudit",
+        "description": "AI-powered compliance monitoring"
+      },
+      "project2": {
+        "title": "Project 2",
+        "description": "Description coming soon"
+      },
+      "project3": {
+        "title": "Project 3",
+        "description": "Description coming soon"
+      },
+      "project4": {
+        "title": "Project 4",
+        "description": "Description coming soon"
+      }
+    }
+  },
+  "methods": {
+    "title": "Methods",
+    "subtitle": "Our proven approach",
+    "cards": {
+      "method1": {
+        "title": "Discovery",
+        "description": "Deep-dive research phase"
+      },
+      "method2": {
+        "title": "Strategy",
+        "description": "Blueprint development"
+      },
+      "method3": {
+        "title": "Design",
+        "description": "Creative execution"
+      },
+      "method4": {
+        "title": "Deploy",
+        "description": "Campaign launch"
+      },
+      "method5": {
+        "title": "Optimize",
+        "description": "Performance tuning"
+      }
+    }
+  },
+  "overwatch": {
+    "title": "Overwatch",
+    "subtitle": "The Sovereign Substrate",
+    "description": "The Overwatch substrate is the final sovereign decision authority. It operates as the governance layer, ensuring every action aligns with strategic intent, ethical constraints, and operational reality.",
+    "status": {
+      "label": "Operational Status // LATCHED",
+      "title": "Sovereign Gatekeeper",
+      "audit": "Audit ID: CLEANUP-STRIKE-v2.1.0-COMPLETE"
+    }
+  },
+  "common": {
+    "readMore": "Read More",
+    "learnMore": "Learn More",
+    "contactUs": "Contact Us",
+    "getStarted": "Get Started"
+  }
+}

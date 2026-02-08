@@ -1,0 +1,105 @@
+{
+  "header": {
+    "nav": {
+      "home": "Utama",
+      "foundations": "Asas",
+      "labs": "Makmal",
+      "methods": "Kaedah",
+      "overwatch": "Pemantauan",
+      "contact": "Hubungi"
+    },
+    "cta": "Mulakan"
+  },
+  "hero": {
+    "tagline": "STRATEGI KREATIF + KETEGASAN OPERASI",
+    "title": "KAMI MEMBINA KEMPEN YANG BENAR-BENAR MEMBERI KESAN.",
+    "subtitle": "KAMI ADALAH AGENSI BUTIK DAN STUDIO PENGALAMAN YANG BENAR-BENAR MENGAMBIL BERAT SAMA ADA KEMPEN ITU MEMBERI KESAN. KAMI MERANCANG KEMPEN BERDASARKAN HASIL DUNIA SEBENAR MELALUI DIGITAL, MAYA DAN RUANG FIZIKAL..DENGAN BAHAGIAN YANG RUMIT DI ANTARANYA.",
+    "cta": {
+      "primary": "MULAKAN PROJEK",
+      "secondary": "TANYA OLLIE"
+    }
+  },
+  "foundations": {
+    "title": "DNA Strategi",
+    "subtitle": "Setiap kempen yang kami reka bermula dengan tiga tiang asas. Ini bukan kata kunci—ia adalah substrat operasi yang memastikan setiap ringgit, setiap mesej, dan setiap interaksi dikalibrasi untuk kesan yang boleh diukur.",
+    "pillars": {
+      "sourceOfTruth": {
+        "title": "Sumber Kebenaran",
+        "description": "Sumber kebenaran tunggal adalah asas setiap langkah strategik. Kami menggabungkan data yang tersebar—garis panduan jenama anda, pandangan pelanggan, prestasi kempen, risikan kompetitif—ke dalam substrat operasi bersatu. Ini bukan sekadar repositori; ia adalah pangkalan pengetahuan yang hidup dan boleh disoal yang memastikan setiap keputusan berasaskan realiti yang disahkan, bukan andaian."
+      },
+      "userInsight": {
+        "title": "Pandangan Pengguna",
+        "description": "Memahami khalayak anda bukan pilihan—ia adalah kewujudan. Kami melampaui demografi peringkat permukaan untuk memetakan corak tingkah laku, motivasi, titik kesakitan, dan aspirasi. Melalui penyelidikan etnografi, analisis sentimen, dan pemerhatian dunia sebenar, kami membina profil psikografi yang mendedahkan bukan sahaja siapa pelanggan anda, tetapi mengapa mereka membuat pilihan yang mereka lakukan. Kedalaman ini mengubah kempen daripada mesej kepada perbualan bermakna."
+      },
+      "consumerJourney": {
+        "title": "Perjalanan Pengguna",
+        "description": "Setiap titik sentuh penting. Kami mencatat lengkung lengkap pengalaman pengguna—dari kesedaran pertama melalui pertimbangan, keputusan, dan kesetiaan selepas pembelian. Dengan mengenal pasti titik geseran, pencetus emosi, dan saat kebenaran merentasi ruang digital, fizikal, dan hibrid, kami mereka bentuk perjalanan yang terasa intuitif, memberi ganjaran, dan manusiawi. Hasilnya: kempen yang tidak mengganggu pengalaman, tetapi menjadi sebahagian daripadanya."
+      }
+    },
+    "footer": "Asas Strategik · Realiti Disahkan · Kesan Boleh Diukur"
+  },
+  "labs": {
+    "title": "Makmal",
+    "subtitle": "Di mana inovasi bertemu pelaksanaan",
+    "projects": {
+      "myaudit": {
+        "title": "MyAudit",
+        "description": "Pemantauan pematuhan berkuasa AI"
+      },
+      "project2": {
+        "title": "Projek 2",
+        "description": "Penerangan akan datang"
+      },
+      "project3": {
+        "title": "Projek 3",
+        "description": "Penerangan akan datang"
+      },
+      "project4": {
+        "title": "Projek 4",
+        "description": "Penerangan akan datang"
+      }
+    }
+  },
+  "methods": {
+    "title": "Kaedah",
+    "subtitle": "Pendekatan terbukti kami",
+    "cards": {
+      "method1": {
+        "title": "Penemuan",
+        "description": "Fasa penyelidikan mendalam"
+      },
+      "method2": {
+        "title": "Strategi",
+        "description": "Pembangunan pelan tindakan"
+      },
+      "method3": {
+        "title": "Reka Bentuk",
+        "description": "Pelaksanaan kreatif"
+      },
+      "method4": {
+        "title": "Lancarkan",
+        "description": "Pelancaran kempen"
+      },
+      "method5": {
+        "title": "Optimumkan",
+        "description": "Penalaan prestasi"
+      }
+    }
+  },
+  "overwatch": {
+    "title": "Pemantauan",
+    "subtitle": "Substrat Berdaulat",
+    "description": "Substrat Pemantauan adalah pihak berkuasa keputusan berdaulat terakhir. Ia beroperasi sebagai lapisan tadbir urus, memastikan setiap tindakan sejajar dengan niat strategik, kekangan etika, dan realiti operasi.",
+    "status": {
+      "label": "Status Operasi // DIKUNCI",
+      "title": "Penjaga Berdaulat",
+      "audit": "ID Audit: CLEANUP-STRIKE-v2.1.0-SELESAI"
+    }
+  },
+  "common": {
+    "readMore": "Baca Lagi",
+    "learnMore": "Ketahui Lebih Lanjut",
+    "contactUs": "Hubungi Kami",
+    "getStarted": "Mulakan"
+  }
+}
