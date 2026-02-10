@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { RprMasterLogo } from '../brand/RprMasterLogo';
+import { RprMasterLogo } from '../brand/rprmasterlogo';
 
 /**
  * TS-Λ3 // SOVEREIGN LEGAL SUBSTRATE [v5.0.0]

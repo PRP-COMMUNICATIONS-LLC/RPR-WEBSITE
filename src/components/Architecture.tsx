@@ -1,6 +1,6 @@
 import React from "react";
-import { SystemCard } from "./SystemCard";
-import { SectionHeading } from "./SectionHeading";
+import { SystemCard } from "./systemcard";
+import { SectionHeading } from "./sectionheading";
 
 /**
  * TS-Λ3 // ARCHITECTURE SUBSTRATE

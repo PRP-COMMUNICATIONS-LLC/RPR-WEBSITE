@@ -1,6 +1,6 @@
 import React from 'react';
 // PATH FIX: Pointing to local component directory
-import SymbolTile from './icons/SymbolTile';
+import SymbolTile from './symboltile';
 
 /**
  * TS-Λ3 // THE METHODS [v3.0.2]

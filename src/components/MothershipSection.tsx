@@ -1,5 +1,5 @@
 import React from 'react';
-import { SectionHeading } from './SectionHeading';
+import { SectionHeading } from './sectionheading';
 
 /**
  * TS-Λ3 // MOTHERSHIP SECTION [v2.2.0]

@@ -1,13 +1,13 @@
 import { useState } from 'react';
-import Hero from './Hero';
-import Foundations from './Foundations';
-import Methods from './Methods';
-import { MothershipSection } from './MothershipSection';
-import { MothershipVisualizer } from './MothershipVisualizer';
-import Labs from './Labs';
-import Overwatch from './Overwatch';
-import AskOllie from './AskOllie';
-import AskOllieLauncher from './AskOllieLauncher';
+import Hero from './hero';
+import Foundations from './foundations';
+import Methods from './methods';
+import { MothershipSection } from './mothershipsection';
+import { MothershipVisualizer } from './mothershipvisualizer';
+import Labs from './labs';
+import Overwatch from './overwatch';
+import AskOllie from './askollie';
+import AskOllieLauncher from './askollielauncher';
 
 /**
  * TS-Λ3 // HOME ORCHESTRATOR [v4.5.0]

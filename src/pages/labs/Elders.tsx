@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import SymbolTile from '../../components/icons/SymbolTile';
+import SymbolTile from '../../components/symboltile';
 import { SectionDivider } from '../../components/c4-elements';
 
 /**

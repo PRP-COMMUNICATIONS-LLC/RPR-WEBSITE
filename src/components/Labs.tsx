@@ -1,5 +1,5 @@
 import React from 'react';
-import SymbolTile from './icons/SymbolTile';
+import SymbolTile from './symboltile';
 
 /**
  * TS-Λ3 // LABS SUBSTRATE [v3.4.1]

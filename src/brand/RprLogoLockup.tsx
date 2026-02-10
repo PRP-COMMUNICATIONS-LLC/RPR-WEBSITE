@@ -1,5 +1,5 @@
 import React from 'react';
-import { RprLogoIcon } from './RprLogoIcon';
+import { RprLogoIcon } from './rprlogoicon';
 
 export type GlyphType = 'master' | 'lockup';
 export type RprVariant = 'KONTROL' | 'VERIFY' | 'COMMUNICATIONS' | 'LLC';

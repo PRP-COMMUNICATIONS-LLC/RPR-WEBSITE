@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import SymbolTile from '../../components/icons/SymbolTile';
+import SymbolTile from '../../components/symboltile';
 import { Icon } from '../../components/Icon';
 
 /**

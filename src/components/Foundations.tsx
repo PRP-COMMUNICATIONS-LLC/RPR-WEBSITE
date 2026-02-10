@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
-import SymbolTile from './icons/SymbolTile';
+import SymbolTile from './symboltile';
 
 /**
  * TS-Λ3 // FOUNDATIONS [v9.0.0]

@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { sentinelDiagrams } from '../c4-diagrams/C4DiagramDefinitions-Final';
-import { MermaidViewer } from './MermaidViewer';
+import { MermaidViewer } from './mermaidviewer';
 import { Icon } from './Icon';
-import SymbolTile from './icons/SymbolTile';
-import { SectionHeading } from './SectionHeading';
+import SymbolTile from './symboltile';
+import { SectionHeading } from './sectionheading';
 import { SystemBox } from './c4-elements';
-import L1OverwatchCommand from './L1OverwatchCommand';
-import L2TheElders from './L2TheElders';
-import L3TheForge from './L3TheForge';
-import L4Sovereignty from './L4Sovereignty';
+import L1OverwatchCommand from './l1overwatchcommand';
+import L2TheElders from './l2theelders';
+import L3TheForge from './l3workspace';
+import L4Sovereignty from './l4sovereignty';
 import type { NodeData } from '../types';
 
 /**

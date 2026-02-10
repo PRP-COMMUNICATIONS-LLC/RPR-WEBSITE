@@ -1,0 +1,58 @@
+/**
+ * TS-Λ3 // SYMBOL TILE SUBSTRATE [v3.2.0]
+ * Path: src/components/icons/symboltile.css
+ * Mission: Clinical interaction and glow dynamics for Material Symbols.
+ * Authority: THE OVERWATCH
+ */
+
+ .symbol-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(4px);
+}
+
+.symbol-glow {
+  position: absolute;
+  inset: -20%;
+  background: radial-gradient(
+    circle,
+    rgba(34, 211, 238, 0.15) 0%,
+    transparent 70%
+  );
+  filter: blur(10px);
+  opacity: 0.5;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+.symbol-glyph {
+  font-variation-settings: 'FILL' 0, 'wght' 450, 'GRAD' 0, 'opsz' 48;
+  color: #94a3b8; /* slate-400 default */
+  z-index: 1;
+  transition: all 0.5s ease;
+}
+
+/* 🖱️ TACTICAL INTERACTION */
+.group:hover .symbol-container,
+.symbol-container:hover {
+  background: rgba(34, 211, 238, 0.05);
+  border-color: rgba(34, 211, 238, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+}
+
+.group:hover .symbol-glyph,
+.symbol-container:hover .symbol-glyph {
+  color: #fff;
+  transform: scale(1.1);
+}
+
+.group:hover .symbol-glow,
+.symbol-container:hover .symbol-glow {
+  opacity: 1;
+}

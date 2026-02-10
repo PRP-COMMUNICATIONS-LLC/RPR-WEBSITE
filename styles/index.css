@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/**
+ * TS-Λ3 // GLOBAL SUBSTRATE STYLES [v4.1.0]
+ * Path: src/styles/index.css
+ * Mission: Fix vendor prefixes and suppress unknown at-rule warnings
+ * Authority: THE OVERWATCH
+ */
+
+@layer base {
+  html {
+    @apply bg-black text-white antialiased;
+    scroll-behavior: smooth;
+    /* Suppress tap highlight on mobile */
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  body {
+    @apply bg-black min-h-screen overflow-x-hidden;
+    /* Axis Latching for Inter / Grotesk Display */
+    font-feature-settings: "cv02", "cv03", "cv04", "ss01";
+  }
+}
+
+@layer components {
+  .text-gradient-cyan {
+    @apply bg-gradient-to-r from-white to-cyan-400 bg-clip-text text-transparent;
+    /* 🛡️ VENDOR PREFIX LATCH */
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+}
+
+/* 📐 AUTHORITATIVE CUSTOM SCROLLBAR */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-black;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-white/10 rounded-full transition-colors;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-cyan-500/20;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  @apply bg-black;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-white/10 rounded-full hover:bg-cyan-500/20 transition-colors;
+}
+
+/* 🧬 ANIMATION SUBSTRATE */
+.animate-glow {
+  animation: glow 4s ease-in-out infinite;
+}
+
+@keyframes glow {
+  0%, 100% { opacity: 0.3; filter: blur(40px); }
+  50% { opacity: 0.6; filter: blur(60px); }
+}
+
+/* 🛡️ FALLBACKS FOR IDE LINTING */
+@supports not (background-clip: text) {
+  .text-gradient-cyan {
+    @apply text-cyan-400 bg-none;
+  }
+}

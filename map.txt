@@ -1,0 +1,150 @@
+./# RPR MOTHERSHIP COPILOT GUIDE.md
+./&#x1D62;&#x1D62;&#x1D62;&#x1D62;.&#x1D62;&#x1D62;&#x1D62;&#x1D62;&#x1D62;&#x1D62;.&#x1D62;&#x1D62;
+./.DS_Store
+./.cursor/CANONICAL-ICON-SPEC.md
+./.cursor/plans/fix_home_hero_and_methods_components.plan.md
+./.cursor/rules/MOTHERSHIP-STABILIZATION-v5.1.0.md
+./.cursor/rules/tsk-source-of-truth.mdc
+./.cursorignore
+./.env
+./.firebase/hosting.ZGlzdA.cache
+./.firebaserc
+./.git/.MERGE_MSG.swp
+./.git/COMMIT_EDITMSG
+./.git/FETCH_HEAD
+./.git/HEAD
+./.git/ORIG_HEAD
+./.git/config
+./.git/description
+./.git/hooks/applypatch-msg.sample
+./.git/hooks/commit-msg.sample
+./.git/hooks/fsmonitor-watchman.sample
+./.git/hooks/post-update.sample
+./.git/hooks/pre-applypatch.sample
+./.git/hooks/pre-commit.sample
+./.git/hooks/pre-merge-commit.sample
+./.git/hooks/pre-push.sample
+./.git/hooks/pre-rebase.sample
+./.git/hooks/pre-receive.sample
+./.git/hooks/prepare-commit-msg.sample
+./.git/hooks/push-to-checkout.sample
+./.git/hooks/sendemail-validate.sample
+./.git/hooks/update.sample
+./.git/index
+./.git/info/exclude
+./.git/info/refs
+./.git/logs/HEAD
+./.git/logs/refs/stash
+./.git/objects/00/41aa84eb2c0f19761c6813625edf446740f464
+./.git/objects/00/6fcd625ec34d07b0d88e8eccbf62ef6c5e45ed
+./.git/objects/00/cd467a0a6c8641b573ba08e77f498627fce3cf
+./.git/objects/00/e232860115b030c02dd332a43a032691cdb599
+./.git/objects/00/fb11e5361932d88c50e7d10d11ddd0210ac0c7
+./.git/objects/00/fcdebe0cbe34ce58d2b044cf880e1a903e1af8
+./.git/objects/01/12f52fb092fa5fbd1e88eb7a3df029ee96cd22
+./.git/objects/01/60c4c5f40792d8607d9d74d68c28976fce9036
+./.git/objects/01/61ad6ee4c52a35164d6a0412f0187f6b1d1de4
+./.git/objects/01/647f213b666739201327fc084440b2cc5a6de2
+./.git/objects/01/687524bdf0e3a0859ab7d19812bcbd34d395f6
+./.git/objects/01/88c22434c23a719d208532f1bb69023aeca2ab
+./.git/objects/01/91e2911fbca3e8b73f9d692783e559f75448ef
+.
+├── # RPR MOTHERSHIP COPILOT GUIDE.md
+├── &#x1D62;&#x1D62;&#x1D62;&#x1D62;.&#x1D62;&#x1D62;&#x1D62;&#x1D62;&#x1D62;&#x1D62;.&#x1D62;&#x1D62;
+├── AUDIT
+│   ├── BUILD-ERROR-REPORT-ISOLATE-2026-001.md
+│   ├── CLEANUP-REPORT-20260207-084314.md
+│   ├── ESLINT-FINDINGS.md
+│   ├── HYGIENE-CSS-CONFLICT-RESOLUTION.md
+│   ├── MASTER-REPORT-v2.7.0.md
+│   ├── WEBSITE-INVENTORY-SUMMARY.txt
+│   ├── cleanup-reports
+│   │   └── 2026-02-06-1836-workspace-hardening.md
+│   ├── mobile_fidelity_audit.html
+│   └── website-other-files-2026-02-10.txt
+├── LABS-ICONS-PAYLOAD-v2.1.0.md
+├── README.md
+├── REPO-DIRECTORY-MAP.md
+├── REPORTS
+│   ├── 2026-01-24 .md
+│   ├── 2026-01-27  .md
+│   ├── HANDOVER PACKAGE_ L1 ORCHESTRATOR → NEXT SPACE AGE.md
+│   ├── MAIN WEBSITE FIX.md
+│   ├── RPR MOTHERSHIP _ MASTER CONTENT MANIFEST [v2.1.0].md
+│   └── RPR-MOTHERSHIP-CONTENT-MANIFEST-v2.md
+├── RPR-MOTHERSHIP-REPOSITORY-INVENTORY-v4.1.0.md
+├── RPR-MOTHERSHIP-inventory-dates.csv
+├── RPR-REACT-MOTHERSHIP.code-workspace
+├── Scripts
+│   ├── Check Stray Files
+│   ├── Open File Helper
+│   ├── Print Category Summary
+│   ├── Snapshot Timestamps
+│   ├── ci-firebase-preflight.sh
+│   ├── ci-firebase-sa-verify.ts
+│   ├── cleanse-governance.sh
+│   ├── cleanse-substrate.sh
+│   ├── configure-secrets.js
+│   ├── generate-rpr-branding.js
+│   ├── inventory
+│   │   ├── generate-inventory-csv.js
+│   │   ├── generate-inventory-markdown.js
+│   │   └── generate-website-other.js
+│   ├── latch-targets.sh
+│   ├── purge-terraform-from-git.sh
+│   ├── recovery-strike.sh
+│   ├── secret_sanitization
+│   ├── sentinel-full-strike.sh
+│   ├── sentinel-multi-harbor-strike.sh
+│   ├── sovereign-audit.sh
+│   ├── sovereign-cleanse.sh
+│   ├── sovereign-git-latch.sh
+│   ├── sovereign-health-probe-angular.sh
+│   ├── sovereign-health-probe.sh
+│   ├── sovereign-seed.ts
+│   ├── sovereign-seeding-strike.sh
+│   ├── sovereign-telemetry-check.ts
+│   ├── wif-diagnostic-strike.sh
+│   └── wif-repair-strike.sh
+├── backups
+│   └── jules-prep-20260203-160622.tar.gz
+├── build_output.log
+├── deploy_strike.sh
+├── eslint.config.js
+├── final_verification_v2.png
+├── firebase.json
+├── index.html
+├── inventory
+│   ├── 1_global_entry_config
+│   │   ├── eslint.config.js
+│   │   ├── index.html
+│   │   ├── public
+│   │   ├── src
+│   │   ├── styles
+│   │   ├── tailwind.config.js
+│   │   ├── tsconfig.json
+│   │   ├── types
+│   │   └── vite.config.ts
+│   ├── 2_routing_page_shells
+│   │   └── src
+│   ├── 3_home_sections
+│   │   └── src
+│   ├── 4_mothership_visualizer
+│   │   ├── l0thefirm.tsx
+│   │   ├── l1overwatchcommand.tsx
+│   │   ├── l2theelders.tsx
+│   │   ├── l3workspace.tsx
+│   │   └── l4products.tsx
+│   ├── 5_icon_visual_primitives
+│   │   ├── symboltile.css
+│   │   ├── symboltile.tsx
+│   │   └── systemcard.tsx
+│   ├── 6_services_wiring
+│   │   └── ollieClient.ts
+│   └── others
+├── jules_session_11905973309113041502
+│   ├── AUDIT
+│   │   ├── MIRROR-SYNC-v2.3.1.md
+│   │   ├── PURGE-REPORT-v2.1.0.md
+│   │   └── mobile_fidelity_audit.html
+│   └── src

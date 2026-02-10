@@ -1,0 +1,10 @@
+const fs = require('fs');
+const path = require('path');
+const dir = './test_casing';
+if (!fs.existsSync(dir)) fs.mkdirSync(dir);
+const file = path.join(dir, 'Foo.tsx');
+fs.writeFileSync(file, 'hello');
+console.log('Exists Foo.tsx:', fs.existsSync(path.join(dir, 'Foo.tsx')));
+console.log('Exists foo.tsx:', fs.existsSync(path.join(dir, 'foo.tsx')));
+console.log('Readdir:', fs.readdirSync(dir));
+fs.rmSync(dir, { recursive: true, force: true });

@@ -2,11 +2,11 @@
 
 import { useEffect } from 'react';
 import { Routes, Route, Navigate } from "react-router-dom";
-import { WorkflowProvider } from "./contexts/WorkflowContext";
-import Header from "./components/Header"; 
-import Home from "./components/Home"; // FIX: Default Import to resolve TS2614
-import { Labs } from "./components/Labs";
-import Footer from "./components/Footer";
+import { WorkflowProvider } from "./contexts/workflowcontext";
+import Header from "./components/header";
+import Home from "./components/home";
+import { Labs } from "./components/labs";
+import Footer from "./components/footer";
 
 /**
  * TS-Λ3 // SPA ORCHESTRATOR [v3.1.7]

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Icon } from './Icon';
-import SymbolTile from './icons/SymbolTile';
+import SymbolTile from './symboltile';
 
 /**
  * TS-Λ3 // C4 ELEMENT PRIMITIVES

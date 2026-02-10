@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useAuth } from '../contexts/AuthContext';
-import { RprLogoLockup } from '../brand/RprLogoLockup';
+import { useAuth } from '../contexts/authcontext';
+import { RprLogoLockup } from '../brand/rprlogolockup';
 import LanguageSwitcher from './LanguageSwitcher';
 
 /**

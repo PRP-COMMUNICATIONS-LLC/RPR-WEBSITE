@@ -1,0 +1,28 @@
+{
+  "script_path": "/Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/scripts/maintenance/safe-smallcaps-latch.sh",
+  "sim_renames": [
+    ["src/App.tsx", "src/app.tsx", "noop"],
+    ["src/Main.tsx", "src/main.tsx", "noop"],
+    ["src/components/Footer.tsx", "src/components/footer.tsx", "rename"],
+    ["src/components/Foundations.tsx", "src/components/foundations.tsx", "rename"],
+    ["src/components/Header.tsx", "src/components/header.tsx", "noop"],
+    ["src/components/Home.tsx", "src/components/home.tsx", "noop"],
+    ["src/components/Hero.tsx", "src/components/hero.tsx", "noop"],
+    ["src/components/Methods.tsx", "src/components/methods.tsx", "noop"],
+    ["src/components/MothershipSection.tsx", "src/components/mothershipsection.tsx", "noop"],
+    ["src/components/MothershipVisualizer.tsx", "src/components/mothershipvisualizer.tsx", "noop"],
+    ["src/components/AskOllie.tsx", "src/components/askollie.tsx", "noop"],
+    ["src/components/AskOllieLauncher.tsx", "src/components/askollielauncher.tsx", "noop"],
+    ["src/components/SectionHeading.tsx", "src/components/sectionheading.tsx", "noop"],
+    ["src/components/SystemCard.tsx", "src/components/systemcard.tsx", "noop"],
+    ["src/components/Overwatch.tsx", "src/components/overwatch.tsx", "noop"],
+    ["src/contexts/AuthContext.tsx", "src/contexts/authcontext.tsx", "noop"],
+    ["src/contexts/WorkflowContext.tsx", "src/contexts/workflowcontext.tsx", "rename"],
+    ["src/brand/RprLogoLockup.tsx", "src/brand/rprlogolockup.tsx", "rename"],
+    ["src/brand/RprLogoIcon.tsx", "src/brand/rprlogoicon.tsx", "rename"],
+    ["src/brand/RprMasterLogo.tsx", "src/brand/rprmasterlogo.tsx", "rename"],
+    ["src/pages/labs/Elders.tsx", "src/pages/labs/elders.tsx", "rename"],
+    ["src/background/HexGrid.tsx", "src/background/hexgrid.tsx", "rename"]
+  ],
+  "ready": false
+}
