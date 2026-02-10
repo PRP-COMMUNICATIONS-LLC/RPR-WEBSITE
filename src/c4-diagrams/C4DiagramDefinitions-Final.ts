@@ -1,6 +1,8 @@
 /**
- * TS-Λ3 // C4 ARCHITECTURE DEFINITIONS [v2.1.0]
+ * TS-Λ3 // C4 ARCHITECTURE DEFINITIONS [v3.4.1]
  * Platform: RPR KONTROL | System: THE MOTHERSHIP
+ * Nomenclature: L3: LABS // L4: THE FORGE
+ * Status: LATCHED // EXIT 0
  */
 
 export interface C4Diagram {
@@ -14,14 +16,14 @@ export const sentinelDiagrams: Record<string, C4Diagram> = {
   l1_overwatch: {
     id: 'l1-overwatch',
     title: 'L1: OVERWATCH COMMAND',
-    description: 'Sovereign Governance: The Sentinel Protocol',
+    description: 'Sovereign Governance: Sentinel Protocol & Strategic Intake',
     definition: `flowchart TD
     OW["🛡️ OVERWATCH COMMAND<br/>(Founder Authority + Perplexity Command)"]
     subgraph L2_Network ["THE QUANTUM NETWORK"]
         Brain["⚙️ RPR KONTROL"]
     end
-    OW -- "Inquiry & Approval" --> Brain
-    Brain -- "Governed Options" --> OW
+    OW -- "Strategic Intent" --> Brain
+    Brain -- "Governed Output" --> OW
 
     classDef default font-family:Inter,font-weight:700,color:#121212,fill:#dcd7c9,stroke:#708090,stroke-width:2px;
     classDef cmd fill:#e6b319,stroke:#121212,color:#121212,stroke-width:4px;
@@ -31,7 +33,7 @@ export const sentinelDiagrams: Record<string, C4Diagram> = {
   l2_elders: {
     id: 'l2-quantum-network',
     title: 'L2: THE QUANTUM NETWORK',
-    description: 'Shared State: Architect, Engineer, Sentinel',
+    description: 'Shared State: Architect, Engineer, Sentinel (Governing Labs & Forge)',
     definition: `graph TB
     subgraph Matrix ["SHARED_STATE_DECISION_MATRIX"]
         direction LR
@@ -39,12 +41,12 @@ export const sentinelDiagrams: Record<string, C4Diagram> = {
         ENG["♟️ ENGINEER (Gemini)"]
         SENT["🏰 SENTINEL"]
     end
-    subgraph L3_SubTier ["THE AGENCY & THE FORGE"]
+    subgraph Tiers ["LABS & THE FORGE"]
         direction TB
-        AGENCY["THE AGENCY"]
-        FORGE["THE FORGE"]
+        L3["L3: LABS"]
+        L4["L4: THE FORGE"]
     end
-    Matrix === L3_SubTier
+    Matrix === Tiers
 
     classDef default font-family:Inter,font-weight:700,color:#121212,fill:#dcd7c9,stroke:#708090,stroke-width:2px;
     classDef triad fill:#e6b319,stroke:#121212,color:#121212,stroke-width:2px;
@@ -53,54 +55,51 @@ export const sentinelDiagrams: Record<string, C4Diagram> = {
     linkStyle default stroke:#708090,stroke-width:2px;`
   },
   l3_forge: {
-    id: 'l3-agency-forge',
-    title: 'L3: THE AGENCY & THE FORGE',
-    description: 'Working Departments & Internal Orchestration',
+    id: 'l3-labs-plane',
+    title: 'L3: LABS',
+    description: 'Planning Department: Strategic Intent & Creative Formulation',
     definition: `flowchart TD
-    subgraph Forge ["⚒️ THE FORGE"]
+    subgraph Orchestration ["⚒️ ORCHESTRATION"]
         direction TB
         Jules["🤖 JULES"]
         Cursor["⌨️ CURSOR"]
     end
-    subgraph Agency ["THE AGENCY"]
+    subgraph LABS ["LABS (Planning)"]
         direction TB
-        subgraph Creative_Cluster ["Creative Cluster"]
+        subgraph Strategic_Creative ["Strategic & Creative"]
             STRAT["♟️ Strategy"]
             CREAT["🎨 Creative"]
             ART["🖼️ Art"]
             DES["📐 Design"]
         end
-        subgraph Delivery_Cluster ["Delivery Cluster"]
-            DEV["💻 Development"]
-            VID["🎬 Video Lab"]
-        end
     end
-    Forge -- "Orchestration" --> Agency
+    Orchestration -- "Orchestrates" --> LABS
 
     classDef default font-family:Inter,font-weight:700,color:#121212,fill:#dcd7c9,stroke:#708090,stroke-width:2px;
-    classDef forgeTools fill:#e6b319,stroke:#121212,color:#121212;
-    class Jules,Cursor forgeTools;
+    classDef labsTools fill:#22d3ee,stroke:#121212,color:#121212;
+    class STRAT,CREAT,ART,DES labsTools;
     linkStyle default stroke:#708090,stroke-width:2px;`
   },
   l4_instances: {
-    id: 'l4-solutions',
-    title: 'L4: SOLUTIONS & INSTANCES',
-    description: 'Specialist Agents & Sovereign Solutions',
+    id: 'l4-the-forge',
+    title: 'L4: THE FORGE',
+    description: 'Execution Department: Specialist Agents & Sovereign Instances',
     definition: `flowchart TD
-    subgraph Solutions ["SOVEREIGN SOLUTIONS"]
+    subgraph THE_FORGE ["THE FORGE (Execution)"]
         direction LR
-        subgraph Standalone ["Standalone"]
+        subgraph Standalone ["Standalone Clones"]
             MyAudit["📊 MYAUDIT"]
             Lab["🌀 LABYRINTH"]
         end
-        subgraph InHouse ["In-House"]
+        subgraph InHouse ["In-House Tools"]
             Verify["🛡️ RPR VERIFY"]
+            Build["🛠️ DEV OPS"]
         end
     end
 
     classDef default font-family:Inter,font-weight:700,color:#121212,fill:#dcd7c9,stroke:#708090,stroke-width:2px;
     classDef active fill:#e6b319,stroke:#121212,color:#121212;
-    class MyAudit,Lab,Verify active;
+    class MyAudit,Lab,Verify,Build active;
     linkStyle default stroke:#708090,stroke-width:2px;`
   }
 };
