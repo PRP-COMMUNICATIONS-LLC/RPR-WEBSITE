@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { sentinelDiagrams } from '../c4-diagrams/C4DiagramDefinitions-Final';
 import { MermaidViewer } from './MermaidViewer';
 import { Icon } from './Icon';
+import SymbolTile from './icons/SymbolTile';
+import { SectionHeading } from './SectionHeading';
+import { SystemBox } from './c4-elements';
 import L1OverwatchCommand from './L1OverwatchCommand';
 import L2TheElders from './L2TheElders';
 import L3TheForge from './L3TheForge';
@@ -9,9 +12,9 @@ import L4Sovereignty from './L4Sovereignty';
 import type { NodeData } from '../types';
 
 /**
- * TS-Λ3 // MOTHERSHIP VISUALIZER [v2.5.0]
- * PURPOSE: Interactive C4 Architectural Map
- * AUTHORITY: hello@butterdime.com
+ * TS-Λ3 // MOTHERSHIP VISUALIZER [proto v5.1.0] // Orchestrator latch per inventory §4
+ * PURPOSE: Interactive C4 Architectural Map (proto v5.1.0)
+ * AUTHORITY: PERPLEXITY COMMAND
  */
 
 export const MothershipVisualizer: React.FC = () => {
@@ -19,11 +22,11 @@ export const MothershipVisualizer: React.FC = () => {
   const [selectedNode, setSelectedNode] = useState<NodeData | null>(null);
 
   type TabId = keyof typeof sentinelDiagrams;
-  const tabs: { id: TabId; label: string; icon: string }[] = [
-    { id: 'l1_overwatch' as TabId, label: 'L1: Overwatch', icon: 'shield' },
-    { id: 'l2_elders' as TabId, label: 'L2: Elders', icon: 'group' },
-    { id: 'l3_forge' as TabId, label: 'L3: Forge', icon: 'build' },
-    { id: 'l4_instances' as TabId, label: 'L4: Instances', icon: 'grid_view' }
+  const tabs: { id: TabId; label: string; glyph: string }[] = [
+    { id: 'l1_overwatch' as TabId, label: 'L1: Overwatch', glyph: 'skull' },
+    { id: 'l2_elders' as TabId, label: 'L2: Elders', glyph: 'assistant_device' },
+    { id: 'l3_forge' as TabId, label: 'L3: Forge', glyph: 'workspaces' },
+    { id: 'l4_instances' as TabId, label: 'L4: Sovereignty', glyph: 'apk_install' }
   ];
 
   const renderActiveLayer = () => {
@@ -51,11 +54,14 @@ export const MothershipVisualizer: React.FC = () => {
   return (
     <section id="mothership-visualizer" className="py-24 bg-sovereign-bg-primary border-t border-white/5 relative">
       <div className="max-w-screen-2xl mx-auto px-6">
-        {/* Visualizer Header & Subhead */}
+        {/* Visualizer Header & Subhead (layout borrowed from MothershipSection) */}
         <div className="mb-12">
-          <h3 className="text-2xl font-bold text-white uppercase tracking-tight mb-4">
-            THE MOTHERSHIP ARCHITECTURE
-          </h3>
+          <SectionHeading
+            title="THE MOTHERSHIP ARCHITECTURE"
+            kicker="Operational Map"
+            className="mb-6 border-l-2 border-sovereign-actor-cyan pl-6"
+          />
+
           <p className="text-sovereign-fg-muted text-sm md:text-base leading-relaxed max-w-5xl font-mono">
             A C4‑style operational map of our enterprise intelligence infrastructure, where real businesses are cloned into a single Mothership environment and governed agentic systems work alongside humans on the same source of truth.
             The diagram maps traditional hierarchy into departments (strategy, execution, governance) and revenue streams (MYAUDIT, VERIFY, etc.), with the Sentinel Protocol’s RAM engine as the central router that keeps every lane’s AI “in the loop” and useful to people by delivering measurable SME value.
@@ -69,10 +75,10 @@ export const MothershipVisualizer: React.FC = () => {
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
                 className={`flex-1 min-w-[120px] py-4 rounded-xl transition-all duration-500 flex flex-col items-center gap-1.5 ${
-                  activeTab === tab.id ? 'bg-sky-600 text-white shadow-lg' : 'text-slate-500 hover:bg-slate-800/30'
+                  activeTab === tab.id ? 'bg-sky-600 text-white shadow-lg ring-1 ring-cyan-400/20' : 'text-slate-500 hover:bg-slate-800/30'
                 }`}
               >
-                <Icon name={tab.icon} size={16} fill={activeTab === tab.id} />
+                <SymbolTile glyph={tab.glyph} size={28} className={`${activeTab === tab.id ? 'opacity-100' : 'opacity-70'}`} glow={true} />
                 <span className="text-[10px] font-black uppercase tracking-widest">{tab.label}</span>
               </button>
             ))}
@@ -85,6 +91,16 @@ export const MothershipVisualizer: React.FC = () => {
 
           <div className="flex-1 relative z-10 bg-slate-900/10 rounded-xl border border-white/5">
             {renderActiveLayer()}
+          </div>
+
+          {/* C4 primitives: quick-access system boxes (integrated below) */}
+          <div className="mt-8 z-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+              <SystemBox title="Overwatch" description="Global Orchestrator" glyph="skull" color="cyan" onClick={() => setActiveTab('l1_overwatch')} />
+              <SystemBox title="Elders" description="Policy & Elders" glyph="assistant_device" color="purple" onClick={() => setActiveTab('l2_elders')} />
+              <SystemBox title="Forge" description="Workspaces & The Forge" glyph="workspaces" color="orange" onClick={() => setActiveTab('l3_forge')} />
+              <SystemBox title="Sovereignty" description="Runtime Instances" glyph="apk_install" color="red" onClick={() => setActiveTab('l4_instances')} />
+            </div>
           </div>
         </div>
       </div>
