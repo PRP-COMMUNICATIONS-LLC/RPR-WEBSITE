@@ -1,0 +1,30 @@
+import fs from 'node:fs';
+import path from 'node:path';
+
+/**
+ * TS-Λ3 // TOOLING: OPEN [v4.1.0]
+ * Resolves relative path to absolute for IDE integration
+ */
+
+const REPO_ROOT = process.cwd();
+
+function run() {
+  const args = process.argv.slice(2);
+  const relPath = args[0];
+
+  if (!relPath) {
+    console.error(`❌ Error: Usage: node open-file-from-inventory.mts <relative_path>`);
+    process.exit(1);
+  }
+
+  const fullPath = path.resolve(REPO_ROOT, relPath);
+
+  if (fs.existsSync(fullPath)) {
+    console.log(fullPath);
+  } else {
+    console.error(`❌ Error: File not found on disk: ${relPath}`);
+    process.exit(1);
+  }
+}
+
+run();

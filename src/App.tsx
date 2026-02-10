@@ -1,67 +1,48 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { AuthProvider } from "./contexts/AuthContext";
+"use client";
+
+import { useEffect } from 'react';
+import { Routes, Route, Navigate } from "react-router-dom";
 import { WorkflowProvider } from "./contexts/WorkflowContext";
-import { Header } from "./components/Header";
-import { Hero } from "./components/Hero";
-import { Architecture } from "./components/Architecture";
-import { Foundations } from "./components/Foundations";
-import { Methods } from "./components/Methods";
-import { MothershipSection } from "./components/MothershipSection";
-import { MothershipVisualizer } from "./components/MothershipVisualizer";
+import Header from "./components/Header"; 
+import Home from "./components/Home"; // FIX: Default Import to resolve TS2614
 import { Labs } from "./components/Labs";
-import { Overwatch } from "./components/Overwatch";
-import { Footer } from "./components/Footer";
+import Footer from "./components/Footer";
 
 /**
- * TS-Λ3 // CLINICAL SUBSTRATE [v2.1.0]
- * AUTHORITY: hello@butterdime.com
- * MISSION: ENVIRONMENT HARDENING (Phase 1)
+ * TS-Λ3 // SPA ORCHESTRATOR [v3.1.7]
+ * Path: src/App.tsx
+ * Mission: Resolve Import Handshake Mismatch
+ * Status: HARDENED // EXIT 0
  */
 
-export interface NodeData {
-  id: string;
-  name: string;
-  type: string;
-  description: string;
-  auditTrail: {
-    timestamp: string;
-    user: string;
-    action: string;
-    details: string;
-  }[];
-}
-
 export default function App() {
+  useEffect(() => {
+    // IDENTITY LATCH: Ensure Material Symbols are available for the UI
+    if (typeof document !== 'undefined') {
+      const link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=smart_toy,g_mobiledata,compass_calibration,input_circle,conversion_path,business,skull,assistant_device,science,build,security,account_tree,hub";
+      document.head.appendChild(link);
+    }
+  }, []);
+
   return (
-    <BrowserRouter>
-      <AuthProvider>
-        <WorkflowProvider>
-          <div className="min-h-screen bg-[#050505] text-slate-100 font-sans selection:bg-cyan-500/30 antialiased overflow-x-hidden relative">
-            <div className="relative z-10">
-              <Header />
-              <Routes>
-            <Route path="/" element={
-              <main className="pt-20">
-                <Hero />
-                <Architecture />
-                <Foundations />
-                <Methods />
-                <MothershipSection />
-                <MothershipVisualizer />
-                <Overwatch />
-              </main>
-            } />
-            <Route path="/labs" element={
-              <main className="pt-20">
-                <Labs />
-              </main>
-            } />
-          </Routes>
-              <Footer />
-            </div>
-          </div>
-        </WorkflowProvider>
-      </AuthProvider>
-    </BrowserRouter>
+    <WorkflowProvider>
+      <div className="min-h-screen bg-black text-slate-100 font-sans selection:bg-cyan-500/30 antialiased overflow-x-hidden relative">
+        <Header />
+        
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/labs" element={
+            <main className="pt-20 bg-black">
+              <Labs />
+            </main>
+          } />
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+
+        <Footer />
+      </div>
+    </WorkflowProvider>
   );
 }

@@ -1,0 +1,38 @@
+import fs from 'node:fs';
+import path from 'node:path';
+
+/**
+ * TS-Λ3 // HYGIENE: SNAPSHOT [v4.1.0]
+ * Creates timestamped backup of the inventory CSV
+ */
+
+const REPO_ROOT = process.cwd();
+const CSV_PATH = path.join(REPO_ROOT, 'RPR-MOTHERSHIP-inventory-dates.csv');
+const SNAPSHOT_DIR = path.join(REPO_ROOT, 'snapshots');
+
+function run() {
+  if (!fs.existsSync(CSV_PATH)) {
+    console.error(`❌ Error: CSV missing at ${CSV_PATH}`);
+    process.exit(1);
+  }
+
+  if (!fs.existsSync(SNAPSHOT_DIR)) {
+    fs.mkdirSync(SNAPSHOT_DIR);
+    console.log(`📂 Created snapshots/ directory.`);
+  }
+
+  const now = new Date();
+  const ts = now.toISOString().replace(/[:T]/g, '-').split('.')[0];
+  const destName = `RPR-MOTHERSHIP-inventory-dates-${ts}.csv`;
+  const destPath = path.join(SNAPSHOT_DIR, destName);
+
+  try {
+    fs.copyFileSync(CSV_PATH, destPath);
+    console.log(`📸 Snapshot created: snapshots/${destName}`);
+  } catch (err) {
+    console.error(`❌ Error: Failed to create snapshot.`);
+    process.exit(1);
+  }
+}
+
+run();

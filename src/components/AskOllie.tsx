@@ -1,52 +1,78 @@
+import { useState, useRef, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
+import { askOllie } from '../services/ollieClient';
+
 /**
- * TS-Λ3 // ASK OLLIE // AI INTERFACE [v1.0.0]
- * RECTIFIED: Switched to Material Symbols Variable Font and White Icons.
+ * TS-Λ3 // ASK OLLIE [v4.8.5]
+ * Path: src/components/AskOllie.tsx
  */
-import React from 'react';
+const AskOllie = () => {
+  const { t, i18n } = useTranslation();
+  const [input, setInput] = useState('');
+  const [messages, setMessages] = useState<{ role: 'ollie' | 'user'; content: string }[]>([
+    { role: 'ollie', content: "Welcome to the Agency layer. I'm Ollie. How can I help move the needle today?" }
+  ]);
+  const [isLoading, setIsLoading] = useState(false);
+  const scrollRef = useRef<HTMLDivElement>(null);
 
-export const AskOllie: React.FC = () => {
+  useEffect(() => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
+    }
+  }, [messages]);
+
+  const handleSend = async () => {
+    if (!input.trim() || isLoading) return;
+    const query = input;
+    setInput('');
+    setMessages(prev => [...prev, { role: 'user', content: query }]);
+    setIsLoading(true);
+
+    try {
+      const response = await askOllie(query, i18n.language);
+      setMessages(prev => [...prev, { role: 'ollie', content: response }]);
+    } catch {
+      setMessages(prev => [...prev, { role: 'ollie', content: "Substrate error. Try again." }]);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
-    <section id="chat" className="bg-black py-32 px-6 md:px-12">
-      <div className="max-w-4xl mx-auto border border-zinc-800 rounded-2xl bg-[#0A0A0A] overflow-hidden shadow-2xl">
-        <div className="p-6 border-b border-zinc-800 flex items-center justify-between bg-zinc-900/50">
-          <div className="flex items-center gap-3">
-            <div className="w-8 h-8 bg-cyan-500 rounded-sm flex items-center justify-center">
-              <span className="material-symbols-outlined text-black text-[20px]">
-                auto_awesome
-              </span>
-            </div>
-            <div>
-              <h3 className="text-white text-xs font-black tracking-widest font-mono uppercase">OLLIE // SENTINEL AI</h3>
-              <p className="text-[8px] text-cyan-500 font-mono uppercase">Status: Operational</p>
-            </div>
+    <section id="chat" className="py-24 bg-black border-t border-white/5 scroll-mt-20">
+      <div className="max-w-4xl mx-auto px-6">
+        <div className="bg-[#050505] border border-white/10 rounded-[3rem] p-8 md:p-12 shadow-2xl relative overflow-hidden">
+          <div ref={scrollRef} className="mb-10 h-[400px] overflow-y-auto space-y-6 px-4 custom-scrollbar scroll-smooth">
+            {messages.map((m, i) => (
+              <div key={i} className={`flex ${m.role === 'user' ? 'justify-end' : 'justify-start'}`}>
+                <div className={`max-w-[80%] px-8 py-4 rounded-2xl text-sm ${m.role === 'user' ? 'bg-cyan-500 text-black font-bold' : 'bg-zinc-900 text-slate-300'}`}>
+                  {m.content}
+                </div>
+              </div>
+            ))}
+            {isLoading && (
+              <div className="flex justify-start">
+                <div className="bg-zinc-900 px-8 py-4 rounded-2xl animate-pulse text-slate-500 text-xs uppercase tracking-widest font-mono">
+                  Ollie is thinking...
+                </div>
+              </div>
+            )}
           </div>
-          <div className="flex gap-2">
-            <div className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse" />
-          </div>
-        </div>
-
-        <div className="h-96 p-6 flex flex-col justify-end gap-4 overflow-y-auto font-mono text-[10px] tracking-tight text-zinc-500 uppercase">
-          <div className="flex gap-4">
-            <span className="text-cyan-500 flex-shrink-0">[SYSTEM]:</span>
-            <p>Mothership substrate confirmed. Awaiting strategic query...</p>
-          </div>
-        </div>
-
-        <div className="p-4 bg-zinc-950 border-t border-zinc-800">
-          <div className="relative flex items-center">
+          <div className="flex items-center bg-black border border-white/10 rounded-2xl px-6 py-2">
             <input
               type="text"
-              placeholder="ASK OLLIE..."
-              className="w-full bg-black border border-zinc-800 rounded-lg py-4 px-6 text-xs font-mono text-white placeholder:text-zinc-700 focus:outline-none focus:border-cyan-500/50 transition-all"
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              onKeyDown={(e) => e.key === 'Enter' && handleSend()}
+              placeholder={t('ollie.placeholder', 'What is the mission?')}
+              className="w-full bg-transparent border-none text-white focus:ring-0 text-sm py-4"
+              disabled={isLoading}
             />
-            <button className="absolute right-4 p-2 text-zinc-500 hover:text-white transition-colors">
-              <span className="material-symbols-outlined text-[18px]">
-                send
-              </span>
-            </button>
           </div>
         </div>
       </div>
     </section>
   );
 };
+
+export default AskOllie;

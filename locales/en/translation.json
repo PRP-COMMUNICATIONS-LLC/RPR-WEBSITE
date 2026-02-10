@@ -1,0 +1,37 @@
+{
+  "visualizer": {
+    "status": "MOTHERSHIP ARCHITECTURE STATE: ACTIVE",
+    "activeNode": "ACTIVE NODE: {{name}}",
+    "tabs": {
+      "firm": "L0 · THE FIRM",
+      "l1": "L1: Command Plane",
+      "l2": "L2: Governance",
+      "l3": "L3: Labs",
+      "l4": "L4: The Forge"
+    },
+    "l1": {
+      "title": "L1: Overwatch Command Layer",
+      "subtitle": "The Command Plane • Final Authority Layer"
+    },
+    "l2": {
+      "title": "L2: The Elders",
+      "subtitle": "Governance Matrix",
+      "nodes": {
+        "sentinel": { "name": "SENTINEL", "type": "Constraint Guard" },
+        "architect": { "name": "ARCHITECT", "type": "Perplexity Engine" },
+        "engineer": { "name": "ENGINEER", "type": "Gemini Engine" }
+      }
+    },
+    "l3": {
+      "title": "L3: Labs",
+      "subtitle": "Design & Intent Formulation"
+    },
+    "l4": {
+      "title": "L4: The Forge",
+      "subtitle": "Active Execution & Specialist Instances"
+    }
+  },
+  "ollie": {
+    "placeholder": "What is the mission?"
+  }
+}

@@ -1,8 +1,25 @@
 /**
- * HARBOR A (Corporate) – Type Definitions
- * MYA-GOV-009A | TypeScript Remediation | Era 2026
- * Authority: TS-Λ3
+ * src/types/index.ts
+ * Centralized Type Definitions
+ * Mission: Authoritative Source of Truth for NodeData
  */
+
+export interface NodeData {
+  id: string;
+  name: string;
+  type: string;
+  description: string;
+  auditTrail?: {
+    timestamp: string;
+    user: string;
+    action: string;
+    details: string;
+  }[];
+}
+
+export interface LayerProps {
+  onNodeClick: (node: NodeData) => void;
+}
 
 export type ForensicStatus =
   | 'PENDING'
@@ -11,13 +28,6 @@ export type ForensicStatus =
   | 'APPROVED'
   | 'USER_REVIEWED'
   | 'FLAGGED';
-
-export type DieFlag =
-  | 'DUPLICATE'
-  | 'ANOMALY'
-  | 'MISSING_SOURCE'
-  | 'MANUAL_OVERRIDE'
-  | 'RECONCILIATION_ERROR';
 
 export interface LedgerEntry {
   id: string;
@@ -30,11 +40,7 @@ export interface LedgerEntry {
   debit: number | null;
   credit: number | null;
   status: ForensicStatus;
-  flags: DieFlag[];
   category: string;
-  sourceDocumentId?: string;
-  createdAt?: string;
-  updatedAt?: string;
 }
 
 export interface UILedgerEntry {
@@ -49,9 +55,6 @@ export interface UILedgerEntry {
   category: string;
 }
 
-/**
- * Mapper: LedgerEntry → UILedgerEntry
- */
 export function mapLedgerEntryToUILedgerEntry(entry: LedgerEntry): UILedgerEntry {
   return {
     id: entry.id,
@@ -61,32 +64,7 @@ export function mapLedgerEntryToUILedgerEntry(entry: LedgerEntry): UILedgerEntry
     debit: entry.debit,
     credit: entry.credit,
     status: entry.status,
-    flags: entry.flags,
+    flags: [],
     category: entry.category,
   };
 }
-
-/**
- * Mapper: UILedgerEntry → LedgerEntry
- */
-export function mapUILedgerEntryToLedgerEntry(
-  uiEntry: UILedgerEntry,
-  defaults: { transactionId: string; yearId: string; entityId: string }
-): LedgerEntry {
-  return {
-    id: uiEntry.id,
-    transactionId: defaults.transactionId,
-    yearId: defaults.yearId,
-    entityId: defaults.entityId,
-    date: uiEntry.date,
-    description: uiEntry.description,
-    accountCode: uiEntry.accountCode,
-    debit: uiEntry.debit,
-    credit: uiEntry.credit,
-    status: uiEntry.status as ForensicStatus,
-    flags: uiEntry.flags as DieFlag[],
-    category: uiEntry.category,
-  };
-}
-
-export type { UILedgerEntry as ViewModelEntry };

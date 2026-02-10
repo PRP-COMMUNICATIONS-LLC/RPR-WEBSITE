@@ -1,0 +1,57 @@
+import fs from 'node:fs';
+import path from 'node:path';
+
+/**
+ * TS-Λ3 // HYGIENE: STRAY CHECK [v4.1.0]
+ * Scans for source files not listed in canonical inventory
+ */
+
+const REPO_ROOT = process.cwd();
+const CSV_PATH = path.join(REPO_ROOT, 'RPR-MOTHERSHIP-inventory-dates.csv');
+const EXCLUDE_DIRS = ['node_modules', '.git', 'dist', 'build', 'inventory', 'scripts', 'snapshots', 'quarantine'];
+const EXTENSIONS = ['.tsx', '.ts', '.js', '.css', '.mts'];
+
+function getAllFiles(dir: string, fileList: string[] = []): string[] {
+  const files = fs.readdirSync(dir);
+  files.forEach(file => {
+    const name = path.join(dir, file);
+    if (fs.statSync(name).isDirectory()) {
+      if (!EXCLUDE_DIRS.includes(file)) {
+        getAllFiles(name, fileList);
+      }
+    } else {
+      if (EXTENSIONS.includes(path.extname(name))) {
+        fileList.push(path.relative(REPO_ROOT, name));
+      }
+    }
+  });
+  return fileList;
+}
+
+function run() {
+  if (!fs.existsSync(CSV_PATH)) {
+    console.error(`❌ Error: CSV missing at ${CSV_PATH}`);
+    process.exit(1);
+  }
+
+  const inventory = new Set(
+    fs.readFileSync(CSV_PATH, 'utf8')
+      .split('\n')
+      .slice(1)
+      .map(line => line.split(',')[1])
+  );
+
+  const diskFiles = getAllFiles(REPO_ROOT);
+  const strays = diskFiles.filter(f => !inventory.has(f));
+
+  console.log(`\n🧹 STRAY FILE REPORT`);
+  console.log(`━━━━━━━━━━━━━━━━━━━`);
+  if (strays.length === 0) {
+    console.log(`🟢 Substrate clean. No stray source files detected.`);
+  } else {
+    console.log(`⚠️  Found ${strays.length} files not in inventory:`);
+    strays.sort().forEach(s => console.log(`  - ${s}`));
+  }
+}
+
+run();

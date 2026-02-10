@@ -1,0 +1,227 @@
+WEBSITE INVENTORY: /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE
+
+SOURCE
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/src/App.tsx
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/src/background/HexGrid.tsx
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/src/brand/RprLogoIcon.tsx
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/src/brand/RprLogoLockup.tsx
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/src/brand/RprMasterLogo.tsx
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/src/c4-diagrams/C4DiagramDefinitions-Final.ts
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/src/components/Architecture.tsx
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/src/components/AskOllie.tsx
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/src/components/BackToTop.tsx
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/src/components/ExtractionResults.tsx
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/src/components/Footer.tsx
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/src/components/Foundations.tsx
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/src/components/HashRedirect.tsx
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/src/components/Header.tsx
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/src/components/Hero.tsx
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/src/components/Home.tsx
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/src/components/Icon.tsx
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/src/components/L0TheFirm.tsx
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/src/components/L1OverwatchCommand.tsx
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/src/components/L2TheElders.tsx
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/src/components/L3TheForge.tsx
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/src/components/L4Sovereignty.tsx
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/src/components/Labs.tsx
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/src/components/LanguageSwitcher.tsx
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/src/components/LegalStub.tsx
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/src/components/LogoIcon.tsx
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/src/components/MermaidViewer.tsx
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/src/components/Methods.tsx
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/src/components/MothershipSection.tsx
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/src/components/MothershipVisualizer.tsx
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/src/components/Overwatch.tsx
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/src/components/SectionHeading.tsx
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/src/components/SentinelBadge.tsx
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/src/components/SquircleLatch.tsx
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/src/components/SymbolTile.tsx
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/src/components/SystemCard.tsx
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/src/components/TacticalPath.tsx
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/src/components/c4-elements.tsx
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/src/components/legacy/Chessboard.tsx
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/src/components/legacy/HomeHero.tsx
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/src/components/legacy/LabyrinthVariantBoard.tsx
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/src/contexts/AuthContext.tsx
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/src/contexts/WorkflowContext.tsx
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/src/data/productManifest.ts
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/src/data/theMothership.ts
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/src/hooks/useRuleRegistry.ts
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/src/i18n/config.ts
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/src/i18n/index.ts
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/src/lib/firebase.ts
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/src/main.tsx
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/src/pages/labs/Elders.tsx
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/src/pages/labs/MyAudit.tsx
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/src/services/ollieClient.ts
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/src/types/index.ts
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/src/types/viewModels.ts
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/src/vite-env.d.ts
+
+STYLING
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/postcss.config.js
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/src/components/SymbolTile.css
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/src/styles/hex-grid.css
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/src/styles/index.css
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/tailwind.config.js
+
+BUILD-CONFIG
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/tsconfig.json
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/tsconfig.node.json
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/vite.config.ts
+
+FIREBASE
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/.firebaserc
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/firebase.json
+
+ENV
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/.env
+
+PACKAGE
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/package.json
+
+SCRIPTS
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/Scripts/ci-firebase-preflight.sh
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/Scripts/ci-firebase-sa-verify.ts
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/Scripts/cleanse-governance.sh
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/Scripts/cleanse-substrate.sh
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/Scripts/configure-secrets.js
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/Scripts/generate-rpr-branding.js
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/Scripts/latch-targets.sh
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/Scripts/purge-terraform-from-git.sh
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/Scripts/recovery-strike.sh
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/Scripts/secret_sanitization
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/Scripts/sentinel-full-strike.sh
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/Scripts/sentinel-multi-harbor-strike.sh
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/Scripts/sovereign-audit.sh
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/Scripts/sovereign-cleanse.sh
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/Scripts/sovereign-git-latch.sh
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/Scripts/sovereign-health-probe-angular.sh
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/Scripts/sovereign-health-probe.sh
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/Scripts/sovereign-seed.ts
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/Scripts/sovereign-seeding-strike.sh
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/Scripts/sovereign-telemetry-check.ts
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/Scripts/wif-diagnostic-strike.sh
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/Scripts/wif-repair-strike.sh
+
+OTHER
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/.DS_Store
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/.cursor/CANONICAL-ICON-SPEC.md
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/.cursor/plans/fix_home_hero_and_methods_components.plan.md
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/.cursor/rules/tsk-source-of-truth.mdc
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/.cursorignore
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/.firebase/hosting.ZGlzdA.cache
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/.github/ISSUE_TEMPLATE/custom.md
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/.github/workflows/deploy.yml
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/.gitignore
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/AUDIT/BUILD-ERROR-REPORT-ISOLATE-2026-001.md
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/AUDIT/CLEANUP-REPORT-20260207-084314.md
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/AUDIT/HYGIENE-CSS-CONFLICT-RESOLUTION.md
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/AUDIT/MASTER-REPORT-v2.7.0.md
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/AUDIT/cleanup-reports/2026-02-06-1836-workspace-hardening.md
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/AUDIT/mobile_fidelity_audit.html
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/LABS-ICONS-PAYLOAD-v2.1.0.md
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/README.md
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/REPORTS/2026-01-24 .md
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/REPORTS/2026-01-27  .md
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/REPORTS/HANDOVER PACKAGE_ L1 ORCHESTRATOR → NEXT SPACE AGE.md
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/REPORTS/MAIN WEBSITE FIX.md
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/REPORTS/RPR MOTHERSHIP _ MASTER CONTENT MANIFEST [v2.1.0].md
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/REPORTS/RPR-MOTHERSHIP-CONTENT-MANIFEST-v2.md
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/RPR-REACT-MOTHERSHIP.code-workspace
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/backups/jules-prep-20260203-160622.tar.gz
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/build_output.log
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/deploy_strike.sh
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/dist/assets/_baseUniq-Dh1feQMp.js
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/dist/assets/arc-CBUNATSC.js
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/dist/assets/architectureDiagram-VXUJARFQ-ResrV-pR.js
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/dist/assets/blockDiagram-VD42YOAC-DuUMrWVN.js
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/dist/assets/c4Diagram-YG6GDRKO-BYRKYpcu.js
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/dist/assets/channel-BzcCgDkt.js
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/dist/assets/chunk-4BX2VUAB-BnRUXwPo.js
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/dist/assets/chunk-55IACEB6-CAAejJ1s.js
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/dist/assets/chunk-B4BG7PRW-8VQpRPBl.js
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/dist/assets/chunk-DI55MBZ5-5dKpgQKd.js
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/dist/assets/chunk-FMBD7UC4-DBcZwZW7.js
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/dist/assets/chunk-QN33PNHL-BCa40nH9.js
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/dist/assets/chunk-QZHKN3VN-aHGpuuNX.js
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/dist/assets/chunk-TZMSLE5B-BCCt1oK1.js
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/dist/assets/classDiagram-2ON5EDUG-B0Gy9Qht.js
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/dist/assets/classDiagram-v2-WZHVMYZB-B0Gy9Qht.js
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/dist/assets/clone-D3S5c8Pt.js
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/dist/assets/cose-bilkent-S5V4N54A-Da6kkxgH.js
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/dist/assets/cytoscape.esm-CyJtwmzi.js
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/dist/assets/dagre-6UL2VRFP-CY7dLJHl.js
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/dist/assets/defaultLocale-DX6XiGOO.js
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/dist/assets/diagram-PSM6KHXK-D6anNPCY.js
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/dist/assets/diagram-QEK2KX5R-D6_Q3zTt.js
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/dist/assets/diagram-S2PKOQOG-CHLwTzc4.js
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/dist/assets/erDiagram-Q2GNP2WA-DBSH4oUR.js
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/dist/assets/firebase-D3iDqfWq.js
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/dist/assets/flowDiagram-NV44I4VS-KCFF4OV-.js
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/dist/assets/ganttDiagram-JELNMOA3-e4xiAgkO.js
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/dist/assets/gitGraphDiagram-NY62KEGX-BS0x0LuS.js
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/dist/assets/graph-Doj0Wdvz.js
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/dist/assets/index-B9xuI1G8.js
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/dist/assets/index-CNzsBfA5.css
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/dist/assets/infoDiagram-WHAUD3N6-CE9cBIDF.js
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/dist/assets/init-Gi6I4Gst.js
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/dist/assets/journeyDiagram-XKPGCS4Q-EWtzgpUX.js
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/dist/assets/kanban-definition-3W4ZIXB7-BTkhrqSk.js
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/dist/assets/katex-CBSAILhF.js
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/dist/assets/layout-CYcem0lw.js
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/dist/assets/linear-hTnfYoRe.js
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/dist/assets/min-6L9Tu8lJ.js
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/dist/assets/mindmap-definition-VGOIOE7T-CDxHHFEO.js
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/dist/assets/ordinal-Cboi1Yqb.js
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/dist/assets/pieDiagram-ADFJNKIX-CvkBCMWq.js
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/dist/assets/quadrantDiagram-AYHSOK5B-CRppeQHN.js
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/dist/assets/requirementDiagram-UZGBJVZJ-_mXiwkED.js
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/dist/assets/sankeyDiagram-TZEHDZUN-D9ZGSdI8.js
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/dist/assets/sequenceDiagram-WL72ISMW-T1N4Kf9R.js
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/dist/assets/stateDiagram-FKZM4ZOC-COWT1zXL.js
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/dist/assets/stateDiagram-v2-4FDKWEC3-Cio4GZid.js
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/dist/assets/timeline-definition-IT6M3QCI-AP9ldE_m.js
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/dist/assets/treemap-KMMF4GRG-B6mOH9RV.js
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/dist/assets/ui-sHgF0c_o.js
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/dist/assets/vendor-DTmLkbfp.js
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/dist/assets/xychartDiagram-PRI3JC2R-Du1HcxQ0.js
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/dist/index.html
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/dist/robots.txt
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/dist/rpr-logo-icon.svg
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/dist/sitemap.xml
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/final_verification_v2.png
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/index.html
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/locales/en/translation.json
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/package-lock.json
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/public/index.html
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/public/robots.txt
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/public/rpr-logo-icon.svg
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/public/sitemap.xml
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/registry.md
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/src/assets/branding/google-auth-black.svg
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/src/assets/branding/rpr-communications-white.svg
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/src/assets/branding/web_dark_sq_na@1x.png
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/src/c4-diagrams/The_Mothership.html
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/src/components/.DS_Store
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/src/components/legacy/.DS_Store
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/src/contexts/.DS_Store
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/src/i18n/locales/en/translation.json
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/src/i18n/locales/my/translation.json
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/src/icons/methods_01_ask_dynamic_form.svg
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/src/icons/methods_02_pay_send_money.svg
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/src/icons/methods_03_make_construction.svg
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/src/icons/methods_04_play_rocket_launch.svg
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/src/icons/methods_05_repeat_update.svg
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/src/icons/overwatch.svg
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/src/icons/perplexity_command-icon-assistant_device.svg
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/src/icons/rpr-icon-chess_bishop.svg
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/src/icons/rpr-icon-chess_knight.svg
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/src/icons/rpr-icon-chess_rook.svg
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/src/icons/the_sentinel_protocol.svg
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/verification/final_v3_elders_lab.png
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/verification/final_v3_overwatch.png
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/verify_header.py
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/verify_mobile.py
+  /Users/puvansivanasan/perplexity/jobs/active/2026-001-RPR-WEBSITE/workspace-cleanup.sh
+

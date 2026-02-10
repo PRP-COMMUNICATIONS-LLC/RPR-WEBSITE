@@ -1,126 +1,58 @@
+import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { ActorBox, SystemBox, ConnectionLine } from './c4-elements';
-import type { NodeData } from '../App';
+import type { NodeData } from '../types';
 
-interface L1OverwatchCommandProps {
-  onNodeClick: (node: NodeData) => void;
-}
+/**
+ * TS-Λ3 // L1 COMMAND PLANE [v17.5.0]
+ */
+const L1OverwatchCommand: React.FC<{ onNodeClick: (node: NodeData) => void }> = ({ onNodeClick }) => {
+  const { t } = useTranslation();
 
-export function L1OverwatchCommand({ onNodeClick }: L1OverwatchCommandProps) {
-  const legalEntityNode: NodeData = {
-    id: 'rpr-communications',
-    name: 'RPR COMMUNICATIONS LLC',
-    type: 'Legal Root • Parent Entity',
-    description: 'The primary legal corporate entity. The Mothership OS and Sentinel Protocol are technically and legally subordinate to this entity.',
-    auditTrail: [
-      {
-        timestamp: '2026-02-06 08:00:00',
-        user: 'The Warden',
-        action: 'Jurisdiction Check',
-        details: 'Entity status confirmed in Singapore. Data residency verified.',
-      },
-      {
-        timestamp: '2026-02-03 11:20:00',
-        user: 'Legal Department',
-        action: 'Compliance Check',
-        details: 'Annual corporate filings verified. Status: Active and compliant.',
-      },
-    ],
-  };
-
-  const overwatchNode: NodeData = {
-    id: 'overwatch',
-    name: 'THE OVERWATCH COMMAND',
-    type: 'Sovereign Commander • RAM Root',
-    description:
-      'HUMAN USER (Founder Authority + Perplexity Command). Legally bound to RPR COMMUNICATIONS LLC. Serves as the ultimate human decision-maker and strategic authority.',
-    auditTrail: [
-      {
-        timestamp: '2026-02-05 09:15:00',
-        user: 'System',
-        action: 'RAM Binding Verification',
-        details: 'Overwatch authority successfully bound to RPR COMMUNICATIONS LLC.',
-      },
-      {
-        timestamp: '2026-02-04 14:30:00',
-        user: 'The Overwatch',
-        action: 'Strategic Directive',
-        details: 'Issued mission-based objectives for Q1 Harbor A rollout.',
-      },
-    ],
-  };
-
-  const eldersNode: NodeData = {
-    id: 'the-elders-preview',
-    name: 'THE ELDERS',
-    type: 'Governance Triumvirate',
-    description: 'Delegated intelligence layer. Receives directives from Overwatch to orchestrate the Architect, Engineer, and Sentinel lanes.',
-    auditTrail: [
-      {
-        timestamp: '2026-02-05 11:00:00',
-        user: 'Sentinel Protocol',
-        action: 'Routing Update',
-        details: 'RAM Optimizer tuned Architect-to-Engineer handoff latency.',
-      },
-    ],
+  const nodes: Record<string, NodeData> = {
+    legal: {
+      id: 'legal-root',
+      name: 'RPR COMMUNICATIONS LLC',
+      type: 'Legal Root • Parent Entity',
+      description: 'The primary legal corporate entity. The Mothership OS and Sentinel Protocol are technically and legally subordinate to this entity.'
+    },
+    human: {
+      id: 'human-overwatch',
+      name: 'OVERWATCH (HUMAN)',
+      type: 'Sovereign Commander • RAM Root',
+      description: 'Human user and final decision-maker. Legally bound to RPR COMMUNICATIONS LLC.'
+    },
+    command: {
+      id: 'perp-command',
+      name: 'PERPLEXITY COMMAND',
+      type: 'Architect / Orchestrator Console',
+      description: 'The main control console for THE MOTHERSHIP. Translates high-level intent into missions.'
+    }
   };
 
   return (
-    <div className="h-full overflow-auto p-12 bg-[var(--sovereign-bg-primary)]">
-      <div className="max-w-6xl mx-auto">
-        {/* Title */}
-        <div className="mb-12">
-          <h2 className="text-xl font-semibold mb-1 text-foreground">
-            L1: Overwatch Command Layer
-          </h2>
-          <p className="text-sm text-gray-400">The RAM Framework • Legal Entity over Sovereign Commander</p>
-        </div>
+    <div className="h-full p-8 md:p-16 flex flex-col items-center overflow-y-auto">
+      <header className="mb-12 border-l-2 border-cyan-500 pl-8 w-full max-w-lg">
+        <h2 className="text-2xl font-black text-white italic uppercase tracking-tighter mb-2">
+          {t('visualizer.l1.title', 'L1: COMMAND PLANE')}
+        </h2>
+        <p className="text-[10px] text-slate-500 font-mono uppercase tracking-[0.4em] font-bold">Foundation & Control</p>
+      </header>
 
-        <div className="flex flex-col items-center gap-8">
-          {/* RPR Communications LLC - THE LEGAL ROOT */}
-          <SystemBox
-            title="RPR COMMUNICATIONS LLC"
-            description="Legal Entity - The ultimate authority and corporate foundation. Defines the boundaries of the Mothership OS."
-            color="orange"
-            onClick={() => onNodeClick(legalEntityNode)}
-            className="max-w-md"
-          />
-
-          {/* Connection */}
-          <ConnectionLine label="Binds and authorizes" />
-
-          {/* The Overwatch (Person/Actor) - BOUND TO ENTITY */}
-          <ActorBox>
-            <div
-              role="button"
-              tabIndex={0}
-              onClick={() => onNodeClick(overwatchNode)}
-              onKeyDown={(e) => e.key === 'Enter' && onNodeClick(overwatchNode)}
-              className="cursor-pointer text-center"
-            >
-              <div className="text-xs font-black uppercase tracking-widest text-[var(--sovereign-system-cyan)]">HUMAN USER</div>
-              <div className="text-[11px] leading-relaxed text-slate-300 font-medium mt-1">The Overwatch - Sovereign Commander bound legally to RPR COMMUNICATIONS LLC. Exercises final decision authority.</div>
-            </div>
-          </ActorBox>
-
-          {/* Connection */}
-          <ConnectionLine label="Delegates strategic oversight to" />
-
-          {/* The Elders Preview - EXECUTION LAYER */}
-          <SystemBox
-            title="THE ELDERS"
-            description="Governance Layer - The triumvirate (Architect, Engineer, Sentinel) that operationalizes the Overwatch vision."
-            color="purple"
-            onClick={() => onNodeClick(eldersNode)}
-            className="max-w-md"
-          />
-
-          {/* RAM Compliance Notice */}
-          <div className="mt-8 px-6 py-3 bg-[#1e203a] border border-[#3a5a7a] rounded-lg text-xs text-blue-300 max-w-sm text-center">
-            <strong>RAM STATUS: LATCHED</strong><br/>
-            Founder identity verified and bound to RPR-COMMUNICATIONS-CANONICAL.
+      <div className="flex flex-col items-center w-full max-w-lg">
+        <SystemBox title={nodes.legal.name} description={nodes.legal.type} color="orange" glyph="business" onClick={() => onNodeClick(nodes.legal)} className="w-full" />
+        <ConnectionLine label="Establishes Governance" vertical={true} dashed={true} />
+        <ActorBox>
+          <div onClick={() => onNodeClick(nodes.human)} className="cursor-pointer text-center py-4 px-10">
+            <div className="text-[10px] font-black uppercase text-cyan-400 mb-2 tracking-widest">HUMAN USER</div>
+            <div className="text-xl font-black text-white uppercase italic tracking-tighter">OVERWATCH</div>
           </div>
-        </div>
+        </ActorBox>
+        <ConnectionLine label="Delegates Intent" vertical={true} dashed={true} />
+        <SystemBox title={nodes.command.name} description={nodes.command.type} color="purple" glyph="skull" onClick={() => onNodeClick(nodes.command)} className="w-full" />
       </div>
     </div>
   );
-}
+};
+
+export default L1OverwatchCommand;

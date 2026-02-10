@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import { sentinelDiagrams } from '../c4-diagrams/C4DiagramDefinitions-Final';
 import { MermaidViewer } from './MermaidViewer';
 import { Icon } from './Icon';
-import { L1OverwatchCommand } from './L1OverwatchCommand';
-import { L2TheElders } from './L2TheElders';
-import { L3AgencyForge } from './L3AgencyForge';
-import { L4Sovereignty } from './L4Sovereignty';
-import type { NodeData } from '../App';
+import L1OverwatchCommand from './L1OverwatchCommand';
+import L2TheElders from './L2TheElders';
+import L3TheForge from './L3TheForge';
+import L4Sovereignty from './L4Sovereignty';
+import type { NodeData } from '../types';
 
 /**
  * TS-Λ3 // MOTHERSHIP VISUALIZER [v2.5.0]
@@ -18,11 +18,12 @@ export const MothershipVisualizer: React.FC = () => {
   const [activeTab, setActiveTab] = useState<keyof typeof sentinelDiagrams>('l1_overwatch');
   const [selectedNode, setSelectedNode] = useState<NodeData | null>(null);
 
-  const tabs = [
-    { id: 'l1_overwatch', label: 'L1: Overwatch', icon: 'shield' },
-    { id: 'l2_elders', label: 'L2: Elders', icon: 'group' },
-    { id: 'l3_forge', label: 'L3: Forge', icon: 'build' },
-    { id: 'l4_instances', label: 'L4: Instances', icon: 'grid_view' }
+  type TabId = keyof typeof sentinelDiagrams;
+  const tabs: { id: TabId; label: string; icon: string }[] = [
+    { id: 'l1_overwatch' as TabId, label: 'L1: Overwatch', icon: 'shield' },
+    { id: 'l2_elders' as TabId, label: 'L2: Elders', icon: 'group' },
+    { id: 'l3_forge' as TabId, label: 'L3: Forge', icon: 'build' },
+    { id: 'l4_instances' as TabId, label: 'L4: Instances', icon: 'grid_view' }
   ];
 
   const renderActiveLayer = () => {
@@ -32,7 +33,7 @@ export const MothershipVisualizer: React.FC = () => {
       case 'l2_elders':
         return <L2TheElders onNodeClick={setSelectedNode} />;
       case 'l3_forge':
-        return <L3AgencyForge onNodeClick={setSelectedNode} />;
+        return <L3TheForge onNodeClick={setSelectedNode} />;
       case 'l4_instances':
         return <L4Sovereignty onNodeClick={setSelectedNode} />;
       default:
@@ -66,7 +67,7 @@ export const MothershipVisualizer: React.FC = () => {
             {tabs.map((tab) => (
               <button
                 key={tab.id}
-                onClick={() => setActiveTab(tab.id as any)}
+                onClick={() => setActiveTab(tab.id)}
                 className={`flex-1 min-w-[120px] py-4 rounded-xl transition-all duration-500 flex flex-col items-center gap-1.5 ${
                   activeTab === tab.id ? 'bg-sky-600 text-white shadow-lg' : 'text-slate-500 hover:bg-slate-800/30'
                 }`}
@@ -115,11 +116,11 @@ export const MothershipVisualizer: React.FC = () => {
 
             <div className="space-y-4">
               <div className="text-[10px] font-black text-slate-500 uppercase tracking-widest border-b border-white/5 pb-2">Shared State History</div>
-              {selectedNode.auditTrail.map((trail, i) => (
+              {selectedNode.auditTrail?.map((trail, i) => (
                 <div key={i} className="flex gap-4 group">
                   <div className="flex flex-col items-center">
                     <div className="w-2 h-2 rounded-full bg-cyan-500 mt-1.5" />
-                    {i !== selectedNode.auditTrail.length - 1 && <div className="w-px flex-1 bg-slate-800 my-1" />}
+                    {i !== (selectedNode.auditTrail?.length ?? 0) - 1 && <div className="w-px flex-1 bg-slate-800 my-1" />}
                   </div>
                   <div className="pb-6">
                     <div className="text-[9px] font-mono text-slate-500 uppercase mb-1">{trail.timestamp} // {trail.user}</div>

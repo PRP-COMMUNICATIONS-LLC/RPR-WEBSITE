@@ -1,0 +1,41 @@
+import fs from 'node:fs';
+import path from 'node:path';
+
+/**
+ * TS-Λ3 // TOOLING: STATS [v4.1.0]
+ * Prints summary of inventory data
+ */
+
+const REPO_ROOT = process.cwd();
+const CSV_PATH = path.join(REPO_ROOT, 'RPR-MOTHERSHIP-inventory-dates.csv');
+
+function run() {
+  if (!fs.existsSync(CSV_PATH)) {
+    console.error(`❌ Error: CSV missing at ${CSV_PATH}`);
+    process.exit(1);
+  }
+
+  const content = fs.readFileSync(CSV_PATH, 'utf8').split('\n').slice(1);
+  const stats: Record<string, { count: number, oldest: string, newest: string }> = {};
+
+  content.forEach(line => {
+    const [cat, _path, mod] = line.split(',');
+    if (!cat || !mod) return;
+
+    if (!stats[cat]) {
+      stats[cat] = { count: 1, oldest: mod, newest: mod };
+    } else {
+      stats[cat].count++;
+      if (mod < stats[cat].oldest) stats[cat].oldest = mod;
+      if (mod > stats[cat].newest) stats[cat].newest = mod;
+    }
+  });
+
+  console.log(`\n📊 REPOSITORY CATEGORY SUMMARY`);
+  console.log(`━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`);
+  Object.entries(stats).sort().forEach(([cat, s]) => {
+    console.log(`${cat.padEnd(25)} | Files: ${String(s.count).padEnd(2)} | Newest: ${s.newest}`);
+  });
+}
+
+run();

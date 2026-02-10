@@ -1,5 +1,6 @@
 import React from 'react';
 import { Icon } from './Icon';
+import SymbolTile from './icons/SymbolTile';
 
 /**
  * TS-Λ3 // C4 ELEMENT PRIMITIVES
@@ -102,13 +103,17 @@ export const ActorBox = ({ children }: { children: React.ReactNode }) => (
 interface ConnectionLineProps {
   label?: string;
   className?: string;
+  vertical?: boolean;
+  dashed?: boolean;
 }
 
-export const ConnectionLine: React.FC<ConnectionLineProps> = ({ label, className = '' }) => {
+export const ConnectionLine: React.FC<ConnectionLineProps> = ({ label, className = '', vertical = true, dashed = true }) => {
+  const lineClass = vertical ? 'w-px h-6' : 'h-px w-full';
+  const styleClass = dashed ? 'border-l border-dashed border-slate-500' : 'bg-slate-600';
   return (
-    <div className={`flex flex-col items-center gap-1 mb-2 ${className}`}>
+    <div className={`flex ${vertical ? 'flex-col items-center' : 'flex-row items-center'} gap-1 mb-2 ${className}`}>
       {label && <span className="text-[10px] text-slate-500 uppercase font-mono tracking-tight">{label}</span>}
-      <div className="w-px h-6 bg-slate-600 border-l border-dashed border-slate-500" />
+      <div className={`${lineClass} ${styleClass}`} />
     </div>
   );
 };
@@ -117,11 +122,12 @@ interface SystemBoxProps {
   title: string;
   description: string;
   color?: 'red' | 'purple' | 'cyan' | 'orange';
+  glyph?: string;
   onClick?: () => void;
   className?: string;
 }
 
-export const SystemBox: React.FC<SystemBoxProps> = ({ title, description, color = 'cyan', onClick, className = '' }) => {
+export const SystemBox: React.FC<SystemBoxProps> = ({ title, description, color = 'cyan', glyph, onClick, className = '' }) => {
   const colorMap = {
     red: 'border-[var(--sovereign-system-red)] hover:bg-[var(--sovereign-system-red)]/10',
     purple: 'border-[var(--sovereign-system-purple)] hover:bg-[var(--sovereign-system-purple)]/10',
@@ -141,8 +147,15 @@ export const SystemBox: React.FC<SystemBoxProps> = ({ title, description, color 
       onClick={onClick}
       className={`group p-5 border-2 bg-[var(--sovereign-bg-secondary)] rounded-lg cursor-pointer transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] ${colorMap[color]} ${className}`}
     >
-      <div className={`text-xs font-black uppercase tracking-widest mb-2 ${textMap[color]}`}>{title}</div>
+      <div className={`flex items-center justify-between mb-2`}>
+        <div className={`text-xs font-black uppercase tracking-widest ${textMap[color]}`}>{title}</div>
+        {glyph && <SymbolTile glyph={glyph} size={28} className="opacity-80" />}
+      </div>
       <div className="text-[11px] leading-relaxed text-slate-300 font-medium group-hover:text-white transition-colors">{description}</div>
     </div>
   );
 };
+
+export const SectionDivider: React.FC<{ label?: string }> = ({ label }) => (
+  <div className="mt-8 border-t border-white/5 pt-6 text-slate-400 text-sm">{label}</div>
+);
