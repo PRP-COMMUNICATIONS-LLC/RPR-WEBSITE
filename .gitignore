@@ -52,3 +52,6 @@ quarantine/
 src/components/legacy/
 src/services/
 src/components/icons/
+src/components/AskOllieLauncher.tsx
+src/components/L0TheFirm.tsx
+src/components/L3TheForge.tsx
