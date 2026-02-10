@@ -46,3 +46,9 @@ ui-debug.log*
 # Forensic Artifacts
 backups/
 quarantine/
+
+# Local editor metadata and legacy artifacts
+.cursor/
+src/components/legacy/
+src/services/
+src/components/icons/

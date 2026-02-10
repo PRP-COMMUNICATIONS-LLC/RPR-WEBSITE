@@ -1,6 +1,5 @@
-/* global console, process */
 /**
- * scripts/inventory/generate-website-other.cjs
+ * scripts/inventory/generate-website-other.js
  * mission: scan the repo and write website-other-files-2026-02-10.txt
  * category: ops, scripts & audit
  */
